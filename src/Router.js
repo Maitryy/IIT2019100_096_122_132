@@ -7,6 +7,9 @@ import Header from './Components/Header';
 import LandingPage from './Components/landingpage';
 import AuthContext from './Context/AuthContext';
 import Course from './Components/Course';
+import HomeTeacher from './Components/HomeTeacher';
+
+import HomeStudent from './Components/HomeStudent';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -43,6 +46,13 @@ function Router() {
                 </Route> */}
                 <Route exact path = '/course'>
                     <Course />
+                </Route>
+
+                <Route exact path = '/HomeStudent'>
+                    <HomeStudent />
+                </Route>
+                <Route exact path = '/HomeTeacher'>
+                    <HomeTeacher />
                 </Route>
             </Switch>
             <Footer />
