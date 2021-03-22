@@ -26,7 +26,7 @@ function Router() {
                         <Route exact path = '/Register'>
                             <Register />
                         </Route>
-                        <Route exact path = '/LoginStudent'>
+                        <Route exact path = '/Login'>
                             <LoginStudent />
                         </Route>
                     </>

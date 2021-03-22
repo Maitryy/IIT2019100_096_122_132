@@ -52,7 +52,7 @@ function Header() {
                 <Link to = "/Register">Sign Up</Link>
               </div>
               <div className='header-items'>
-                <Link to = "/LoginStudent">Log In </Link>
+                <Link to = "/Login">Log In </Link>
               </div>
             </>
           )}
