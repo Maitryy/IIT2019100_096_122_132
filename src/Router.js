@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import LoginStudent from './Auth/LoginStudent';
-import RegisterStudent from './Auth/RegisterStudent';
+import Register from './Auth/Register';
 import Footer from './Components/footer';
 import Header from './Components/Header';
 import LandingPage from './Components/landingpage';
@@ -19,8 +19,8 @@ function Router() {
             <Switch>
                 {!loggedIn && (
                     <>
-                        <Route exact path = '/RegisterStudent'>
-                            <RegisterStudent />
+                        <Route exact path = '/Register'>
+                            <Register />
                         </Route>
                         <Route exact path = '/LoginStudent'>
                             <LoginStudent />

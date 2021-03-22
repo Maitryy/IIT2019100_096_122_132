@@ -1,11 +1,10 @@
 import axios from 'axios';
-import React,{useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 import AuthContext from '../Context/AuthContext';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './RegisterStudent.css'
+import "./RegisterStudent.css";
 
-function RegisterStudent() {
+function StudentForm() {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [passwordVerify,setPasswordVerify] = useState("");
@@ -42,7 +41,6 @@ function RegisterStudent() {
 
     return (
         <div>
-            <h1>Register a new Student account</h1>
             <form className = "create"
                 onSubmit = {registerStudent}
             >
@@ -97,10 +95,14 @@ function RegisterStudent() {
                     type ='String'
                     placeholder = 'Semester'
                     onChange = {(e) => setSemester(e.target.value)}>
-                    <option value="IT">IT</option>
-                    <option value="IT-BI">IT-BI</option>
-                    <option value="ECE">ECE</option>
-                    
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
                     
                 </select>
                 </div>
@@ -110,21 +112,17 @@ function RegisterStudent() {
                     type ='String'
                     placeholder = 'Branch'
                     onChange = {(e) => setBranch(e.target.value)}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
+                    <option value="IT">IT</option>
+                    <option value="IT-BI">IT-BI</option>
+                    <option value="ECE">ECE</option>
                     </select>
                 </div>
 
                 <button type = 'submit'>Register</button>
             </form>
+            
         </div>
     )
 }
 
-export default RegisterStudent;
+export default StudentForm
