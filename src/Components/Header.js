@@ -59,7 +59,7 @@ function Header() {
           {loggedIn && (
             <>
               <div className='header-items'>
-                <Link to = '/Home'>
+                <Link to = '/HomeStudent'>
                   Home
                 </Link>
               </div>
