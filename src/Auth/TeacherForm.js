@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 import AuthContext from '../Context/AuthContext';
+import userContext from '../Context/UserContext';
 import "./RegisterStudent.css";
 
 function StudentForm() {
@@ -13,6 +14,7 @@ function StudentForm() {
     const [branch,setBranch] = useState("IT");
 
     const {getLoggedIn} = useContext(AuthContext);
+    const {getUser} = useContext(userContext);
     const history = useHistory();
 
     async function registerTeacher(e) {
@@ -30,6 +32,7 @@ function StudentForm() {
 
             await axios.post("http://localhost:5000/auth/registerTeacher", registerTeacherData);
             await getLoggedIn();
+            await getUser();
             history.push("/");
 
         }catch (err) {

@@ -196,4 +196,34 @@ router.get("/LoggedInStudent",(req,res) => {
         };
 });
 
+router.get("/TypeOfUser",async (req,res) => {
+    try{
+        var token = req.cookies.token;
+        
+        if(!token)
+            return res.json(false);
+
+        token = token.replace('Bearer','');
+        var decoded = jwt.decode(token);
+
+        var typeofuser = await Student.findById(decoded.student);
+
+        typeofuser = typeofuser.proffesion;
+        if(typeofuser === "Teacher")
+        {
+            res.send(true);
+            return true;
+        }
+        else if(typeofuser === "Student")
+        {
+            res.send(false);
+            return false;
+        }
+
+    }catch(err){
+        console.error(err);
+        res.json(false);
+    };
+});
+
 module.exports = router;

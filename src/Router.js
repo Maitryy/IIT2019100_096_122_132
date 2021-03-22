@@ -10,9 +10,11 @@ import Course from './Components/Course';
 import HomeTeacher from './Components/HomeTeacher';
 
 import HomeStudent from './Components/HomeStudent';
+import userContext from './Context/UserContext';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
+    const {user} = useContext(userContext)
 
     return (
         <BrowserRouter>
@@ -39,12 +41,26 @@ function Router() {
                     <Course />
                 </Route>
 
-                <Route exact path = '/HomeStudent'>
+                { !user &&
+                    <>
+                        <Route exact path = '/HomeStudent'>
+                            <HomeStudent />
+                        </Route>
+                    </>
+                }
+                {/* <Route exact path = '/HomeStudent'>
                     <HomeStudent />
-                </Route>
-                <Route exact path = '/HomeTeacher'>
+                </Route> */}
+                { user &&
+                    <>
+                        <Route exact path = '/HomeTeacher'>
+                            <HomeTeacher />
+                        </Route>
+                    </>
+                }
+                {/* <Route exact path = '/HomeTeacher'>
                     <HomeTeacher />
-                </Route>
+                </Route> */}
             </Switch>
             <Footer />
         </BrowserRouter>
