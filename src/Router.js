@@ -31,16 +31,7 @@ function Router() {
                         </Route>
                     </>
                 )}
-                {!loggedIn && (
-                    <>
-                        <Route exact path = '/RegisterStudent'>
-                            <RegisterStudent />
-                        </Route>
-                        <Route exact path = '/LoginStudent'>
-                            <LoginStudent />
-                        </Route>
-                    </>
-                )}
+
                 {/* <Route exact path = '/'>
                     <LandingPage />
                 </Route> */}
