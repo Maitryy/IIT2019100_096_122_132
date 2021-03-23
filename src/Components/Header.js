@@ -57,7 +57,7 @@ function Header() {
               </div>
             </>
           )}
-          {loggedIn && !user && (
+          {loggedIn && user === "Student" && (
             <>
               <div className='header-items'>
                 <Link to = '/HomeStudent'>
@@ -91,7 +91,7 @@ function Header() {
               </div>
             </>
           )}
-          {loggedIn && user && (
+          {loggedIn && user === "Teacher" && (
             <>
               <div className='header-items'>
                 <Link to = '/HomeTeacher'>

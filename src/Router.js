@@ -41,7 +41,7 @@ function Router() {
                     <Course />
                 </Route>
 
-                { !user &&
+                { user === "Student" &&
                     <>
                         <Route exact path = '/HomeStudent'>
                             <HomeStudent />
@@ -51,7 +51,7 @@ function Router() {
                 {/* <Route exact path = '/HomeStudent'>
                     <HomeStudent />
                 </Route> */}
-                { user &&
+                { user === "Teacher" &&
                     <>
                         <Route exact path = '/HomeTeacher'>
                             <HomeTeacher />
