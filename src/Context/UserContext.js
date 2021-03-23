@@ -6,6 +6,7 @@ const userContext = createContext();
 function UserContextProvider(props) {
 
     const [user,setUser] = useState();
+    const [userName, setUserName] = useState();
 
     async function getUser(){
         const type = await axios.get("http://localhost:5000/auth/TypeOfUser");
@@ -13,9 +14,10 @@ function UserContextProvider(props) {
         // console.log(type.data.proffesion)
         const x = type.data;
         setUser(x.proffesion);
+        setUserName(x.firstName);
     }
     return (
-        <userContext.Provider value = {{user,getUser}}>
+        <userContext.Provider value = {{user,userName,getUser}}>
             {props.children}
         </userContext.Provider>
     )

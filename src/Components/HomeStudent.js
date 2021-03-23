@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../bootstrap/bootstrap.css'
+import userContext from '../Context/UserContext'
 import './HomeStudent.css'
 
 function HomeStudent() {
+    const {userName} = useContext(userContext);
+
     return (
         <div className='homestudent container' >
             <div className="jumbotron">
-                <h1 className="display-4">Hello, Maitry !!</h1>
+                <h1 className="display-4">Hello, {userName} !!</h1>
                 <p className="lead"> “Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young.”</p>
                 <hr className="my-4"/>
                 <strong>
