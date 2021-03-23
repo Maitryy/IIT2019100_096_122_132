@@ -1,20 +1,22 @@
 import React from 'react'
 import '../bootstrap/bootstrap.css'
 import './HomeStudent.css'
+import image3 from '../images/bg-home.png'
 
 function HomeStudent() {
     return (
         <div className='homestudent container' >
-            <div className="jumbotron">
+                {/* <img src={image3} alt="Logo" /> */}
+            <div className="jumbotron student">
                 <h1 className="display-4">Hello, Maitry !!</h1>
                 <p className="lead"> “Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young.”</p>
                 <hr className="my-4"/>
                 <strong>
                 <p>Total credits completed: 18</p>
-                <p>Enrolled in courses: 3</p>
+                <p>Enrolled in courses: 5</p>
                 </strong>
                 <p className="lead">
-                    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    <a className="btn btn-primary btn-lg btn-course" href="#" role="button">Grade Sheets</a>
                 </p>
              </div>
             
@@ -35,7 +37,7 @@ function HomeStudent() {
            <div className='card courses mask '>
                 <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                     <a href="#" >
-                        <img src="https://img.jagranjosh.com/imported/images/E/Articles/maths2.jpg" className="img-fluid card-img-top"/>
+                        <img src="https://images.unsplash.com/photo-1509869175650-a1d97972541a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" className="img-fluid card-img-top"/>
                     </a>
                 </div>
                 <div class="card-body">
@@ -43,6 +45,7 @@ function HomeStudent() {
                         <h5 className = "card-subtitle text-muted">Anand kumar tiwari</h5>
                         <p className="text-muted">Credits:4</p>
                         <p className="card-text"></p>
+                        <button className="btn btn-primary btn-course">Go to Course</button>
                 </div>
            </div>
            </div>
@@ -58,6 +61,7 @@ function HomeStudent() {
                         <h5 className = "card-subtitle text-muted">Mohammad Javed</h5>
                         <p className="text-muted">Credits:4</p>
                         <p className="card-text"></p>
+                        <button className="btn btn-primary btn-course">Go to Course</button>
                 </div>
            </div>
            </div>
@@ -73,6 +77,7 @@ function HomeStudent() {
                         <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5>
                         <p className="text-muted">Credits:4</p>
                         <p className="card-text"></p>
+                        <button className="btn btn-primary btn-course">Go to Course</button>
                 </div>
            </div>
            </div>
@@ -88,6 +93,7 @@ function HomeStudent() {
                         <h5 className = "card-subtitle text-muted">Sonali </h5>
                         <p className="text-muted">Credits: 4</p>
                         <p className="card-text"></p>
+                        <button className="btn btn-primary btn-course">Go to Course</button>
                 </div>
            </div>
            </div>
@@ -103,6 +109,7 @@ function HomeStudent() {
                         <h5 className = "card-subtitle text-muted">Rahul Kala</h5>
                         <p className="text-muted">Credits:4</p>
                         <p className="card-text"></p>
+                        <button className="btn btn-primary btn-course">Go to Course</button>
                 </div>
            </div>
            </div>
