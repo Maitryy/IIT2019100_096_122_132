@@ -1,0 +1,15 @@
+.course_students {
+    align-items: center;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    max-width: 1140px;
+}
+
+/* .btn-course{
+    border: 10px solid rgba(119, 15, 119, 0.205) ;
+} */
+
+.card-announcements{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(119, 15, 119, 0.205);
+    border: 1px solid whitesmoke;
+}

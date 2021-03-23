@@ -8,7 +8,6 @@ import LandingPage from './Components/landingpage';
 import AuthContext from './Context/AuthContext';
 import Course from './Components/Course';
 import HomeTeacher from './Components/HomeTeacher';
-
 import HomeStudent from './Components/HomeStudent';
 import userContext from './Context/UserContext';
 
@@ -61,6 +60,10 @@ function Router() {
                 {/* <Route exact path = '/HomeTeacher'>
                     <HomeTeacher />
                 </Route> */}
+
+                <Route exact path = '/courseid'>
+                    <Course />
+                </Route>
             </Switch>
             <Footer />
         </BrowserRouter>

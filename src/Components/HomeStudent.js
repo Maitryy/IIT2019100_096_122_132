@@ -25,7 +25,7 @@ function HomeStudent() {
 
             {/* <h1>Enrolled Courses</h1> */}
             <div className="card bg-dark text-white enroll-card">
-                <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Card image"/>
+                <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" alt="Card image"/>
                 <div className="card-img-overlay">
                     <h1 className=" enroll-card-title card-title">Enrolled Courses</h1>
                     {/* <p className="enroll-card-text card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -117,7 +117,7 @@ function HomeStudent() {
            </div>
            </div>
            <div className="card bg-dark text-white enroll-card">
-                <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Card image"/>
+                <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" alt="Card image"/>
                 <div className="card-img-overlay">
                     <h1 className=" enroll-card-title card-title">Explore Courses</h1>
                 </div>
@@ -127,7 +127,7 @@ function HomeStudent() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
-                            <div className="card-horizontal">
+                            <div className="card-horizontal card-explore">
                                 <div className="img-square-wrapper">
                                     <img className="" src="https://images.unsplash.com/photo-1563729831178-d09061d83b12?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80" alt="Card image cap"/>
                                 </div>
@@ -144,7 +144,7 @@ function HomeStudent() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
-                            <div className="card-horizontal">
+                            <div className="card-horizontal card-explore">
                                 <div className="card-body">
                                     <h4 className="card-title explore-title">Technical Courses</h4>
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -161,7 +161,7 @@ function HomeStudent() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
-                            <div className="card-horizontal">
+                            <div className="card-horizontal card-explore">
                                 <div className="img-square-wrapper">
                                     <img className="" src="https://images.unsplash.com/photo-1589254066213-a0c9dc853511?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"/>
                                 </div>
