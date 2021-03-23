@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../bootstrap/bootstrap.css'
+import userContext from '../Context/UserContext'
 import './HomeStudent.css'
 import image3 from '../images/bg-home.png'
 
 function HomeStudent() {
+    const {userName} = useContext(userContext);
+
     return (
         <div className='homestudent container' >
-                {/* <img src={image3} alt="Logo" /> */}
-            <div className="jumbotron student">
-                <h1 className="display-4">Hello, Maitry !!</h1>
+            <div className="jumbotron">
+                <h1 className="display-4">Hello, {userName} !!</h1>
                 <p className="lead"> “Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young.”</p>
                 <hr className="my-4"/>
                 <strong>
@@ -19,8 +21,8 @@ function HomeStudent() {
                     <a className="btn btn-primary btn-lg btn-course" href="#" role="button">Grade Sheets</a>
                 </p>
              </div>
-            
-            
+
+
             {/* <h1>Enrolled Courses</h1> */}
             <div className="card bg-dark text-white enroll-card">
                 <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Card image"/>
@@ -30,9 +32,9 @@ function HomeStudent() {
                     <p className="card-text">Last updated 3 mins ago</p> */}
                 </div>
             </div>
-            
+
             <div className="All-courses row row-cols-3">
-           
+
            <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
            <div className='card courses mask '>
                 <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">

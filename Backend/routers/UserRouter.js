@@ -208,17 +208,7 @@ router.get("/TypeOfUser",async (req,res) => {
 
         var typeofuser = await Student.findById(decoded.student);
 
-        typeofuser = typeofuser.proffesion;
-        if(typeofuser === "Teacher")
-        {
-            res.send(true);
-            return true;
-        }
-        else if(typeofuser === "Student")
-        {
-            res.send(false);
-            return false;
-        }
+        res.send(typeofuser);
 
     }catch(err){
         console.error(err);
