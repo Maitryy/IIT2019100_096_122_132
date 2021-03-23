@@ -9,7 +9,7 @@ function HomeStudent() {
 
     return (
         <div className='homestudent container' >
-            <div className="jumbotron">
+            <div className="jumbotron student">
                 <h1 className="display-4">Hello, {userName} !!</h1>
                 <p className="lead"> “Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young.”</p>
                 <hr className="my-4"/>
