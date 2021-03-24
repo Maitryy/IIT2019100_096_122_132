@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState,useLayoutEffect } from 'react'
 
 const userContext = createContext();
 
@@ -16,6 +16,10 @@ function UserContextProvider(props) {
         setUser(x.proffesion);
         setUserName(x.firstName);
     }
+
+    useLayoutEffect(() => {
+        getUser();
+    }, []) 
     return (
         <userContext.Provider value = {{user,userName,getUser}}>
             {props.children}

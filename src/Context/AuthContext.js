@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React,{useState,useEffect, createContext} from 'react';
+import React,{useState,useLayoutEffect, createContext} from 'react';
 
 const AuthContext = createContext();
 
@@ -11,7 +11,7 @@ function AuthContextProvider(props) {
         setloggedIn(loggedInRes.data);
     }
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         getLoggedIn();
     }, [])
 
