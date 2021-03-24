@@ -9,6 +9,7 @@ import AuthContext from './Context/AuthContext';
 import Course from './Components/Course';
 import HomeTeacher from './Components/HomeTeacher';
 import HomeStudent from './Components/HomeStudent';
+import CourseTeacher from './Components/CourseTeacher';
 import userContext from './Context/UserContext';
 
 function Router() {
@@ -39,6 +40,9 @@ function Router() {
                 <Route exact path = '/course'>
                     <Course />
                 </Route>
+                <Route exact path = '/courseTeacher'>
+                    <CourseTeacher />
+                </Route>
 
                 { user === "Student" &&
                     <>
@@ -61,9 +65,17 @@ function Router() {
                     <HomeTeacher />
                 </Route> */}
 
+                {/* <Route exact path = '/HomeStudent'>
+                            <HomeStudent />
+                        </Route>
+
+                <Route exact path = '/HomeTeacher'>
+                            <HomeTeacher />
+                        </Route> */}
+
                 <Route exact path = '/courseid'>
                     <Course />
-                </Route>
+                </Route> 
             </Switch>
             <Footer />
         </BrowserRouter>

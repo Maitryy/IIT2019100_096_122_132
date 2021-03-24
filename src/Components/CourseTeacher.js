@@ -4,7 +4,7 @@ import './Course.css'
 import image3 from '../images/pdf-logo.png'
 import image2 from '../images/image-logo.png'
 import image1 from '../images/video-logo.png'
-function Courses() {
+function CourseTeacher() {
     return (
         <div className=' container' >
 
@@ -22,12 +22,16 @@ function Courses() {
 
             
             <div className='course_sudents row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Find Your Class-mates</button>
+                <button className="btn btn-primary btn-lg btn-course">Student's List</button>
                 {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
             </div>
             <br/>
             <div className='course_doubts row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button>
+                <button className="btn btn-primary btn-lg btn-course">Post Announcements</button>
+            </div>
+            <br/>
+            <div className='course_doubts row ml-2 mr-2'>
+                <button className="btn btn-primary btn-lg btn-course">Take Test</button>
             </div> 
 
 
@@ -120,4 +124,4 @@ function Courses() {
     )
 }
 
-export default Courses
+export default CourseTeacher
