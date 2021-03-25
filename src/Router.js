@@ -11,6 +11,7 @@ import HomeTeacher from './Components/HomeTeacher';
 import HomeStudent from './Components/HomeStudent';
 import CourseTeacher from './Components/CourseTeacher';
 import userContext from './Context/UserContext';
+import AddCourses from './Courses/AddCourses';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -58,6 +59,9 @@ function Router() {
                     <>
                         <Route exact path = '/HomeTeacher'>
                             <HomeTeacher />
+                        </Route>
+                        <Route exact path = '/AddCourse'>
+                            <AddCourses />
                         </Route>
                     </>
                 }

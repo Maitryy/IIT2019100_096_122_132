@@ -1,5 +1,6 @@
 
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import '../bootstrap/bootstrap.css'
 import userContext from '../Context/UserContext'
 import './HomeStudent.css'
@@ -17,7 +18,7 @@ function HomeTeacher() {
                 <p>Enrolled in courses: 4</p>
                 </strong>
                 <p className="lead">
-                    <a className="btn btn-primary btn-lg btn-course" href="#" role="button">Add a New Course</a>
+                    <Link to = '/AddCourse' >Add Course</Link>
                 </p>
             </div>
             
