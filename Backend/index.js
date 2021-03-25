@@ -22,4 +22,6 @@ mongoose.connect(process.env.MDB_CONNECT, {
 
 app.use("/auth", require("./routers/UserRouter"));
 
+app.use("/course", require("./routers/CourseRouter"));
+
 app.listen(PORT, () => console.log('Server started on port:'+ PORT));
