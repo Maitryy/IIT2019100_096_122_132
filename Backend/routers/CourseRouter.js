@@ -39,6 +39,8 @@ router.post("/AddCoreCourse",async (req,res) => {
         
         await NewCourse.save();
 
+        res.send(true);
+
     } catch (err) {
         console.error(err);
         res.status(500).send();
@@ -81,6 +83,8 @@ router.post("/AddElectiveCourse",async (req,res) => {
         });
         
         await NewCourse.save();
+
+        res.send(true);
 
     } catch (err) {
         console.error(err);

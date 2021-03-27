@@ -15,11 +15,11 @@ function AddCourses() {
         <div className = 'add-courses'>
             <h1>Add New Course:</h1>
             <button onClick={handleClick}>Core Course</button>
-            <div className = {click? 'create':'create:inactive'}>
+            <div className = {click? 'create':'create-inactive'}>
                 <CoreCoursesForm />
             </div>
             <button onClick={HandleClick}>Elective Course</button>
-            <div className = {Click? 'create':'create:inactive'}>
+            <div className = {Click? 'create':'create-inactive'}>
                 <ElectiveCourseForm />
             </div>
         </div>

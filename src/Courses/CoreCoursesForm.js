@@ -21,10 +21,11 @@ function CoreCoursesForm() {
                 description,
             }
             
-            await axios.post("http://localhost:5000/course/AddCoreCourse", CoreCourse);
-
-            console.log(CoreCourse);
-            history.push("/HomeTeacher");
+            const y = await axios.post("http://localhost:5000/course/AddCoreCourse", CoreCourse);
+            if(y)
+            {
+                history.push('/HomeTeacher');
+            }
 
         } catch (err) {
             console.error(err);

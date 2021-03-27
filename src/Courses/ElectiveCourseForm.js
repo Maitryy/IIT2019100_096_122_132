@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { useHistory } from 'react-router';
 
 function ElectiveCourseForm() {
     const [name,getName] = useState("");
@@ -7,6 +8,8 @@ function ElectiveCourseForm() {
     const [credits,getCredits] = useState(1);
     const [description,getDescription] = useState("");
     const [subtype,getType] = useState("");
+
+    const history = useHistory();
 
     async function addElectiveCourse(e){
         e.preventDefault();
@@ -20,7 +23,11 @@ function ElectiveCourseForm() {
                 subtype
             }
             
-            await axios.post("http://localhost:5000/course/AddElectiveCourse", ElectiveCourse);
+            const y = await axios.post("http://localhost:5000/course/AddElectiveCourse", ElectiveCourse);
+            if(y)
+            {
+                history.push('/HomeTeacher');
+            }
         } catch (err) {
             console.error(err);
         }
