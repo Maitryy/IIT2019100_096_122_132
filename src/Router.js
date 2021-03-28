@@ -65,17 +65,6 @@ function Router() {
                         </Route>
                     </>
                 }
-                {/* <Route exact path = '/HomeTeacher'>
-                    <HomeTeacher />
-                </Route> */}
-
-                {/* <Route exact path = '/HomeStudent'>
-                            <HomeStudent />
-                        </Route>
-
-                <Route exact path = '/HomeTeacher'>
-                            <HomeTeacher />
-                        </Route> */}
 
                 <Route exact path = '/courseid'>
                     <Course />

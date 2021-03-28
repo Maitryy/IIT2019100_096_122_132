@@ -77,7 +77,7 @@ router.post("/AddElectiveCourse",async (req,res) => {
             id: id,
             credits: credits,
             description: description,
-            type: "Core",
+            type: "Elective",
             subtype: subtype,
             teacher: teacher
         });
@@ -92,5 +92,50 @@ router.post("/AddElectiveCourse",async (req,res) => {
     }
 });
 
+router.get("/GetCoreCourses", async (req,res) => {
+    try {
+        const getCourses = await Course.find({
+            type: "Core"
+        });
+        res.send(getCourses);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
+
+router.get("/GetTechnicalElectiveCourses", async (req,res) => {
+    try {
+        const getCourses = await Course.find({
+            type: "Elective",
+            subtype: "Technical"
+        });
+        res.send(getCourses);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
+router.get("/GetNonTechnicalElectiveCourses", async (req,res) => {
+    try {
+        const getCourses = await Course.find({
+            type: "Elective",
+            subtype: "Non-Technical"
+        });
+        res.send(getCourses);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
 
 module.exports = router;
