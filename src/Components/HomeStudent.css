@@ -82,6 +82,14 @@ div.courses {
 .student {
     background-image: url(../images/jumbotron-01.png);
     background-size: cover;
+    text-align-last: left;
+}
+
+.teacher {
+    background-image: url(../images/homepage-teacher.png);
+    background-size: cover;
+    align-items: right;
+    text-align-last: right;
 }
 
 h1.display-4{
