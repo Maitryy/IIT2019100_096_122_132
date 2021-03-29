@@ -1,12 +1,15 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
+import  CourseContext from '../Context/CourseContext';
 
 function CoreCoursesForm() {
     const [name,getName] = useState("");
     const [id,getID] = useState("");
     const [credits,getCredits] = useState(1);
     const [description,getDescription] = useState("");
+
+    const {getCore} = useContext(CourseContext);
 
     const history = useHistory();
 
@@ -26,6 +29,7 @@ function CoreCoursesForm() {
             {
                 history.push('/HomeTeacher');
             }
+            await getCore();
 
         } catch (err) {
             console.error(err);
