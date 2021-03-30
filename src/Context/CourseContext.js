@@ -17,13 +17,13 @@ function CourseContextProvider(props) {
 
     async function getTechnicalElective(){
         const TechnicalElectiveCourse = await axios.get("http://localhost:5000/course/GetTechnicalElectiveCourses");
-        console.log(TechnicalElectiveCourse.data);
+        // console.log(TechnicalElectiveCourse.data);
         SetTechnicalElective(TechnicalElectiveCourse.data);
     }
 
     async function getNonTechnicalElective(){
         const NonTechnicalElectiveCourse = await axios.get("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
-        console.log(NonTechnicalElectiveCourse.data);
+        // console.log(NonTechnicalElectiveCourse.data);
         SetNonTechnicalElective(NonTechnicalElectiveCourse.data);
     }
     

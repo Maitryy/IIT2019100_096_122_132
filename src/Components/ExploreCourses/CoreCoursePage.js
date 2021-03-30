@@ -1,27 +1,35 @@
-import React, { useContext, useEffect } from 'react'
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react'
 import CourseContext from '../../Context/CourseContext'
 
 function CoreCoursePage() {
-    // const {core} = useContext(CourseContext);
+    const [data,setData] = useState([]);
 
-    // useEffect(()=> {
-    //     console.log(core);
-    // }
-    // , [core])
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetCoreCourses");
+        const da = await response.json();
+        setData(da);
+    }, []);
+    useEffect( () => {
+        console.log(data);
+    }, [data]);
+
     
     return (
-        <div style={{marginLeft: "200px",
-                    marginTop: "200px"}}>
+        <div>
             Hello
-            {/* {core.map(course=>{
+            {data.map(course=>{
                 return(
-                    <div>
-                        {
-                            course.name
-                        }
+                    <div key = '_id'>   
+                        <div>   Course name { course.name} </div>
+                        <div>   Course id { course.id} </div> 
+                        <div>   Course credits: { course.credits} </div>
+                        <div>   Course description { course.description } </div>
+                        <br></br>
                     </div>
+                    
                 )
-            })} */}
+            })}
         </div>
     )
 }

@@ -21,10 +21,24 @@ function Router() {
     return (
         <BrowserRouter>
             <Header />
-            <Route exact path = '/'>
+            <Switch>
+                <Route exact path = '/'>
                     <LandingPage />
                 </Route>
-            <Switch>
+
+                <Route exact path = '/course'>
+                    <Course />
+                </Route>
+
+                <Route exact path = '/courseTeacher'>
+                    <CourseTeacher />
+                </Route>
+
+                <Route exact path = '/HomeStudent'>
+                    <HomeStudent />
+                </Route>
+
+
                 {!loggedIn && (
                     <>
                         <Route exact path = '/Register'>
@@ -36,50 +50,35 @@ function Router() {
                     </>
                 )}
 
-                {/* <Route exact path = '/'>
-                    <LandingPage />
-                </Route> */}
-                <Route exact path = '/course'>
-                    <Course />
-                </Route>
-                <Route exact path = '/courseTeacher'>
-                    <CourseTeacher />
-                </Route>
-
-                { user === "Student" &&
-                    <>
-                        <Route exact path = '/HomeStudent'>
-                            <HomeStudent />
-                        </Route>
-                    </>
-                }
-                {/* <Route exact path = '/HomeStudent'>
-                    <HomeStudent />
-                </Route> */}
-                { user === "Teacher" &&
-                    <>
-                        <Route exact path = '/HomeTeacher'>
-                            <HomeTeacher />
-                        </Route>
-                        <Route exact path = '/AddCourse'>
-                            <AddCourses />
-                        </Route>
-                    </>
-                }
-
                 {loggedIn &&
-                <>
-                
-                <Route exact path = '/courseid'>
-                    <Course />
-                </Route>
-                <Route exact path = '/CoreCourses'>
-                    <CoreCoursePage />    
-                </Route>
+                    <>
+                        <Route exact path = '/courseid'>
+                            <Course />
+                        </Route>
+                        <Route exact path = '/CoreCourses'>
+                            <CoreCoursePage />    
+                        </Route>
 
-                
-                </>
+                        { user === "Student" &&
+                            <>
+                                <Route exact path = '/HomeStudent'>
+                                    <HomeStudent />
+                                </Route>
+                            </>
+                        }
 
+                        { user === "Teacher" &&
+                            <>
+                                <Route exact path = '/HomeTeacher'>
+                                    <HomeTeacher />
+                                </Route>
+                                <Route exact path = '/AddCourse'>
+                                    <AddCourses />
+                                </Route>
+                            </>
+                        }
+
+                    </>
                 } 
             </Switch>
             <Footer />
