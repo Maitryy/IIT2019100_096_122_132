@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router';
-import CourseContext from '../Context/CourseContext';
 
 function ElectiveCourseForm() {
     const [name,getName] = useState("");
@@ -9,8 +8,6 @@ function ElectiveCourseForm() {
     const [credits,getCredits] = useState(1);
     const [description,getDescription] = useState("");
     const [subtype,getType] = useState("");
-
-    const {getNonTechnical,getTechnical} = useContext(CourseContext);
 
     const history = useHistory();
 
@@ -30,14 +27,6 @@ function ElectiveCourseForm() {
             if(y)
             {
                 history.push('/HomeTeacher');
-            }
-            if (subtype === "Technical")
-            {
-                getTechnical();
-            }
-            else
-            {
-                getNonTechnical();
             }
         } catch (err) {
             console.error(err);

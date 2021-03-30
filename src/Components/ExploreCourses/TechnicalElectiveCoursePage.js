@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-
-function CoreCoursePage() {
+function TechnicalElectiveCoursePage() {
     const [data,setData] = useState([]);
 
     useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetCoreCourses");
+        const response = await fetch("http://localhost:5000/course/GetTechnicalElectiveCourses");
         const da = await response.json();
         setData(da);
     }, []);
@@ -13,10 +12,9 @@ function CoreCoursePage() {
         console.log(data);
     }, [data]);
 
-    
     return (
         <div>
-            {data.map(course=>{
+             {data.map(course=>{
                 return(
                     <div key = '_id'>   
                         <div>   Course name { course.name} </div>
@@ -32,4 +30,4 @@ function CoreCoursePage() {
     )
 }
 
-export default CoreCoursePage
+export default TechnicalElectiveCoursePage

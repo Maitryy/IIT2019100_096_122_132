@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-
-function CoreCoursePage() {
+export default function NonTechnicalElectiveCoursePage() {
     const [data,setData] = useState([]);
 
     useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetCoreCourses");
+        const response = await fetch("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
         const da = await response.json();
         setData(da);
     }, []);
@@ -13,7 +12,6 @@ function CoreCoursePage() {
         console.log(data);
     }, [data]);
 
-    
     return (
         <div>
             {data.map(course=>{
@@ -28,8 +26,7 @@ function CoreCoursePage() {
                     
                 )
             })}
+            
         </div>
     )
 }
-
-export default CoreCoursePage

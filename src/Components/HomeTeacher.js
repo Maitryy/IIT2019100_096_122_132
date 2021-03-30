@@ -111,6 +111,7 @@ function HomeTeacher() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
+                            <Link to = '/CoreCourses'>
                             <div className="card-horizontal">
                                 <div className="img-square-wrapper">
                                     <img className="" src="https://images.unsplash.com/photo-1563729831178-d09061d83b12?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80" alt="Card image cap"/>
@@ -120,6 +121,7 @@ function HomeTeacher() {
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -128,6 +130,7 @@ function HomeTeacher() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
+                            <Link to = '/TechnicalElectiveCourses'>
                             <div className="card-horizontal">
                                 <div className="card-body">
                                     <h4 className="card-title explore-title">Technical Courses</h4>
@@ -137,6 +140,7 @@ function HomeTeacher() {
                                     <img className="" src="https://images.unsplash.com/photo-1606337321936-02d1b1a4d5ef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" alt="Card image cap"/>
                                 </div>
                             </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -145,6 +149,7 @@ function HomeTeacher() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
+                            <Link to = '/NonTechnicalElectiveCourses'>
                             <div className="card-horizontal">
                                 <div className="img-square-wrapper">
                                     <img className="" src="https://images.unsplash.com/photo-1589254066213-a0c9dc853511?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"/>
@@ -154,6 +159,7 @@ function HomeTeacher() {
                                     <p className="card-text"> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

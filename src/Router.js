@@ -13,6 +13,8 @@ import CourseTeacher from './Components/CourseTeacher';
 import userContext from './Context/UserContext';
 import AddCourses from './Courses/AddCourses';
 import CoreCoursePage from './Components/ExploreCourses/CoreCoursePage';
+import NonTechnicalElectiveCoursePage from './Components/ExploreCourses/NonTechnicalElectiveCoursePage';
+import TechnicalElectiveCoursePage from './Components/ExploreCourses/TechnicalElectiveCoursePage';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -57,6 +59,12 @@ function Router() {
                         </Route>
                         <Route exact path = '/CoreCourses'>
                             <CoreCoursePage />    
+                        </Route>
+                        <Route exact path = '/NonTechnicalElectiveCourses'>
+                            <NonTechnicalElectiveCoursePage />
+                        </Route>
+                        <Route exact path = '/TechnicalElectiveCourses'>
+                            <TechnicalElectiveCoursePage />
                         </Route>
 
                         { user === "Student" &&
