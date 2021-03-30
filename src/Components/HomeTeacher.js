@@ -111,12 +111,8 @@ function HomeTeacher() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
-<<<<<<< HEAD
                             <Link to = '/CoreCourses'>
                             <div className="card-horizontal">
-=======
-                            <div className="card-horizontal card-explore">
->>>>>>> feabf67703fc12524d057c77c8d4b247a5321b3d
                                 <div className="img-square-wrapper">
                                     <img className="" src="https://images.unsplash.com/photo-1563729831178-d09061d83b12?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80" alt="Card image cap"/>
                                 </div>
@@ -134,12 +130,8 @@ function HomeTeacher() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
-<<<<<<< HEAD
                             <Link to = '/TechnicalElectiveCourses'>
                             <div className="card-horizontal">
-=======
-                            <div className="card-horizontal card-explore">
->>>>>>> feabf67703fc12524d057c77c8d4b247a5321b3d
                                 <div className="card-body">
                                     <h4 className="card-title explore-title">Technical Courses</h4>
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -157,12 +149,8 @@ function HomeTeacher() {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
-<<<<<<< HEAD
                             <Link to = '/NonTechnicalElectiveCourses'>
                             <div className="card-horizontal">
-=======
-                            <div className="card-horizontal card-explore">
->>>>>>> feabf67703fc12524d057c77c8d4b247a5321b3d
                                 <div className="img-square-wrapper">
                                     <img className="" src="https://images.unsplash.com/photo-1589254066213-a0c9dc853511?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"/>
                                 </div>
