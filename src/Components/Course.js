@@ -5,6 +5,7 @@ import image3 from '../images/pdf-logo.png'
 import image2 from '../images/image-logo.png'
 import image1 from '../images/video-logo.png'
 function Courses() {
+
     return (
         <div className=' container' >
 
