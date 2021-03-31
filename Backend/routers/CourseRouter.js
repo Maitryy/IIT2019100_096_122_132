@@ -138,4 +138,17 @@ router.get("/GetNonTechnicalElectiveCourses", async (req,res) => {
     }
 });
 
+router.get("/course/:id", async(req, res) => {
+    try {
+        const individualCourse = await Course.find(req.params.id);
+        res.send(individualCourse);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
+
 module.exports = router;
