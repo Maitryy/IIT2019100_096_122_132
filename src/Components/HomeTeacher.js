@@ -60,7 +60,7 @@ function HomeTeacher() {
                                         {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
                                         <p className="text-muted">Credits:{ course.credits}</p>
                                         <p className="card-text">{ course.description }</p>
-                                        <Link  to= {`/course/${course._id}`} >
+                                        <Link  to= {`/courseTeacher/${course._id}`} >
                                             <button className="btn btn-primary btn-course">Edit Course</button>
                             
                                         </Link>
