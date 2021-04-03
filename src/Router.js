@@ -32,9 +32,11 @@ function Router() {
                     <Course />
                 </Route>
 
-                <Route exact path = '/courseTeacher'>
+                <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+
+                {/* <Route exact path = '/courseTeacher'>
                     <CourseTeacher />
-                </Route>
+                </Route> */}
 
                 <Route exact path = '/HomeStudent'>
                     <HomeStudent />
