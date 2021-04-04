@@ -8,7 +8,8 @@ import './HomeStudent.css'
 function HomeTeacher() {
 
     const [data,setData] = useState([]);
-
+    const [data1,setData1] = useState([]);
+    const [data2,setData2] = useState([]);
     useEffect(async() => {
         const response = await fetch("http://localhost:5000/course/GetCoreCourses");
         const da = await response.json();
@@ -17,6 +18,25 @@ function HomeTeacher() {
     useEffect( () => {
         console.log(data);
     }, [data]);
+
+  
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetTechnicalElectiveCourses");
+        const da = await response.json();
+        setData1(da);
+    }, []);
+    useEffect( () => {
+        console.log(data1);
+    }, [data1]);
+
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
+        const da = await response.json();
+        setData2(da);
+    }, []);
+    useEffect( () => {
+        console.log(data2);
+    }, [data2]);
 
     const {userName} = useContext(userContext);
     return (
@@ -59,11 +79,11 @@ function HomeTeacher() {
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                        <p>{ course._id}</p>
+                                       
                                         <h4 className= " card-title">{ course.name}</h4>
                                         {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
                                         <p className="text-muted">Credits:{ course.credits}</p>
-                                        <p className="card-text">{ course.description }</p>
+                                       
                                         <Link  to= {`/courseTeacher/${course._id}`} >
                                             <button className="btn btn-primary btn-course">Edit Course</button>
                             
@@ -76,6 +96,73 @@ function HomeTeacher() {
                     
                 )
             })}
+
+{data1.map(course=>{
+                return(
+                    
+                    
+                    
+                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div key = '_id'>
+                        
+                        <div className='card courses mask '>
+                                <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <a href="#" >
+                                        <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                      
+                                        <h4 className= " card-title">{ course.name}</h4>
+                                        {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
+                                        <p className="text-muted">Credits:{ course.credits}</p>
+                                      
+                                        <Link  to= {`/courseTeacher/${course._id}`} >
+                                            <button className="btn btn-primary btn-course">Edit Course</button>
+                            
+                                        </Link>
+                                </div>
+                        </div>
+                        </div>  
+                    </div>
+                   
+                    
+                )
+            })}
+
+{data2.map(course=>{
+                return(
+                    
+                    
+                    
+                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div key = '_id'>
+                        
+                        <div className='card courses mask '>
+                                <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <a href="#" >
+                                        <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                       
+                                        <h4 className= " card-title">{ course.name}</h4>
+                                        {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
+                                        <p className="text-muted">Credits:{ course.credits}</p>
+                                       
+                                        <Link  to= {`/courseTeacher/${course._id}`} >
+                                            <button className="btn btn-primary btn-course">Edit Course</button>
+                            
+                                        </Link>
+                                </div>
+                        </div>
+                        </div>  
+                    </div>
+                   
+                    
+                )
+            })}
+
             </div>
            
            

@@ -7,7 +7,8 @@ import image2 from '../images/image-logo.png'
 import image1 from '../images/video-logo.png'
 function CourseTeacher(props) {
     const [data,setData] = useState([]);
-
+    const [data1,setData1] = useState([]);
+    const [data2,setData2] = useState([]);
     useEffect(async() => {
         const response = await fetch("http://localhost:5000/course/GetCoreCourses");
         const da = await response.json();
@@ -17,11 +18,77 @@ function CourseTeacher(props) {
         console.log(data);
     }, [data]);
 
+  
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetTechnicalElectiveCourses");
+        const da = await response.json();
+        setData1(da);
+    }, []);
+    useEffect( () => {
+        console.log(data1);
+    }, [data1]);
+
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
+        const da = await response.json();
+        setData2(da);
+    }, []);
+    useEffect( () => {
+        console.log(data2);
+    }, [data2]);
+
     const {userName} = useContext(userContext);
     return (
         <div className=' container' >
 
             {data.map(course=>{
+                return(
+                      
+                            ( course._id === props.match.params.id ) && 
+                                <div className="jumbotron course">
+                                    <h1 className="display-4">{course.name}</h1>
+                                    <p className="lead">{course.description} </p>
+                                    <hr className="my-4"/>
+                                    <strong>
+                                    <p>Course credits : {course.credits}</p>
+                                    <p>Mentors: {userName}</p>
+                                    </strong>
+                                    
+                                </div>
+                            
+                        
+                        
+                    
+                    
+                )
+            })}
+
+
+            
+{data1.map(course=>{
+                return(
+                      
+                            ( course._id === props.match.params.id ) && 
+                                <div className="jumbotron course">
+                                    <h1 className="display-4">{course.name}</h1>
+                                    <p className="lead">{course.description} </p>
+                                    <hr className="my-4"/>
+                                    <strong>
+                                    <p>Course credits : {course.credits}</p>
+                                    <p>Mentors: {userName}</p>
+                                    </strong>
+                                    
+                                </div>
+                            
+                        
+                        
+                    
+                    
+                )
+            })}
+
+            
+{data2.map(course=>{
                 return(
                       
                             ( course._id === props.match.params.id ) && 
