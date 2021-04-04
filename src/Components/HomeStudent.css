@@ -135,8 +135,8 @@ h1.display-4{
 
 body {
     /* background-image: url(../images/bg-home.png); */
-    /* background-color: rgb(184, 154, 184); */
-    background-color: ghostwhite;
+    background-color: rgb(184, 154, 184);
+    /* background-color: ghostwhite; */
 }
 
 .btn-course{

@@ -109,17 +109,7 @@ function CourseTeacher() {
                 </div>
             </div>
 
-            <div className='course_annoucements'>
-                <h2>Annoucements</h2>
-                 <input placeholder='text'  />
-                <button><i></i>Add</button>
-                <button>Cancel</button>
-                <button>Post</button>
-                {/* <div className='course_image'>
-                    <h3>Upload_image</h3>
-                    <img src='https://tse4.mm.bing.net/th?id=OIP.Tn0Iywitm52vLhVGfibGgAAAAA&pid=Api&P=0&w=315&h=178' />
-                </div> */}
-            </div>
+            
         </div>
     )
 }

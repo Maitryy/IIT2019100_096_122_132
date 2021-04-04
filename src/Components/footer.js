@@ -1,12 +1,13 @@
 import React from 'react';
 import '../bootstrap/bootstrap.css'
+import './footer.css'
 import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
     return (  
        
-        <footer className="footer bg-light text-center text-lg-start sticky-footer fixed-bottom">
+    <footer className="footer bg-light text-center text-lg-start sticky-footer fixed-bottom foot-color">
     <div className="container">
       <div className="row align-items-center">
         <div className="col-md-4">
@@ -18,10 +19,10 @@ const Footer = () => {
         <div className="col-md-4">
           <ul className="list-inline quicklinks">
             <li className="list-inline-item">
-              <Link href="#something">Privacy Policy</Link>
+              <Link className="foot-text" href="#something">Privacy Policy</Link>
             </li>
             <li className="list-inline-item">
-              <Link href="#something">Terms of Use</Link>
+              <Link className="foot-text" href="#something">Terms of Use</Link>
             </li>
           </ul>
         </div>

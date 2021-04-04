@@ -15,7 +15,8 @@ function Header() {
     
 
       return (
-        <nav className = 'navbar'>
+        <nav className = 'navbar header '>
+        <div className="container">
           {!loggedIn && (
             <>
               <div className='header-items'>
@@ -132,7 +133,8 @@ function Header() {
                 </Link>
               </div>
             </>
-          )}    
+          )} 
+          </div>   
         </nav>
     )
 }

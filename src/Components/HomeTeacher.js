@@ -42,12 +42,16 @@ function HomeTeacher() {
             </div>
             
             
+            
             <div className="All-courses row row-cols-3">
-           
             {data.map(course=>{
                 return(
+                    
+                    
+                    
+                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
-                        <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
+                        
                         <div className='card courses mask '>
                                 <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                     <a href="#" >
@@ -68,11 +72,13 @@ function HomeTeacher() {
                         </div>
                         </div>  
                     </div>
+                   
                     
                 )
             })}
+            </div>
            
-           </div>
+           
 
            <div className="card bg-dark text-white enroll-card">
                 <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" alt="Card image"/>
