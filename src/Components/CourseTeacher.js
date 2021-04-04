@@ -1,23 +1,47 @@
-import React from 'react'
+import React, { useContext , useEffect, useState }  from 'react'
 import '../bootstrap/bootstrap.css'
 import './Course.css'
+import userContext from '../Context/UserContext'
 import image3 from '../images/pdf-logo.png'
 import image2 from '../images/image-logo.png'
 import image1 from '../images/video-logo.png'
-function CourseTeacher() {
+function CourseTeacher(props) {
+    const [data,setData] = useState([]);
+
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetCoreCourses");
+        const da = await response.json();
+        setData(da);
+    }, []);
+    useEffect( () => {
+        console.log(data);
+    }, [data]);
+
+    const {userName} = useContext(userContext);
     return (
         <div className=' container' >
 
-            <div className="jumbotron course">
-                <h1 className="display-4">Software Engineering</h1>
-                <p className="lead"> Much of the world's data resides in databases. SQL (or Structured Query Language) is a powerful language which is used for communicating with and extracting data from databases. A working knowledge of databases and SQL is a must if you want to become a data scientist.The purpose of this course is to introduce relational database concepts and help you learn and apply foundational knowledge of the SQL language. It is also intended to get you started with performing SQL access in a data science environment. </p>
-                <hr className="my-4"/>
-                <strong>
-                <p>Course credits : 4</p>
-                <p>Mentors: Sonali</p>
-                </strong>
-                
-             </div>
+            {data.map(course=>{
+                return(
+                      
+                            ( course._id === props.match.params.id ) && 
+                                <div className="jumbotron course">
+                                    <h1 className="display-4">{course.name}</h1>
+                                    <p className="lead">{course.description} </p>
+                                    <hr className="my-4"/>
+                                    <strong>
+                                    <p>Course credits : {course.credits}</p>
+                                    <p>Mentors: {userName}</p>
+                                    </strong>
+                                    
+                                </div>
+                            
+                        
+                        
+                    
+                    
+                )
+            })}
 
 
             
