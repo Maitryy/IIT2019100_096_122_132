@@ -92,20 +92,7 @@ router.post("/AddElectiveCourse",async (req,res) => {
     }
 });
 
-router.get("/GetCoreCourses", async (req,res) => {
-    try {
-        const getCourses = await Course.find({
-            type: "Core"
-        });
-        res.send(getCourses);
 
-    }catch(err) {
-        console.error(err);
-        res
-            .status(401)
-            .json({errorMessage: "Unauthorised"});
-    }
-});
 
 router.get("/GetTechnicalElectiveCourses", async (req,res) => {
     try {

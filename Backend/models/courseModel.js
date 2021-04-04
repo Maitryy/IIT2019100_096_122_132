@@ -7,7 +7,9 @@ const CourseSchema = new mongoose.Schema({
     description: {type:String, required:true},
     type: {type: String, required: true},
     subtype: {type: String, required: false},
-    teacher: {type: String, required: true}
+    teacher: {type: String, required: true},
+    announcement:{type: String, required:false}
+
     // students: {type: Array, required: false}
 });
 
