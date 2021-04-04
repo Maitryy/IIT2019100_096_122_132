@@ -20,10 +20,10 @@ function Header() {
           {!loggedIn && (
             <>
               <div className='header-items'>
-                <Link to = "/Register">Sign Up</Link>
+                <Link className="head-item" to = "/Register">Sign Up</Link>
               </div>
               <div className='header-items'>
-                <Link to = "/Login">Log In </Link>
+                <Link className="head-item" to = "/Login">Log In </Link>
               </div>
             </>
           )}
@@ -54,8 +54,8 @@ function Header() {
                         Edit Profile
                     </Link>
                 </li>
-                <li className = 'dropdown-item'>
-                    <button  onClick={() => setDropdown(false)} ><LogoutStudent /></button>
+                <li className = 'dropdown-item ' onClick={() => setDropdown(false)} >
+                 <LogoutStudent/>
                 </li>
             </ul>
 
@@ -69,13 +69,13 @@ function Header() {
               </div>
 
               <div className='header-items'>
-                <Link to = '/MyCourses'>
+                <Link className="head-item" to = '/MyCourses'>
                   Courses
                 </Link>
               </div>    
 
               <div className='header-items'>
-                <Link to = '/HomeStudent'>
+                <Link className="head-item" to = '/HomeStudent'>
                   Home
                 </Link>
               </div>
@@ -87,7 +87,9 @@ function Header() {
                   <button onClick = {handleDropdown}><i class="fas fa-user-circle"></i></button>
                   {dropdown && 
                   <>
-                  <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active':'dropdown-inactive'}>
+                  <div className="drop">
+                  <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active drop':'dropdown-inactive'} >
+                
                 <li className = 'dropdown-item'>
                     <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         User Profile
@@ -108,10 +110,11 @@ function Header() {
                         Edit Profile
                     </Link>
                 </li>
-                <li className = 'dropdown-item'>
-                    <button  onClick={() => setDropdown(false)} ><LogoutStudent /></button>
+                <li className = 'dropdown-item logout' onClick={() => setDropdown(false)} ><LogoutStudent />
                 </li>
+                
             </ul>
+            </div>
 
 
                   </>
@@ -123,12 +126,12 @@ function Header() {
               </div>
 
               <div className='header-items'>
-                <Link to = '/MyCourses'>
+                <Link className="head-item" to = '/MyCourses'>
                   My Courses
                 </Link>
               </div>    
               <div className='header-items'>
-                <Link to = '/HomeTeacher'>
+                <Link className="head-item" to = '/HomeTeacher'>
                   Home
                 </Link>
               </div>
