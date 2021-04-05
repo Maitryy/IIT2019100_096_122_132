@@ -1,0 +1,34 @@
+.peer{
+    padding: 0px;
+    list-style: none;
+}
+
+.list-stu{
+    padding-top: 10px;
+    background-color: #fedae8;
+    list-style-type: none;
+    border: none;
+    box-shadow:
+    inset 0 -3em 3em rgba(119, 15, 119, 0.205),
+           0 0  0 2px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(119, 15, 119, 0.205);
+    background-image: linear-gradient(to bottom right,  #fedae8 , #dc96ba);
+    color: #463352;
+}
+
+.stu-head {
+    padding: 1em 0 ;
+    color: #463352;
+    font-weight: bold;
+}
+
+.teach-list {
+    padding: 2em 0;
+
+}
+
+.stu{
+    padding-right: 1em;
+    color: #463352;
+    font-weight: bold;
+}
