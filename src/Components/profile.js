@@ -12,7 +12,7 @@ const {userEmail} = useContext(userContext);
 const {userSemester} = useContext(userContext);
 const {userBranch} = useContext(userContext);
 const {userLastName} = useContext(userContext);
-
+const {userPassword} = useContext(userContext);
   return (
    
     <div className='profile-page' >
@@ -28,6 +28,7 @@ const {userLastName} = useContext(userContext);
         <h4 ><strong>UserEmail: </strong> {userEmail}</h4>
         <h4 ><strong>Profession: </strong> {user}</h4>
         <h4 ><strong>Branch: </strong> {userBranch}</h4>
+        <h4 ><strong>Password: </strong> {userPassword}</h4>
         {user === 'Student' &&
         <div>
         <h4 ><strong>Semester: </strong> {userSemester}</h4>
