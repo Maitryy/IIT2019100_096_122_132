@@ -216,4 +216,31 @@ router.get("/TypeOfUser",async (req,res) => {
     };
 });
 
+router.post("/enrollCourse", async (req,res) => {
+    try {
+        const {enCourse} = req.body;
+        var token = req.cookies.token;
+        if(!token)
+            return res.json(false);
+
+        token = token.replace('Bearer','');
+        var decoded = jwt.decode(token);
+        decoded = decoded.student;
+
+        var user = await Student.findById(decoded);
+        if(user.course == enCourse)
+        return res
+                .status(400)
+                .json({errorMessage: "Course already exist"});
+
+        await Student.findByIdAndUpdate({_id: decoded}, {$push: {course: enCourse}} );
+
+        res.send();
+        
+    } catch (err) {
+        console.error(err);
+        res.json(false);        
+    };
+});
+
 module.exports = router;

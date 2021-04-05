@@ -7,7 +7,8 @@ const studentSchema = new mongoose.Schema({
    lastName: {type: String, required: true},
    semester: {type: String, required: false},
    branch: {type: String, required: true},
-   proffesion: {type: String, required: true}
+   proffesion: {type: String, required: true},
+   course: {type: [String], required: false}
 });
 
 const Student = mongoose.model("student", studentSchema);
