@@ -51,7 +51,7 @@ function CourseTeacher(props) {
                                     <hr className="my-4"/>
                                     <strong>
                                     <p>Course credits : {course.credits}</p>
-                                    <p>Mentors: {userName}</p>
+                                    <p>Mentors: {course.teacher}</p>
                                     </strong>
                                     <div className='course_sudents row ml-2 mr-2'>
                 <button className="btn btn-primary btn-lg btn-course">Student's List</button>
@@ -165,7 +165,7 @@ function CourseTeacher(props) {
                                     <hr className="my-4"/>
                                     <strong>
                                     <p>Course credits : {course.credits}</p>
-                                    <p>Mentors: {userName}</p>
+                                    <p>Mentors: {course.teacher}</p>
                                     </strong>
                                     <div className='course_sudents row ml-2 mr-2'>
                 <button className="btn btn-primary btn-lg btn-course">Student's List</button>
@@ -278,7 +278,7 @@ function CourseTeacher(props) {
                                     <hr className="my-4"/>
                                     <strong>
                                     <p>Course credits : {course.credits}</p>
-                                    <p>Mentors: {userName}</p>
+                                    <p>Mentors: {course.teacher}</p>
                                     </strong>
                                     
                                     <div className='course_sudents row ml-2 mr-2'>

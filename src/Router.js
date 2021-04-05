@@ -17,6 +17,7 @@ import CoreCoursePage from './Components/ExploreCourses/CoreCoursePage';
 import NonTechnicalElectiveCoursePage from './Components/ExploreCourses/NonTechnicalElectiveCoursePage';
 import TechnicalElectiveCoursePage from './Components/ExploreCourses/TechnicalElectiveCoursePage';
 import Profile from './Components/profile';
+import MyCourses from './Components/MyCourses';
 import EditProfile from './Auth/editprofile';
 
 function Router() {
@@ -72,6 +73,9 @@ function Router() {
                         </Route>
                         <Route exact path = '/EditProfile'>
                             <EditProfile />
+                        </Route>
+                        <Route exact path = '/MyCourses'>
+                            <MyCourses />
                         </Route>
                         <Route exact path = '/CoreCourses'>
                             <CoreCoursePage />    
