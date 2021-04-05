@@ -3,7 +3,7 @@
     background-image: url("https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2500&q=800" );
     height: 55px;
     bottom: 0;
-    position: absolute;
+    position: relative;
     width: 100%;
     
 }
