@@ -82,7 +82,8 @@ function HomeTeacher() {
                                        
                                         <h4 className= " card-title">{ course.name}</h4>
                                         {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
-                                        <p className="text-muted">Credits:{ course.credits}</p>
+                                        <p className="text-muted">Credits: { course.credits}</p>
+                                        <p className="text-muted">Mentors: { course.teacher}</p>
                                        
                                         <Link  to= {`/courseTeacher/${course._id}`} >
                                             <button className="btn btn-primary btn-course">Edit Course</button>
@@ -115,8 +116,9 @@ function HomeTeacher() {
                                       
                                         <h4 className= " card-title">{ course.name}</h4>
                                         {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
-                                        <p className="text-muted">Credits:{ course.credits}</p>
-                                      
+                                        <p className="text-muted">Credits: { course.credits}</p>
+                                        <p className="text-muted">Mentors: { course.teacher}</p>
+                                       
                                         <Link  to= {`/courseTeacher/${course._id}`} >
                                             <button className="btn btn-primary btn-course">Edit Course</button>
                             
@@ -148,7 +150,8 @@ function HomeTeacher() {
                                        
                                         <h4 className= " card-title">{ course.name}</h4>
                                         {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
-                                        <p className="text-muted">Credits:{ course.credits}</p>
+                                        <p className="text-muted">Credits: { course.credits}</p>
+                                        <p className="text-muted">Mentors: { course.teacher}</p>
                                        
                                         <Link  to= {`/courseTeacher/${course._id}`} >
                                             <button className="btn btn-primary btn-course">Edit Course</button>
