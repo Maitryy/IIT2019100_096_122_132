@@ -1,10 +1,14 @@
 import React, { useContext , useEffect, useState }  from 'react'
 import '../bootstrap/bootstrap.css'
 import './Course.css'
+import './CourseTeacher.css'
+import { Link } from 'react-router-dom';
 import userContext from '../Context/UserContext'
 import image3 from '../images/pdf-logo.png'
 import image2 from '../images/image-logo.png'
 import image1 from '../images/video-logo.png'
+import image4 from '../images/clndr-01.png'
+
 function CourseTeacher(props) {
     const [data,setData] = useState([]);
     const [data1,setData1] = useState([]);
@@ -45,6 +49,7 @@ function CourseTeacher(props) {
                 return(
                       
                             ( course._id === props.match.params.id ) && 
+                              <div>
                                 <div className="jumbotron course">
                                     <h1 className="display-4">{course.name}</h1>
                                     <p className="lead">{course.description} </p>
@@ -53,18 +58,30 @@ function CourseTeacher(props) {
                                     <p>Course credits : {course.credits}</p>
                                     <p>Mentors: {course.teacher}</p>
                                     </strong>
-                                    <div className='course_sudents row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Student's List</button>
-                {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
-            </div>
-            <br/>
-            <div className='course_doubts row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Post Announcements</button>
-            </div>
-            <br/>
-            <div className='course_doubts row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Take Test</button>
-            </div> 
+                                </div>
+                                <div className = "row">
+                                    <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
+                                    <Link to="#" ><img className = "calendar" src={image4} alt=""/> </Link>
+                                    </div>
+                                    <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <Link to="/peers" >
+                                        <div className='course_sudents row ml-2 mr-2'>
+                                        
+                                            <button className="btn btn-primary btn-lg btn-course">Student's List</button>
+                                        
+                                        </div>
+                                        </Link>
+                                        <br/>
+                                        <div className='course_doubts row ml-2 mr-2'>
+                                            <button className="btn btn-primary btn-lg btn-course">Post Announcements</button>
+                                        </div>
+                                        <br/>
+                                        <div className='course_doubts row ml-2 mr-2'>
+                                            <button className="btn btn-primary btn-lg btn-course">Take Test</button>
+                                        </div> 
+                                    </div>
+                                </div>
 
 
             <div className="card bg-dark text-white enroll-card">
@@ -124,7 +141,7 @@ function CourseTeacher(props) {
                     <div className="col-12 mt-3">
                         <div className="card">
                             <div className="card-horizontal card-announcements">
-                            <div className="img-square-wrapper">
+                                <div className="img-square-wrapper">
                                     <img className="" src={image2} alt="Card image cap"/>
                                 </div>
                                 <div className="card-body">
