@@ -15,7 +15,7 @@ function Header() {
     
 
       return (
-        <nav className = 'navbar header '>
+        <nav className = 'navbar header  navbar-collapse sticky-top'>
         <div className="container">
           {!loggedIn && (
             <>
@@ -30,7 +30,7 @@ function Header() {
           {loggedIn && user === "Student" && (
             <>
                   <div className = 'header-dropbox'>
-                  <button onClick = {handleDropdown}><i class="fas fa-user-circle"></i></button>
+                  <button className="nav-icon stu" onClick = {handleDropdown}><i class="fas fa-user-circle"></i></button>
                   {dropdown && 
                   <>
                   <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active':'dropdown-inactive'}>
@@ -84,7 +84,7 @@ function Header() {
           {loggedIn && user === "Teacher" && (
             <>
               <div className = 'header-dropbox'>
-                  <button onClick = {handleDropdown}><i class="fas fa-user-circle"></i></button>
+                  <button className="nav-icon stu" onClick = {handleDropdown}><i class="fas fa-user-circle"></i></button>
                   {dropdown && 
                   <>
                   <div className="drop">
