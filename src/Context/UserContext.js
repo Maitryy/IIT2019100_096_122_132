@@ -7,6 +7,13 @@ function UserContextProvider(props) {
 
     const [user,setUser] = useState();
     const [userName, setUserName] = useState();
+    const [userEmail, setUserEmail] = useState();
+    const [userLastName, setUserLastName] = useState();
+  
+
+    const [userSemester, setUserSemester] = useState();
+    const [userBranch, setUserBranch] = useState();
+
 
     async function getUser(){
         const type = await axios.get("http://localhost:5000/auth/TypeOfUser");
@@ -15,13 +22,19 @@ function UserContextProvider(props) {
         const x = type.data;
         setUser(x.proffesion);
         setUserName(x.firstName);
+        setUserEmail(x.email);
+        setUserLastName(x.lastName);
+        setUserBranch(x.branch);
+        setUserSemester(x.semester);
+        
+
     }
 
     useLayoutEffect(() => {
         getUser();
     }, []) 
     return (
-        <userContext.Provider value = {{user,userName,getUser}}>
+        <userContext.Provider value = {{user,userName,userEmail,userLastName,userSemester,userBranch,getUser}}>
             {props.children}
         </userContext.Provider>
     )

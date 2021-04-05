@@ -16,6 +16,7 @@ import AddCourses from './Courses/AddCourses';
 import CoreCoursePage from './Components/ExploreCourses/CoreCoursePage';
 import NonTechnicalElectiveCoursePage from './Components/ExploreCourses/NonTechnicalElectiveCoursePage';
 import TechnicalElectiveCoursePage from './Components/ExploreCourses/TechnicalElectiveCoursePage';
+import Profile from './Components/profile';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -61,6 +62,9 @@ function Router() {
 
                 {loggedIn &&
                     <>
+                        <Route exact path = '/profile'>
+                            <Profile />
+                        </Route>
                         <Route exact path = '/courseid'>
                             <Course />
                         </Route>

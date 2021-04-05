@@ -35,7 +35,7 @@ function Header() {
                   <>
                   <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active':'dropdown-inactive'}>
                 <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
+                    <Link to = '/profile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         User Profile
                     </Link>
                 </li>
@@ -91,7 +91,7 @@ function Header() {
                   <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active drop':'dropdown-inactive'} >
                 
                 <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
+                    <Link to = '/profile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         User Profile
                     </Link>
                 </li>
