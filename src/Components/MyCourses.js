@@ -45,6 +45,7 @@ function MyCourses() {
 
     return (
         <div>
+            
             <div className=' container' >
             <h1>Core courses</h1>
 {data.map(course=>{

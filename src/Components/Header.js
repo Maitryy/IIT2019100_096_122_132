@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LogoutStudent from '../Auth/LogoutStudent';
 
@@ -14,6 +14,36 @@ function Header() {
     const [dropdown, setDropdown] = useState(false);
     const handleDropdown = () => setDropdown(!dropdown)
     
+    const [data,setData] = useState([]);
+    const [data1,setData1] = useState([]);
+    const [data2,setData2] = useState([]);
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetCoreCourses");
+        const da = await response.json();
+        setData(da);
+    }, []);
+    useEffect( () => {
+        console.log(data);
+    }, [data]);
+
+  
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetTechnicalElectiveCourses");
+        const da = await response.json();
+        setData1(da);
+    }, []);
+    useEffect( () => {
+        console.log(data1);
+    }, [data1]);
+
+    useEffect(async() => {
+        const response = await fetch("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
+        const da = await response.json();
+        setData2(da);
+    }, []);
+    useEffect( () => {
+        console.log(data2);
+    }, [data2]);
 
       return (
         <nav className = 'navbar header  navbar-collapse sticky-top'>
@@ -66,7 +96,18 @@ function Header() {
               </div>
 
               <div className = 'header-search'>
-                  <input type='text' placeholder='Search Course'/>              
+                  
+                  <select value="search-course">
+            {data.map((option) => (
+              <option>{option.name}</option>
+            ))}
+             {data1.map((option) => (
+              <option>{option.name}</option>
+            ))}
+             {data2.map((option) => (
+              <option>{option.name}</option>
+            ))}
+          </select>              
               </div>
 
               <div className='header-items'>
@@ -123,7 +164,18 @@ function Header() {
               </div>
 
               <div className = 'header-search'>
-                  <input type='text' placeholder='Search Course'/>              
+                
+                  <select value="search-course">
+            {data.map((option) => (
+              <option>{option.name}</option>
+            ))}
+             {data1.map((option) => (
+              <option>{option.name}</option>
+            ))}
+             {data2.map((option) => (
+              <option>{option.name}</option>
+            ))}
+          </select>            
               </div>
 
               <div className='header-items'>
