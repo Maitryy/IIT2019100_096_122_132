@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react'
+import { useHistory } from 'react-router';
+import userContext from '../../Context/UserContext';
 
 function TechnicalElectiveCoursePage() {
     const [data,setData] = useState([]);
+    const {user} = useContext(userContext);
+    const history = useHistory();
 
     useEffect(async() => {
         const response = await fetch("http://localhost:5000/course/GetTechnicalElectiveCourses");
@@ -11,6 +16,18 @@ function TechnicalElectiveCoursePage() {
     useEffect( () => {
         console.log(data);
     }, [data]);
+
+    async function EnrollCourse(enCourse){
+        try {
+            const course_id = {enCourse};
+            console.log(course_id);
+            await axios.post("http://localhost:5000/auth/enrollCourse",course_id);
+            history.push('/HomeStudent');
+            
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
     return (
         <div>
@@ -33,6 +50,11 @@ function TechnicalElectiveCoursePage() {
                         <div>  <strong>Course description: </strong> { course.description } </div>
                         <br></br>
                     </div>
+                    {user === 'Student' &&
+                                    <>
+                                        <button onClick = {() => EnrollCourse(course.id)}>Enroll Course</button>
+                                    </>
+                                    }
                     </div>
                         </div>
                         </div>  
