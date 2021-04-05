@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LogoutStudent from '../Auth/LogoutStudent';
+
 import AuthContext  from '../Context/AuthContext';
 import userContext from '../Context/UserContext';
 import './Header.css';
@@ -35,7 +36,7 @@ function Header() {
                   <>
                   <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active':'dropdown-inactive'}>
                 <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
+                    <Link to = '/profile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         User Profile
                     </Link>
                 </li>
@@ -50,7 +51,7 @@ function Header() {
                     </Link>
                 </li>
                 <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
+                    <Link to = '/EditProfile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Edit Profile
                     </Link>
                 </li>
@@ -91,7 +92,7 @@ function Header() {
                   <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active drop':'dropdown-inactive'} >
                 
                 <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
+                    <Link to = '/profile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         User Profile
                     </Link>
                 </li>
@@ -106,7 +107,7 @@ function Header() {
                     </Link>
                 </li>
                 <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
+                    <Link to = '/EditProfile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Edit Profile
                     </Link>
                 </li>
