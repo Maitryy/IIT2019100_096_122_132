@@ -121,7 +121,7 @@ function StudentForm() {
                     </select>
                 </div>
 
-                <button type = 'submit'>Register</button>
+                <button className="btn btn-course" type = 'submit'>Register</button>
             </form>
             
         </div>

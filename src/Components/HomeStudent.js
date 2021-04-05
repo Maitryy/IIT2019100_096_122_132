@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import '../bootstrap/bootstrap.css'
 import userContext from '../Context/UserContext'
 import './HomeStudent.css'
-import image3 from '../images/bg-home.png'
+
 import { Link } from 'react-router-dom';
 
 function HomeStudent() {

@@ -1,13 +1,51 @@
 .regi {
     align-items: center;
     text-align: center;
+    
 }
 
 .register-head{
     width: 750px;
     height: 500px;
+    padding-bottom: 20px;
+    
 }
 
 .regi-btns{
     align-items: center;
+    text-align: center;
+}
+
+.regs img {
+    width: 100%;
+    min-width: 200px;
+    
+    
+}
+
+.regs {
+    /* padding-bottom: 30px; */
+}
+
+.btn.teacher-btn {
+    width: 100%;
+    height: 50px;
+    /* text-color: thistle; */
+    color: thistle;
+}
+
+.btn.student-btn {
+    width: 100%;
+    height: 50px;
+    color: thistle;
+}
+
+.regi-btns {
+    border: solid 2px rgb(85, 31, 82);
+    border-radius: 10px;
+    
+}
+
+.both-reg {
+    padding-bottom: 30px;
 }
