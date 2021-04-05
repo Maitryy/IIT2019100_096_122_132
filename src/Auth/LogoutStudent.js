@@ -13,7 +13,7 @@ function LogoutStudent() {
         await getLoggedIn(); 
         history.push("/");
     }
-    return <button onClick = {logout}>
+    return <button className= "logout btn btn-sm" onClick = {logout}>
         Log Out
     </button>;
 }

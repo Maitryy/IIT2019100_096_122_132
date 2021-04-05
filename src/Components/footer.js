@@ -7,17 +7,17 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (  
        
-    <footer className="footer bg-light text-center text-lg-start sticky-footer fixed-bottom foot-color">
+    <footer className="footer bg-light text-center text-lg-start  sticky-footer navbar-fixed-bottom  foot-color">
     <div className="container">
       <div className="row align-items-center">
         <div className="col-md-4">
-          <span className="copyright">Copyright &copy; Classroom </span>
+          <span className="copyright">Copyright &copy; Grp-60 </span>
         </div>
         <div className="col-md-4">
           
         </div>
         <div className="col-md-4">
-          <ul className="list-inline quicklinks">
+          <ul className="list-inline quicklinks foot-links">
             <li className="list-inline-item">
               <Link className="foot-text" href="#something">Privacy Policy</Link>
             </li>

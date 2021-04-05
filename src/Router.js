@@ -9,6 +9,7 @@ import AuthContext from './Context/AuthContext';
 import Course from './Components/Course';
 import HomeTeacher from './Components/HomeTeacher';
 import HomeStudent from './Components/HomeStudent';
+import Peers from './Components/peers';
 import CourseTeacher from './Components/CourseTeacher';
 import userContext from './Context/UserContext';
 import AddCourses from './Courses/AddCourses';
@@ -26,6 +27,10 @@ function Router() {
             <Switch>
                 <Route exact path = '/'>
                     <LandingPage />
+                </Route>
+
+                <Route exact path = '/peers'>
+                    <Peers />
                 </Route>
 
                 <Route exact path = '/course'>
