@@ -14,6 +14,7 @@ function UserContextProvider(props) {
     const [userSemester, setUserSemester] = useState();
     const [userBranch, setUserBranch] = useState();
     const [userPassword, setUserPassword] = useState();
+    const [userCourse, setUserCourse] = useState([]);
 
 
     async function getUser(){
@@ -28,7 +29,7 @@ function UserContextProvider(props) {
         setUserBranch(x.branch);
         setUserSemester(x.semester);
         setUserPassword(x.passwordHash);
-        
+        setUserCourse(x.course);
 
     }
 
@@ -36,7 +37,7 @@ function UserContextProvider(props) {
         getUser();
     }, []) 
     return (
-        <userContext.Provider value = {{user,userName,userEmail,userLastName,userSemester,userBranch,userPassword,getUser}}>
+        <userContext.Provider value = {{user,userName,userEmail,userLastName,userSemester,userBranch,userPassword,userCourse,getUser}}>
             {props.children}
         </userContext.Provider>
     )
