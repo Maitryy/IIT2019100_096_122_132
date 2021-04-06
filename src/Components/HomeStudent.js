@@ -57,7 +57,7 @@ function HomeStudent() {
                   
                 </p>
                 <p className="lead">
-                    <a className="btn btn-primary btn-lg btn-course" href="#" role="button">Grade Sheets</a>
+                <Link to = '/grades' > <a className="btn btn-primary btn-lg btn-course" href="#" role="button">Grade Sheets</a></Link>
                 </p>
              </div>
 
