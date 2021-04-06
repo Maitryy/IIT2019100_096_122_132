@@ -58,6 +58,7 @@ function CourseTeacher(props) {
                                     <p>Course credits : {course.credits}</p>
                                     <p>Mentors: {course.teacher}</p>
                                     </strong>
+                                    <a href = {course.link} target="_blank"><button className = "btn btn-sm btn-warning"><strong>Live Session </strong></button></a>
                                 </div>
                                 <div className = "row">
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12">

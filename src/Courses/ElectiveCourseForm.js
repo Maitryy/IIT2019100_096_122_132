@@ -8,6 +8,7 @@ function ElectiveCourseForm() {
     const [credits,getCredits] = useState(1);
     const [description,getDescription] = useState("");
     const [subtype,getType] = useState("");
+    const [link,getLink] = useState("");
 
     const history = useHistory();
 
@@ -20,7 +21,8 @@ function ElectiveCourseForm() {
                 id,
                 credits,
                 description,
-                subtype
+                subtype,
+                link
             }
             
             const y = await axios.post("http://localhost:5000/course/AddElectiveCourse", ElectiveCourse);
@@ -83,6 +85,16 @@ function ElectiveCourseForm() {
                     placeholder = 'Technical/Non-Technical' 
                     onChange = {(e) => getType(e.target.value)}
                     value= {subtype}
+                />
+            </div>
+
+            <div className="prop">
+                <label >Class Link</label>
+                <input 
+                    type='string' 
+                    placeholder = 'google meet / webex meet link' 
+                    onChange = {(e) => getLink(e.target.value)}
+                    value= {link}
                 />
             </div>
 
