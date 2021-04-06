@@ -2,6 +2,7 @@ const router =  require("express").Router();
 const Course = require("../models/courseModel");
 const jwt = require("jsonwebtoken");
 const Student = require("../models/studentModel");
+const Announcement = require("../models/announcementModel");
 
 router.post("/AddCoreCourse",async (req,res) => {
     try {
@@ -145,7 +146,6 @@ router.get("/GetNonTechnicalElectiveCourses", async (req,res) => {
 router.get("/course/:id", async(req, res) => {
     try {
         const individualCourse = await Course.find(req.params.id);
-        //res.send(individualCourse);
         res.send(individualCourse);
 
     }catch(err) {
@@ -156,10 +156,20 @@ router.get("/course/:id", async(req, res) => {
     }
 });
 
-router.get("/GetAllCourse", async(req, res) => {
+router.post("/course/Announcement", async(req, res) => {
     try {
-        const individualCourse = await Course.find();
-        res.send(individualCourse);
+        const{course_id,type,description,link} = req.body;
+        
+        newAnnouncement = new Announcement({
+            course: course_id,
+            type: type,
+            description: description,
+            link: link,
+        });
+
+        await newAnnouncement.save();
+
+        res.send(true);
 
     }catch(err) {
         console.error(err);
@@ -168,5 +178,7 @@ router.get("/GetAllCourse", async(req, res) => {
             .json({errorMessage: "Unauthorised"});
     }
 });
+
+
 
 module.exports = router;

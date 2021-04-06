@@ -23,7 +23,7 @@ function Header() {
         setData(da);
     }, []);
     useEffect( () => {
-        console.log(data);
+        //console.log(data);
     }, [data]);
 
   
@@ -33,7 +33,7 @@ function Header() {
         setData1(da);
     }, []);
     useEffect( () => {
-        console.log(data1);
+        //console.log(data1);
     }, [data1]);
 
     useEffect(async() => {
@@ -42,7 +42,7 @@ function Header() {
         setData2(da);
     }, []);
     useEffect( () => {
-        console.log(data2);
+        //console.log(data2);
     }, [data2]);
 
       return (

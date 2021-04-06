@@ -21,6 +21,7 @@ import Profile from './Components/profile';
 import MyCourses from './Components/MyCourses';
 import EditProfile from './Auth/editprofile';
 import MyCourseStudent from './Components/MyCourseStudent';
+import Announcement from './Components/Announcement';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -43,6 +44,8 @@ function Router() {
                 </Route>
 
                 <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+
+                <Route path="/courseTeacher/Announcement"><Announcement/></Route>
                 
                 
             
