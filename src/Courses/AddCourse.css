@@ -54,3 +54,14 @@
    background: oldlace;
    background-color: oldlace;
  } */
+
+ .prof-head {
+   width: 500px;
+   height: 500px;
+   border: solid 3px rgb(85, 31, 82);
+   border-radius: 5px;
+ }
+
+ .profile {
+   padding: 1em;
+ }
