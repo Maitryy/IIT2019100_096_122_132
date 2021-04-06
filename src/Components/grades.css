@@ -1,0 +1,17 @@
+.g-div{
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+.grade-image-div{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+    padding-left: 6em;
+}
+
+.grade-image{
+    width: 60em;
+    height: 45em;
+}

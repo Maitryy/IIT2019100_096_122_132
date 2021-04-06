@@ -10,6 +10,7 @@ import Course from './Components/Course';
 import HomeTeacher from './Components/HomeTeacher';
 import HomeStudent from './Components/HomeStudent';
 import Peers from './Components/peers';
+import Grades from './Components/grades';
 import CourseTeacher from './Components/CourseTeacher';
 import userContext from './Context/UserContext';
 import AddCourses from './Courses/AddCourses';
@@ -35,6 +36,10 @@ function Router() {
 
                 <Route exact path = '/peers'>
                     <Peers />
+                </Route>
+
+                <Route exact path = '/grades'>
+                    <Grades />
                 </Route>
 
                 <Route exact path = '/course'>
