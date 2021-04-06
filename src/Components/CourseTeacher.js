@@ -63,7 +63,7 @@ function CourseTeacher(props) {
                                 <div className = "row">
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
                                     {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
-                                    <Link to="#" ><img className = "calendar" src={image4} alt=""/> </Link>
+                                    <a href="https://docs.google.com/document/d/1tw-n6FJAtuYNnpbxnlIqWSi7c9S2wxR6c33bKrGBfCo/edit" target="_blank" ><img className = "calendar" src={image4} alt=""/> </a>
                                     </div>
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12 course-btns">
                                    
@@ -204,7 +204,7 @@ function CourseTeacher(props) {
                                 <div className = "row">
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
                                     {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
-                                    <Link to="#" ><img className = "calendar" src={image4} alt=""/> </Link>
+                                    <a href="https://docs.google.com/document/d/1tw-n6FJAtuYNnpbxnlIqWSi7c9S2wxR6c33bKrGBfCo/edit" target="_blank" ><img className = "calendar" src={image4} alt=""/> </a>
                                     </div>
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12 course-btns">
                                    
@@ -345,7 +345,7 @@ function CourseTeacher(props) {
             <div className = "row">
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
                                     {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
-                                    <Link to="#" ><img className = "calendar" src={image4} alt=""/> </Link>
+                                    <a href="https://docs.google.com/document/d/1tw-n6FJAtuYNnpbxnlIqWSi7c9S2wxR6c33bKrGBfCo/edit" target="_blank"><img className = "calendar" src={image4} alt=""/> </a>
                                     </div>
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12 course-btns">
                                    

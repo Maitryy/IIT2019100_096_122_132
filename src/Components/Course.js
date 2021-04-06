@@ -4,6 +4,7 @@ import './Course.css'
 import image3 from '../images/pdf-logo.png'
 import image2 from '../images/image-logo.png'
 import image1 from '../images/video-logo.png'
+import { Link } from 'react-router-dom';
 function Courses() {
 
     return (
@@ -17,13 +18,13 @@ function Courses() {
                 <p>Course credits : 4</p>
                 <p>Mentors: Sonali</p>
                 </strong>
-                
+                <Link to = '/grades' ><a className="btn btn-primary btn-lg btn-course" href="#" role="button">Grade Sheets</a></Link>
              </div>
 
 
             
             <div className='course_sudents row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Find Your Class-mates</button>
+               <Link to="/peers"> <button className="btn btn-primary btn-lg btn-course">Find Your Class-mates</button> </Link>
                 {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
             </div>
             <br/>

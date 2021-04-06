@@ -70,7 +70,7 @@ function MyCourses() {
           
                 ( s3 === course.teacher ) && 
                  
-                         
+                    <div className="row">
                     <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
                         
@@ -92,6 +92,7 @@ function MyCourses() {
                                             <button className="btn btn-primary btn-course">Edit Course</button>
                             
                                         </Link>
+                        </div>
                         </div>
                         </div>
                         </div>

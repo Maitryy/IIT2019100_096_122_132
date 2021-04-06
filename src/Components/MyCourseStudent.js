@@ -39,7 +39,7 @@ function MyCourseStudent() {
     }, [data2]);
 
     return (
-        <div>
+        <div className="container">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 mt-3">
