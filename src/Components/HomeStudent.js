@@ -181,7 +181,7 @@ function HomeStudent() {
                                <div className='card courses mask '>
                                        <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                            <a href="#" >
-                                               <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                           <img src={course.image} alt="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
                                            </a>
                                        </div>
                                        <div class="card-body">
@@ -190,7 +190,7 @@ function HomeStudent() {
                                                {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
                                                <p className="text-muted">Credits: { course.credits}</p>
                                                <p className="text-muted">Mentors: { course.teacher}</p>
-                                              
+                                               <p className="text-muted">Description: { course.description}</p>
                                                <Link  to= {`/courseTeacher/${course._id}`} >
                                                    <button className="btn btn-primary btn-course">Go to Course</button>
                                    
@@ -215,7 +215,7 @@ function HomeStudent() {
                                <div className='card courses mask '>
                                        <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                            <a href="#" >
-                                               <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                           <img src={course.image} alt="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
                                            </a>
                                        </div>
                                        <div class="card-body">
@@ -224,7 +224,7 @@ function HomeStudent() {
                                                {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
                                                <p className="text-muted">Credits: { course.credits}</p>
                                                <p className="text-muted">Mentors: { course.teacher}</p>
-                                              
+                                               <p className="text-muted">Description: { course.description}</p>
                                                <Link  to= {`/courseTeacher/${course._id}`} >
                                                    <button className="btn btn-primary btn-course">Go to Course</button>
                                    
@@ -249,7 +249,7 @@ function HomeStudent() {
                                <div className='card courses mask '>
                                        <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                            <a href="#" >
-                                               <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                           <img src={course.image} alt="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
                                            </a>
                                        </div>
                                        <div class="card-body">
@@ -258,7 +258,7 @@ function HomeStudent() {
                                                {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
                                                <p className="text-muted">Credits: { course.credits}</p>
                                                <p className="text-muted">Mentors: { course.teacher}</p>
-                                              
+                                               <p className="text-muted">Description: { course.description}</p>
                                                <Link  to= {`/courseTeacher/${course._id}`} >
                                                    <button className="btn btn-primary btn-course">Go to Course</button>
                                    
