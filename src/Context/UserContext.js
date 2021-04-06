@@ -16,6 +16,7 @@ function UserContextProvider(props) {
     const [userPassword, setUserPassword] = useState();
     const [userCourse, setUserCourse] = useState([]);
 
+    
 
     async function getUser(){
         const type = await axios.get("http://localhost:5000/auth/TypeOfUser");

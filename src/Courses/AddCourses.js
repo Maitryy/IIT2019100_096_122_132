@@ -3,7 +3,7 @@ import CoreCoursesForm from './CoreCoursesForm';
 import ElectiveCourseForm from './ElectiveCourseForm';
 import './AddCourse.css';
 import '../Auth/Register.css'
-import image1 from '../images/register-head-01.png'
+import image1 from '../images/add-course.png'
 import image2 from '../images/student-reg-01.png'
 import image3 from '../images/teacher-reg-01.png'
 
@@ -31,7 +31,9 @@ function AddCourses() {
 
         <div className="container">
             <div className="regi ">
-            <img className = "register-head" src={image1} alt=""/>
+            <div className="profile">
+            <img className = "prof-head" src={image1} alt=""/>
+            </div>
             </div>
             <div className="row both-reg">
                 <div className="col col-lg-6 col-md-6 col-sm-12 col-12">

@@ -71,7 +71,7 @@ function MyCourses() {
                 ( s3 === course.teacher ) && 
                  
                          
-                    <div className= "col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
                         
                         <div className='card courses mask '>
@@ -124,7 +124,7 @@ function MyCourses() {
                 ( s3 === course.teacher ) && 
                  
                          
-                    <div className= "col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
                         
                         <div className='card courses mask '>
@@ -179,7 +179,7 @@ function MyCourses() {
                 ( s3 === course.teacher ) && 
                  
                          
-                    <div className= "col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
                         
                         <div className='card courses mask '>
