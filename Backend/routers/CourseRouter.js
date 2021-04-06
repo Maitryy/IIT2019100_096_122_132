@@ -5,8 +5,8 @@ const Student = require("../models/studentModel");
 
 router.post("/AddCoreCourse",async (req,res) => {
     try {
-        const{name,id,credits,description} = req.body;
-        if(!name || !id || !credits || !description)
+        const{name,id,credits,description,link,image} = req.body;
+        if(!name || !id || !credits || !description || !link || !image)
             return res
                 .status(400)
                 .json({errorMessage: "Please enter all details"});
@@ -34,7 +34,9 @@ router.post("/AddCoreCourse",async (req,res) => {
             credits: credits,
             description: description,
             type: "Core",
-            teacher: teacher
+            teacher: teacher,
+            link: link,
+            image: image
         });
         
         await NewCourse.save();
@@ -49,8 +51,8 @@ router.post("/AddCoreCourse",async (req,res) => {
 
 router.post("/AddElectiveCourse",async (req,res) => {
     try {
-        const{name,id,credits,description,subtype} = req.body;
-        if(!name || !id || !credits || !description || !subtype)
+        const{name,id,credits,description,subtype,link,image} = req.body;
+        if(!name || !id || !credits || !description || !subtype || !link || !image)
             return res
                 .status(400)
                 .json({errorMessage: "Please enter all details"});
@@ -79,7 +81,9 @@ router.post("/AddElectiveCourse",async (req,res) => {
             description: description,
             type: "Elective",
             subtype: subtype,
-            teacher: teacher
+            teacher: teacher,
+            link: link,
+            image: image
         });
         
         await NewCourse.save();
