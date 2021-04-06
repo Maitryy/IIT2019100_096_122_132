@@ -7,6 +7,8 @@ function CoreCoursesForm() {
     const [id,getID] = useState("");
     const [credits,getCredits] = useState(1);
     const [description,getDescription] = useState("");
+    const [link,getLink] = useState("");
+
 
    
 
@@ -21,6 +23,7 @@ function CoreCoursesForm() {
                 id,
                 credits,
                 description,
+                link
             }
             
             const y = await axios.post("http://localhost:5000/course/AddCoreCourse", CoreCourse);
@@ -74,6 +77,16 @@ function CoreCoursesForm() {
                     placeholder = 'Write a short description of the course' 
                     onChange = {(e) => getDescription(e.target.value)}
                     value= {description}
+                />
+            </div>
+
+            <div className="prop">
+                <label >Class Link</label>
+                <input 
+                    type='string' 
+                    placeholder = 'google meet / webex meet link' 
+                    onChange = {(e) => getLink(e.target.value)}
+                    value= {link}
                 />
             </div>
 

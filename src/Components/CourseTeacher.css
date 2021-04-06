@@ -5,5 +5,17 @@
 .calendar {
     border: solid 2px rgb(85, 31, 82);
     border-radius: 10px;
+    margin-bottom: 1em;
+    height: 100%;
      
+}
+
+.btn-peers {
+    width: 100%;
+    margin: 0.75em 0;
+}
+
+.course-btns {
+    justify-content: center;
+    padding: 1em 0;
 }
