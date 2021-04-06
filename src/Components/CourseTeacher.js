@@ -19,7 +19,7 @@ function CourseTeacher(props) {
         setData(da);
     }, []);
     useEffect( () => {
-        console.log(data);
+        //console.log(data);
     }, [data]);
 
   
@@ -29,7 +29,7 @@ function CourseTeacher(props) {
         setData1(da);
     }, []);
     useEffect( () => {
-        console.log(data1);
+        //console.log(data1);
     }, [data1]);
 
     useEffect(async() => {
@@ -38,7 +38,7 @@ function CourseTeacher(props) {
         setData2(da);
     }, []);
     useEffect( () => {
-        console.log(data2);
+        //console.log(data2);
     }, [data2]);
 
     const {userName} = useContext(userContext);
@@ -76,7 +76,7 @@ function CourseTeacher(props) {
                                         <br/>
                                         <div className='course_doubts row ml-2 mr-2'>
                                             {/* <button className="btn btn-primary btn-lg btn-course ">Post Announcements</button> */}
-                                            <Link  to= '#' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
+                                            <Link  to= "/courseTeacher/Announcement" >   <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
                                         </div>
                                         <br/>
                                         <div className='course_doubts row ml-2 mr-2'>
@@ -217,7 +217,7 @@ function CourseTeacher(props) {
                                         <br/>
                                         <div className='course_doubts row ml-2 mr-2'>
                                             {/* <button className="btn btn-primary btn-lg btn-course ">Post Announcements</button> */}
-                                            <Link  to= '#' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
+                                            <Link  to= '/courseTeacher/Announcement' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
                                         </div>
                                         <br/>
                                         <div className='course_doubts row ml-2 mr-2'>

@@ -11,6 +11,7 @@ import HomeTeacher from './Components/HomeTeacher';
 import HomeStudent from './Components/HomeStudent';
 import Peers from './Components/peers';
 import Grades from './Components/grades';
+import Faq from './Components/Faq';
 import CourseTeacher from './Components/CourseTeacher';
 import userContext from './Context/UserContext';
 import AddCourses from './Courses/AddCourses';
@@ -21,6 +22,7 @@ import Profile from './Components/profile';
 import MyCourses from './Components/MyCourses';
 import EditProfile from './Auth/editprofile';
 import MyCourseStudent from './Components/MyCourseStudent';
+import Announcement from './Components/Announcement';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -47,11 +49,17 @@ function Router() {
                 </Route>
 
                 <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
-                
-                
-            
+
+                <Route path="/courseTeacher/Announcement"><Announcement/></Route>
+
+
+
               <Route path='/peers'>
                   <Peers />
+              </Route>
+
+              <Route path='/Faq'>
+                  <Faq />
               </Route>
                 {/* <Route exact path = '/courseTeacher'>
                     <CourseTeacher />
@@ -70,7 +78,7 @@ function Router() {
                         <Route exact path = '/Login'>
                             <LoginStudent />
                         </Route>
-                    
+
                     </>
                 )}
 
@@ -80,8 +88,8 @@ function Router() {
                             <Profile />
                         </Route>
 
-                       
-                       
+
+
                         <Route exact path = '/courseid'>
                             <Course />
                         </Route>
@@ -92,7 +100,7 @@ function Router() {
                             <MyCourses />
                         </Route>
                         <Route exact path = '/CoreCourses'>
-                            <CoreCoursePage />    
+                            <CoreCoursePage />
                         </Route>
                         <Route exact path = '/NonTechnicalElectiveCourses'>
                             <NonTechnicalElectiveCoursePage />
@@ -103,7 +111,7 @@ function Router() {
                         <Route exact path = '/mycoursestudent'>
                             <MyCourseStudent />
                         </Route>
-                        
+
                         { user === "Student" &&
                             <>
                                 <Route exact path = '/HomeStudent'>
@@ -124,11 +132,11 @@ function Router() {
                         }
 
                     </>
-                } 
+                }
             </Switch>
             <Footer />
         </BrowserRouter>
-    
+
 )}
 
 export default Router

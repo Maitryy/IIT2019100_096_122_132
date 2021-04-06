@@ -53,6 +53,10 @@ function HomeStudent() {
                 <p>Enrolled in courses: 5</p>
                 </strong>
                 <p className="lead">
+                    <Link to = '/Faq' ><button className="btn btn-lg btn-course add-btn">Feedback and queries</button></Link>
+                  
+                </p>
+                <p className="lead">
                     <a className="btn btn-primary btn-lg btn-course" href="#" role="button">Grade Sheets</a>
                 </p>
              </div>
