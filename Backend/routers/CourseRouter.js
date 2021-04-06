@@ -152,4 +152,17 @@ router.get("/course/:id", async(req, res) => {
     }
 });
 
+router.get("/GetAllCourse", async(req, res) => {
+    try {
+        const individualCourse = await Course.find();
+        res.send(individualCourse);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
+
 module.exports = router;
