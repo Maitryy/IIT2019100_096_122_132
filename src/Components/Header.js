@@ -102,7 +102,7 @@ function Header() {
               </div>
 
               <div className='header-items'>
-                <Link className="head-item" to = '/MyCourses'>
+                <Link className="head-item" to = '/mycoursestudent'>
                   Courses
                 </Link>
               </div>    
