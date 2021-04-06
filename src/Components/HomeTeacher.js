@@ -50,6 +50,10 @@ function HomeTeacher() {
                 <p>Enrolled in courses: 4</p>
                 </strong>
                 <p className="lead">
+                    <Link to = '/Faq' ><button className="btn btn-lg btn-course add-btn">Feedback and queries</button></Link>
+                  
+                </p>
+                <p className="lead">
                     <Link to = '/AddCourse' ><button className="btn btn-lg btn-course add-btn">Add Course</button></Link>
                   
                 </p>
