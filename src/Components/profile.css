@@ -1,0 +1,17 @@
+.profile-image {
+    width: 30em;
+    height: 30em;
+}
+
+.profile-image-div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.p-div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+}
