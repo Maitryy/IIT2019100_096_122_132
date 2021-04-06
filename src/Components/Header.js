@@ -64,7 +64,7 @@ function Header() {
                   <button className="nav-icon stu" onClick = {handleDropdown}><i class="fas fa-user-circle"></i></button>
                   {dropdown && 
                   <>
-                  <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active':'dropdown-inactive'}>
+                  <ul onClick={handleDropdown} className = {dropdown? 'dropdown-active drop':'dropdown-inactive'}>
                 <li className = 'dropdown-item'>
                     <Link to = '/profile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         User Profile
