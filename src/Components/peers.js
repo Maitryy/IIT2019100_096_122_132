@@ -3,8 +3,11 @@ import React, { useContext } from 'react'
 import '../bootstrap/bootstrap.css'
 import './peers.css'
 
-function Peers() {
+function Peers(props) {
+    console.log(props);
     return(
+       
+
         <div className="peers">
              <div className="container">
                 <div className="card bg-dark text-white enroll-card">

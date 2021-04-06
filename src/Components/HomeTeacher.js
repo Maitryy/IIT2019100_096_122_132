@@ -51,6 +51,7 @@ function HomeTeacher() {
                 </strong>
                 <p className="lead">
                     <Link to = '/AddCourse' >Add Course</Link>
+                  
                 </p>
             </div>
             

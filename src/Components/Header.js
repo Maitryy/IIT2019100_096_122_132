@@ -96,18 +96,9 @@ function Header() {
               </div>
 
               <div className = 'header-search'>
+                  <input type='text' placeholder='Search Course'/>  
+                   
                   
-                  <select value="search-course">
-            {data.map((option) => (
-              <option>{option.name}</option>
-            ))}
-             {data1.map((option) => (
-              <option>{option.name}</option>
-            ))}
-             {data2.map((option) => (
-              <option>{option.name}</option>
-            ))}
-          </select>              
               </div>
 
               <div className='header-items'>
@@ -165,17 +156,9 @@ function Header() {
 
               <div className = 'header-search'>
                 
-                  <select value="search-course">
-            {data.map((option) => (
-              <option>{option.name}</option>
-            ))}
-             {data1.map((option) => (
-              <option>{option.name}</option>
-            ))}
-             {data2.map((option) => (
-              <option>{option.name}</option>
-            ))}
-          </select>            
+              <input type='text' placeholder='Search Course'/>  
+                   
+                  
               </div>
 
               <div className='header-items'>

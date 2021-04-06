@@ -65,13 +65,13 @@ function CourseTeacher(props) {
                                     <Link to="#" ><img className = "calendar" src={image4} alt=""/> </Link>
                                     </div>
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <Link to="/peers" >
+                                   
                                         <div className='course_sudents row ml-2 mr-2'>
                                         
-                                            <button className="btn btn-primary btn-lg btn-course">Student's List</button>
+                                        <Link  to= {`/peers`} >   <button className="btn btn-primary btn-lg btn-course">Student's List</button></Link> 
                                         
                                         </div>
-                                        </Link>
+                                      
                                         <br/>
                                         <div className='course_doubts row ml-2 mr-2'>
                                             <button className="btn btn-primary btn-lg btn-course">Post Announcements</button>
@@ -185,7 +185,7 @@ function CourseTeacher(props) {
                                     <p>Mentors: {course.teacher}</p>
                                     </strong>
                                     <div className='course_sudents row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Student's List</button>
+                                    <Link  to= {`/peers`} ><button   className="btn btn-primary btn-lg btn-course">Student's List</button></Link>
                 {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
             </div>
             <br/>
@@ -299,7 +299,7 @@ function CourseTeacher(props) {
                                     </strong>
                                     
                                     <div className='course_sudents row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Student's List</button>
+                                    <Link  to= {`/peers`} >  <button className="btn btn-primary btn-lg btn-course">Student's List</button></Link>
                 {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
             </div>
             <br/>

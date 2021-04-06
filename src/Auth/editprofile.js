@@ -24,7 +24,7 @@ const [updatedpassword,setUpdatedPassword] = useState("");
 
     return (
         <div>
-            <h1>Change your Profile</h1>
+            <h1>Change your Profile details</h1>
        
             <form className="create"
                 onSubmit = {EditProfile}
