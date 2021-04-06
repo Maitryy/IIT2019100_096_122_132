@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 import React, { useContext } from 'react'
 import '../bootstrap/bootstrap.css'
+import image from '../images/teacher-profile-01.png'
 import './peers.css'
 
 function Peers(props) {
@@ -21,7 +22,7 @@ function Peers(props) {
                 <div className="teach-list">
                 <div className="card-horizontal ">
                     <div className="img-square-wrapper">
-                            <img className="" src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1325&q=80" alt="Card image cap"/>
+                            <img className="" src = {image} alt="Card image cap"/>
                         </div>
                         <div className="card-body">
                             <h4 className="card-title explore-title">Teacher: </h4>
