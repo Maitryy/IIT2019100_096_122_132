@@ -71,14 +71,14 @@ function Header() {
                     </Link>
                 </li>
                 <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
+                    <Link to = '/grades' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Grades
                     </Link>
                 </li>
                 <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
+                    <a href = 'https://docs.google.com/document/d/1tw-n6FJAtuYNnpbxnlIqWSi7c9S2wxR6c33bKrGBfCo/edit' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Calender
-                    </Link>
+                    </a>
                 </li>
                 <li className = 'dropdown-item'>
                     <Link to = '/EditProfile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
@@ -128,11 +128,7 @@ function Header() {
                         User Profile
                     </Link>
                 </li>
-                <li className = 'dropdown-item'>
-                    <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
-                        Grades
-                    </Link>
-                </li>
+                
                 <li className = 'dropdown-item'>
                     <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Calender
