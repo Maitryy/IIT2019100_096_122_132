@@ -84,7 +84,7 @@ function CourseTeacher(props) {
                                         <br/>
                                         <div className='course_doubts row ml-2 mr-2'>
                                             {/* <button className="btn btn-primary btn-lg btn-course">Take Test</button> */}
-                                            <Link  to= '#' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Take Tests</button></Link>
+                                            <Link  to= {`/test/${course._id}`} >   <button className="btn btn-primary btn-lg btn-course btn-peers">Take Tests</button></Link>
                                         </div> 
                                     </div>
                                    
@@ -205,9 +205,11 @@ function CourseTeacher(props) {
             <Link  to= {`/Announcement/${course._id}`} > <button className="btn btn-primary btn-lg btn-course">Post Announcements</button></Link>
             </div>
             <br/>
+            <Link  to= {`/test/${course._id}`} >  
             <div className='course_doubts row ml-2 mr-2'>
                 <button className="btn btn-primary btn-lg btn-course">Take Test</button>
             </div> 
+            </Link>
             
             </div>
 }
@@ -323,10 +325,13 @@ function CourseTeacher(props) {
             <Link  to= {`/Announcement/${course._id}`} >   <button className="btn btn-primary btn-lg btn-course">Post Announcements</button></Link>
             </div>
             <br/>
+            <Link  to= {`/test/${course._id}`} >  
             <div className='course_doubts row ml-2 mr-2'>
                 <button className="btn btn-primary btn-lg btn-course">Take Test</button>
             </div> 
+            </Link>
             </div>}
+
 
 
             <div className="card bg-dark text-white enroll-card">

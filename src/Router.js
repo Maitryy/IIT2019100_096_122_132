@@ -23,7 +23,7 @@ import MyCourses from './Components/MyCourses';
 import EditProfile from './Auth/editprofile';
 import MyCourseStudent from './Components/MyCourseStudent';
 import Announcement from './Components/Announcement';
-
+import Test from './Components/Test';
 function Router() {
     const {loggedIn} = useContext(AuthContext);
     const {user} = useContext(userContext)
@@ -51,6 +51,7 @@ function Router() {
                 <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
                  <Route path="/peers/:id" render={(props) => <Peers  {...props} />} />
                  <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
+                 <Route path="/test/:id" render={(props) => <Test {...props} />} />
 
               
 
