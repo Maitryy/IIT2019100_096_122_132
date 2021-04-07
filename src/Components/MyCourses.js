@@ -65,11 +65,11 @@ function MyCourses() {
                     </div>
                 </div>
             </div>
-            {data.map(course=>{
-                return(
-                    
-                    
-                    ( s3 === course.teacher ) && 
+{data.map(course=>{
+    return(
+          
+                ( s3 === course.teacher ) && 
+                    <div className="row">
                     <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
                         
@@ -94,7 +94,7 @@ function MyCourses() {
                         </div>
                         </div>  
                     </div>
-                   
+                   </div>
                     
                 )
             })}
