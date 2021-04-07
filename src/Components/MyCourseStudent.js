@@ -1,8 +1,9 @@
 import React , { useContext, useState, useEffect } from 'react'
 import '../bootstrap/bootstrap.css'
 import userContext from '../Context/UserContext';
+import './Course.css'
+import './HomeTeacher.css'
 import { Link } from 'react-router-dom';
-
 
 function MyCourseStudent() {
 
@@ -39,8 +40,9 @@ function MyCourseStudent() {
     }, [data2]);
 
     return (
-        <div className="container">
-            <div className="container-fluid">
+        <div className="hometeacher container">
+    
+              <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
@@ -57,42 +59,43 @@ function MyCourseStudent() {
                     </div>
                 </div>
             </div>
-             {userCourse.map(course=>{
+          
+      
+             {userCourse.map(Course=>{
                 return (
+
                     <>
-                    {data.map(uCourse => {
+                    {data.map(course => {
                     return(
                             <div key = '_id'>
-                            {course === String(uCourse.id) &&
+                            {Course === String(course.id) &&
                                 <>
-                                    {/* {
-                                        // console.log(uCourse.id)
-                                        // console.log(course)
-                                    } */}
-                                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <div key = '_id'>
-                                    
-                                    <div className='card courses mask '>
-                                            <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                                <a href="#" >
-                                                    <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
-                                                </a>
-                                            </div>
-                                            <div class="card-body"></div>
-                                    <h1 className="display-4">{uCourse.name}</h1>
-                                
-                                    <hr className="my-4"/>
-                                    <strong>
-                                    <p>Course credits : {uCourse.credits}</p>
-                                    <p>Mentors: {uCourse.mentor}</p>
-                                    </strong>
-                                    <Link  to= {`/courseTeacher/${uCourse._id}`} >
-                                                        <button className="btn btn-primary btn-course">Edit Course</button>
-                                        
-                                                    </Link>
-                                    </div>
-                                    </div>
-                                    </div>
+                                    <div className="All-courses row row-cols-3">
+                                  <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div key = '_id'>
+                        
+                        <div className='card courses mask '>
+                                <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <a href="#" >
+                                        <img src={course.image} alt="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                       
+                                        <h4 className= " card-title">{ course.name}</h4>
+                                        {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
+                                        <p className="text-muted">Credits: { course.credits}</p>
+                                        <p className="text-muted">Mentors: { course.teacher}</p>
+                                        <p className="text-muted">Description: { course.description}</p>
+                                        <Link  to= {`/courseTeacher/${course._id}`} >
+                                            <button className="btn btn-primary btn-course">Edit Course</button>
+                            
+                                        </Link>
+                                </div>
+                        </div>
+                        </div>  
+                    </div>
+                    </div>
                                 </>
                             } 
                             </div>
@@ -100,6 +103,8 @@ function MyCourseStudent() {
                     })}
                     </>)
             })}
+           
+          
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 mt-3">
@@ -117,50 +122,51 @@ function MyCourseStudent() {
                     </div>
                 </div>
             </div>
-            {userCourse.map(course=>{
+           
+            {userCourse.map(Course=>{
                 return (
+
                     <>
-                    {data1.map(uCourse => {
+                    {data1.map(course => {
                     return(
                             <div key = '_id'>
-                            {course === String(uCourse.id) &&
+                            {Course === String(course.id) &&
                                 <>
-                                    {/* {
-                                        // console.log(uCourse.id)
-                                        // console.log(course)
-                                    } */}
-                                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <div key = '_id'>
-                                    
-                                    <div className='card courses mask '>
-                                            <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                                <a href="#" >
-                                                    <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
-                                                </a>
-                                            </div>
-                                            <div class="card-body"></div>
-                                    <h1 className="display-4">{uCourse.name}</h1>
-                                
-                                    <hr className="my-4"/>
-                                    <strong>
-                                    <p>Course credits : {uCourse.credits}</p>
-                                    <p>Mentors: {uCourse.mentor}</p>
-                                    </strong>
-                                    <Link  to= {`/courseTeacher/${uCourse._id}`} >
-                                                        <button className="btn btn-primary btn-course">Edit Course</button>
-                                        
-                                                    </Link>
-                                    </div>
-                                    </div>
-                                    </div>
-                                </>
+                                    <div className="All-courses row row-cols-3">
+                                  <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div key = '_id'>
+                        
+                        <div className='card courses mask '>
+                                <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <a href="#" >
+                                        <img src={course.image} alt="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                       
+                                        <h4 className= " card-title">{ course.name}</h4>
+                                        {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
+                                        <p className="text-muted">Credits: { course.credits}</p>
+                                        <p className="text-muted">Mentors: { course.teacher}</p>
+                                        <p className="text-muted">Description: { course.description}</p>
+                                        <Link  to= {`/courseTeacher/${course._id}`} >
+                                            <button className="btn btn-primary btn-course">Edit Course</button>
+                            
+                                        </Link>
+                                </div>
+                        </div>
+                        </div>  
+                    </div>
+                    </div>  </>
                             } 
                             </div>
                         )
                     })}
                     </>)
             })}
-
+         
+     
+          
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 mt-3">
@@ -179,52 +185,51 @@ function MyCourseStudent() {
                     </div>
                 </div>
             </div>
-
-            {userCourse.map(course=>{
+           
+             {userCourse.map(Course=>{
                 return (
+
                     <>
-                    {data2.map(uCourse => {
+                    {data2.map(course => {
                     return(
                             <div key = '_id'>
-                            {course === String(uCourse.id) &&
+                            {Course === String(course.id) &&
                                 <>
-                                    {/* {
-                                        // console.log(uCourse.id)
-                                        // console.log(course)
-                                    } */}
-                                    <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <div key = '_id'>
-                                    
-                                    <div className='card courses mask '>
-                                            <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                                <a href="#" >
-                                                    <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
-                                                </a>
-                                            </div>
-                                            <div class="card-body"></div>
-                                    <h1 className="display-4">{uCourse.name}</h1>
-                                
-                                    <hr className="my-4"/>
-                                    <strong>
-                                    <p>Course credits : {uCourse.credits}</p>
-                                    <p>Mentors: {uCourse.mentor}</p>
-                                    </strong>
-                                    <Link  to= {`/courseTeacher/${uCourse._id}`} >
-                                                        <button className="btn btn-primary btn-course">Edit Course</button>
-                                        
-                                                    </Link>
-                                    </div>
-                                    </div>
-                                    </div>
-                                </>
+                                   <div className="All-courses row row-cols-3">
+                                  <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div key = '_id'>
+                        
+                        <div className='card courses mask '>
+                                <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <a href="#" >
+                                        <img src={course.image} alt="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                       
+                                        <h4 className= " card-title">{ course.name}</h4>
+                                        {/* <h5 className = "card-subtitle text-muted">Amarnath Yadav</h5> */}
+                                        <p className="text-muted">Credits: { course.credits}</p>
+                                        <p className="text-muted">Mentors: { course.teacher}</p>
+                                        <p className="text-muted">Description: { course.description}</p>
+                                        <Link  to= {`/courseTeacher/${course._id}`} >
+                                            <button className="btn btn-primary btn-course">Edit Course</button>
+                            
+                                        </Link>
+                                </div>
+                        </div>
+                        </div>  
+                    </div>
+                    </div>   </>
                             } 
                             </div>
                         )
                     })}
                     </>)
             })}
+            </div>
 
-        </div>
+ 
     )
 }
 

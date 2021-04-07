@@ -38,7 +38,12 @@ function HomeTeacher() {
         console.log(data2);
     }, [data2]);
 
+  
     const {userName} = useContext(userContext);
+    const {userLastName} = useContext(userContext);
+   var s=userName;
+   var s2=userLastName;
+   var s3=s+" "+s2;
     return (
         <div className='hometeacher container' >
 
@@ -73,7 +78,7 @@ function HomeTeacher() {
                 return(
                     
                     
-                    
+                    ( s3 === course.teacher ) && 
                     <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
                         
@@ -107,7 +112,7 @@ function HomeTeacher() {
                 return(
                     
                     
-                    
+                    ( s3 === course.teacher ) && 
                     <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
                         
@@ -141,7 +146,7 @@ function HomeTeacher() {
                 return(
                     
                     
-                    
+                    ( s3 === course.teacher ) && 
                     <div className= "col-lg-4 col-md-6 col-sm-12 col-12">
                     <div key = '_id'>
                         
