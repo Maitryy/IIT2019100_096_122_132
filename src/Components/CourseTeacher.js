@@ -10,6 +10,7 @@ import image1 from '../images/video-logo.png'
 import image4 from '../images/clndr-01.png'
 
 function CourseTeacher(props) {
+    const {user} = useContext(userContext);
     const [data,setData] = useState([]);
     const [data1,setData1] = useState([]);
     const [data2,setData2] = useState([]);
@@ -74,6 +75,8 @@ function CourseTeacher(props) {
                                         </div>
                                       
                                         <br/>
+                                        { user === 'Teacher' &&
+                          <div>
                                         <div className='course_doubts row ml-2 mr-2'>
                                             {/* <button className="btn btn-primary btn-lg btn-course ">Post Announcements</button> */}
                                             <Link  to= {`/Announcement/${course._id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
@@ -84,6 +87,9 @@ function CourseTeacher(props) {
                                             <Link  to= '#' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Take Tests</button></Link>
                                         </div> 
                                     </div>
+                                   
+                                  }
+                                </div>
                                 </div>
 
 
@@ -193,6 +199,8 @@ function CourseTeacher(props) {
                 {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
             </div>
             <br/>
+            { user === 'Teacher' &&
+                          <div>
             <div className='course_doubts row ml-2 mr-2'>
             <Link  to= {`/Announcement/${course._id}`} > <button className="btn btn-primary btn-lg btn-course">Post Announcements</button></Link>
             </div>
@@ -200,7 +208,9 @@ function CourseTeacher(props) {
             <div className='course_doubts row ml-2 mr-2'>
                 <button className="btn btn-primary btn-lg btn-course">Take Test</button>
             </div> 
-
+            
+            </div>
+}
 
             <div className="card bg-dark text-white enroll-card">
                 <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80"/>
@@ -307,6 +317,8 @@ function CourseTeacher(props) {
                 {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
             </div>
             <br/>
+            { user === 'Teacher' &&
+                          <div>
             <div className='course_doubts row ml-2 mr-2'>
             <Link  to= {`/Announcement/${course._id}`} >   <button className="btn btn-primary btn-lg btn-course">Post Announcements</button></Link>
             </div>
@@ -314,6 +326,7 @@ function CourseTeacher(props) {
             <div className='course_doubts row ml-2 mr-2'>
                 <button className="btn btn-primary btn-lg btn-course">Take Test</button>
             </div> 
+            </div>}
 
 
             <div className="card bg-dark text-white enroll-card">
