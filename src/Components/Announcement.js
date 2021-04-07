@@ -9,29 +9,28 @@ function Announcement() {
 
     const history = useHistory();
     
-    // async function createAnnouncement(e){
-    //     e.preventDefault();
+     async function createAnnouncement(e){
+         e.preventDefault();
 
-    //     try {
-    //         const newAnnouncement = {
-    //             type,
-    //             description,
-    //             link
-    //         };
+        try {
+            const newAnnouncement = {
+                type,
+                description,
+                 link
+            };
 
-    //         await axios.post("http://localhost:5000/course/course/Announcement", newAnnouncement);
-    //         history.push("/HomeTeacher");
+            await axios.post("http://localhost:5000/course/course/Announcement", newAnnouncement);
+             history.push("/HomeTeacher");
             
-    //     } catch (err) {
-    //         console.error(err);
-    //     }
-    // }
+        } catch (err) {
+         console.error(err);
+         }
+     }
 
     return (
         <div>
-    
-            dc
-                    {/* <form className = "create"
+    <h1>heyyyyyy</h1>
+             <form className = "create"
                         onSubmit = {createAnnouncement}
                     >
                         <div className="prop">
@@ -65,7 +64,7 @@ function Announcement() {
                         </div>
                                        
                         <button className="btn btn-course" type = 'submit'>Submit</button>
-                    </form>             */}
+                    </form>       
         </div>
     )
 }

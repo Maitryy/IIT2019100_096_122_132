@@ -19,7 +19,7 @@ function CourseTeacher(props) {
         setData(da);
     }, []);
     useEffect( () => {
-        //console.log(data);
+        console.log(data);
     }, [data]);
 
   
@@ -29,7 +29,7 @@ function CourseTeacher(props) {
         setData1(da);
     }, []);
     useEffect( () => {
-        //console.log(data1);
+        console.log(data1);
     }, [data1]);
 
     useEffect(async() => {
@@ -38,7 +38,7 @@ function CourseTeacher(props) {
         setData2(da);
     }, []);
     useEffect( () => {
-        //console.log(data2);
+        console.log(data2);
     }, [data2]);
 
     const {userName} = useContext(userContext);
@@ -63,20 +63,20 @@ function CourseTeacher(props) {
                                 <div className = "row">
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
                                     {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
-                                    <a href="https://docs.google.com/document/d/1tw-n6FJAtuYNnpbxnlIqWSi7c9S2wxR6c33bKrGBfCo/edit" target="_blank" ><img className = "calendar" src={image4} alt=""/> </a>
+                                    <Link to="#" ><img className = "calendar" src={image4} alt=""/> </Link>
                                     </div>
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12 course-btns">
                                    
                                         <div className='course_sudents row ml-2 mr-2'>
                                         
-                                        <Link  to= {`/peers`} >   <button className="btn btn-primary btn-lg btn-course btn-peers">Student's List</button></Link> 
+                                        <Link  to= {`/peers/${course._id}`} >   <button className="btn btn-primary btn-lg btn-course btn-peers">Student's List</button></Link> 
                                         
                                         </div>
                                       
                                         <br/>
                                         <div className='course_doubts row ml-2 mr-2'>
                                             {/* <button className="btn btn-primary btn-lg btn-course ">Post Announcements</button> */}
-                                            <Link  to= "/courseTeacher/Announcement" >   <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
+                                            <Link  to= {`/Announcement/${course._id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
                                         </div>
                                         <br/>
                                         <div className='course_doubts row ml-2 mr-2'>
@@ -90,7 +90,7 @@ function CourseTeacher(props) {
             <div className="card bg-dark text-white enroll-card">
                 <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80"/>
                 <div className="card-img-overlay">
-                    <h1 className=" enroll-card-title card-title"> Announcements.. </h1>
+               <h1 className=" enroll-card-title card-title"> Announcements.. </h1>
                 </div>
             </div>
             
@@ -179,7 +179,6 @@ function CourseTeacher(props) {
                 return(
                       
                             ( course._id === props.match.params.id ) && 
-                            <div>
                                 <div className="jumbotron course">
                                     <h1 className="display-4">{course.name}</h1>
                                     <p className="lead">{course.description} </p>
@@ -188,44 +187,19 @@ function CourseTeacher(props) {
                                     <p>Course credits : {course.credits}</p>
                                     <p>Mentors: {course.teacher}</p>
                                     </strong>
-                                    </div>
-                                    {/* <div className='course_sudents row ml-2 mr-2'>
-                                    <Link  to= {`/peers`} ><button   className="btn btn-primary btn-lg btn-course">Student's List</button></Link>
-                 <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> 
+                                
+                                    <div className='course_sudents row ml-2 mr-2'>
+                                    <Link  to= {`/peers/${course._id}`} ><button   className="btn btn-primary btn-lg btn-course">Student's List</button></Link>
+                {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
             </div>
             <br/>
             <div className='course_doubts row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Post Announcements</button>
+            <Link  to= {`/Announcement/${course._id}`} > <button className="btn btn-primary btn-lg btn-course">Post Announcements</button></Link>
             </div>
             <br/>
             <div className='course_doubts row ml-2 mr-2'>
                 <button className="btn btn-primary btn-lg btn-course">Take Test</button>
-            </div>  */}
-                                <div className = "row">
-                                    <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
-                                    {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
-                                    <a href="https://docs.google.com/document/d/1tw-n6FJAtuYNnpbxnlIqWSi7c9S2wxR6c33bKrGBfCo/edit" target="_blank" ><img className = "calendar" src={image4} alt=""/> </a>
-                                    </div>
-                                    <div className="col col-lg-6 col-md-6 col-sm-12 col-12 course-btns">
-                                   
-                                        <div className='course_sudents row ml-2 mr-2'>
-                                        
-                                        <Link  to= {`/peers`} >   <button className="btn btn-primary btn-lg btn-course btn-peers">Student's List</button></Link> 
-                                        
-                                        </div>
-                                      
-                                        <br/>
-                                        <div className='course_doubts row ml-2 mr-2'>
-                                            {/* <button className="btn btn-primary btn-lg btn-course ">Post Announcements</button> */}
-                                            <Link  to= '/courseTeacher/Announcement' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
-                                        </div>
-                                        <br/>
-                                        <div className='course_doubts row ml-2 mr-2'>
-                                            {/* <button className="btn btn-primary btn-lg btn-course">Take Test</button> */}
-                                            <Link  to= '#' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Take Tests</button></Link>
-                                        </div> 
-                                    </div>
-                                </div>
+            </div> 
 
 
             <div className="card bg-dark text-white enroll-card">
@@ -319,7 +293,6 @@ function CourseTeacher(props) {
                 return(
                       
                             ( course._id === props.match.params.id ) && 
-                            <div>
                                 <div className="jumbotron course">
                                     <h1 className="display-4">{course.name}</h1>
                                     <p className="lead">{course.description} </p>
@@ -328,45 +301,19 @@ function CourseTeacher(props) {
                                     <p>Course credits : {course.credits}</p>
                                     <p>Mentors: {course.teacher}</p>
                                     </strong>
-                                    </div>
-                                    {/* <div className='course_sudents row ml-2 mr-2'>
-                                    <Link  to= {`/peers`} >  <button className="btn btn-primary btn-lg btn-course">Student's List</button></Link>
-                <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> 
+                                    
+                                    <div className='course_sudents row ml-2 mr-2'>
+                                    <Link  to= {`/peers/${course._id}`} >  <button className="btn btn-primary btn-lg btn-course">Student's List</button></Link>
+                {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
             </div>
             <br/>
             <div className='course_doubts row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Post Announcements</button>
+            <Link  to= {`/Announcement/${course._id}`} >   <button className="btn btn-primary btn-lg btn-course">Post Announcements</button></Link>
             </div>
             <br/>
             <div className='course_doubts row ml-2 mr-2'>
                 <button className="btn btn-primary btn-lg btn-course">Take Test</button>
-            </div>  */}
-
-            <div className = "row">
-                                    <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
-                                    {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
-                                    <a href="https://docs.google.com/document/d/1tw-n6FJAtuYNnpbxnlIqWSi7c9S2wxR6c33bKrGBfCo/edit" target="_blank"><img className = "calendar" src={image4} alt=""/> </a>
-                                    </div>
-                                    <div className="col col-lg-6 col-md-6 col-sm-12 col-12 course-btns">
-                                   
-                                        <div className='course_sudents row ml-2 mr-2'>
-                                        
-                                        <Link  to= {`/peers`} >   <button className="btn btn-primary btn-lg btn-course btn-peers">Student's List</button></Link> 
-                                        
-                                        </div>
-                                      
-                                        <br/>
-                                        <div className='course_doubts row ml-2 mr-2'>
-                                            {/* <button className="btn btn-primary btn-lg btn-course ">Post Announcements</button> */}
-                                            <Link  to= '#' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Post Announcements</button></Link>
-                                        </div>
-                                        <br/>
-                                        <div className='course_doubts row ml-2 mr-2'>
-                                            {/* <button className="btn btn-primary btn-lg btn-course">Take Test</button> */}
-                                            <Link  to= '#' >   <button className="btn btn-primary btn-lg btn-course btn-peers">Take Tests</button></Link>
-                                        </div> 
-                                    </div>
-                                </div>
+            </div> 
 
 
             <div className="card bg-dark text-white enroll-card">
@@ -445,7 +392,12 @@ function CourseTeacher(props) {
 
             
         
-                                </div>    
+                                </div>
+                            
+                        
+                        
+                    
+                    
                 )
             })}
 

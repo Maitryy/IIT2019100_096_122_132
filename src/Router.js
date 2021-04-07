@@ -49,14 +49,13 @@ function Router() {
                 </Route>
 
                 <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+                 <Route path="/peers/:id" render={(props) => <Peers  {...props} />} />
+                 <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
 
-                <Route path="/courseTeacher/Announcement"><Announcement/></Route>
+              
 
 
 
-              <Route path='/peers'>
-                  <Peers />
-              </Route>
 
               <Route path='/Faq'>
                   <Faq />

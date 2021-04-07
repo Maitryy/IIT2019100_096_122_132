@@ -235,6 +235,8 @@ router.post("/enrollCourse", async (req,res) => {
 
         await Student.findByIdAndUpdate({_id: decoded}, {$push: {course: enCourse}} );
 
+        
+          
         res.send();
         
     } catch (err) {
