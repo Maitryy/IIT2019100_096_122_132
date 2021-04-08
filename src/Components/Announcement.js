@@ -19,7 +19,7 @@ function Announcement() {
                  link
             };
 
-            await axios.post("http://localhost:5000/course/course/Announcement", newAnnouncement);
+            await axios.post("http://localhost:5000/Announcement/:id", newAnnouncement);
              history.push("/HomeTeacher");
             
         } catch (err) {
