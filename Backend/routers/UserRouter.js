@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Student = require("../models/studentModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Course = require("../models/courseModel");
 
 //register
 router.post("/registerStudent",async (req,res) => {
@@ -228,6 +229,7 @@ router.post("/enrollCourse", async (req,res) => {
         decoded = decoded.student;
 
         var user = await Student.findById(decoded);
+        
         if(user.course == enCourse)
         return res
                 .status(400)
@@ -235,9 +237,20 @@ router.post("/enrollCourse", async (req,res) => {
 
         await Student.findByIdAndUpdate({_id: decoded}, {$push: {course: enCourse}} );
 
+        var course = await Course.findById(enCourse);
+        
+        if(course.student == user)
+        return res
+                .status(400)
+                .json({errorMessage: "Student already exist"});
+
+        await Course.findByIdAndUpdate({_id: enCourse}, {$push: {student: user}} );
+       
         
           
         res.send();
+
+        
         
     } catch (err) {
         console.error(err);

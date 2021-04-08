@@ -10,7 +10,7 @@ const CourseSchema = new mongoose.Schema({
     teacher: {type: String, required: true},
     link: {type: String, required: false},
     image: {type: String, required: false},
-    students: {type: [String], required: false}
+    student: {type: [String], required: false}
     // students: {type: Array, required: false}
 });
 

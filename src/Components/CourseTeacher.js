@@ -51,6 +51,8 @@ function CourseTeacher(props) {
                       
                             ( course._id === props.match.params.id ) && 
                               <div>
+                                  console.log(course);
+
                                 <div className="jumbotron course">
                                     <h1 className="display-4">{course.name}</h1>
                                     <p className="lead">{course.description} </p>
@@ -58,6 +60,7 @@ function CourseTeacher(props) {
                                     <strong>
                                     <p>Course credits : {course.credits}</p>
                                     <p>Mentors: {course.teacher}</p>
+
                                     </strong>
                                     <a href = {course.link} target="_blank"><button className = "btn btn-sm btn-warning"><strong>Live Session </strong></button></a>
                                 </div>
@@ -186,6 +189,7 @@ function CourseTeacher(props) {
                       
                             ( course._id === props.match.params.id ) && 
                                 <div className="jumbotron course">
+                                       console.log(course);
                                     <h1 className="display-4">{course.name}</h1>
                                     <p className="lead">{course.description} </p>
                                     <hr className="my-4"/>
@@ -306,6 +310,7 @@ function CourseTeacher(props) {
                       
                             ( course._id === props.match.params.id ) && 
                                 <div className="jumbotron course">
+                                       console.log(course);
                                     <h1 className="display-4">{course.name}</h1>
                                     <p className="lead">{course.description} </p>
                                     <hr className="my-4"/>
