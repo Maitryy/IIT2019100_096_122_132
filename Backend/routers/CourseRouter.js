@@ -143,6 +143,19 @@ router.get("/GetNonTechnicalElectiveCourses", async (req,res) => {
     }
 });
 
+router.get("/GetAllCourses", async (req,res) => {
+    try {
+        const getCourses = await Course.find();
+        res.send(getCourses);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
+
 router.get("/course/:id", async(req, res) => {
     try {
         const individualCourse = await Course.find(req.params.id);

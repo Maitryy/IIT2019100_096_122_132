@@ -8,9 +8,9 @@ function Peers(props) {
  
     const [data,setData] = useState([]);
     const [data1,setData1] = useState([]);
-    const [data2,setData2] = useState([]);
+    // const [data2,setData2] = useState([]);
     useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetCoreCourses");
+        const response = await fetch("http://localhost:5000/course/GetAllCourses");
         const da = await response.json();
         setData(da);
     }, []);
@@ -20,7 +20,7 @@ function Peers(props) {
 
   
     useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetTechnicalElectiveCourses");
+        const response = await fetch("http://localhost:5000/auth/GetAllUsers");
         const da = await response.json();
         setData1(da);
     }, []);
@@ -28,14 +28,14 @@ function Peers(props) {
         console.log(data1);
     }, [data1]);
 
-    useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
-        const da = await response.json();
-        setData2(da);
-    }, []);
-    useEffect( () => {
-        console.log(data2);
-    }, [data2]);
+    // useEffect(async() => {
+    //     const response = await fetch("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
+    //     const da = await response.json();
+    //     setData2(da);
+    // }, []);
+    // useEffect( () => {
+    //     console.log(data2);
+    // }, [data2]);
 
     
     return(
@@ -74,12 +74,14 @@ function Peers(props) {
                 <div className="jumbotron list-stu">
                 <h3 className="stu-head">Students: </h3>
                     <ul>
-                    {course.student.map(stud=>{
-                        <div>
-                        <li className="peer"> <i className="fas fa-user-circle stu "></i> {stud.firstName} {stud.lastName}</li>
-                        <hr className="my-4"/>
-                        </div>
-                    
+                    {data1.map(students=>{
+                        return(
+                            (course.student == students._id)&&
+                            <>
+                                <li className="peer"> <i className="fas fa-user-circle stu "></i> {students.firstName} {students.lastName}</li>
+                                <hr className="my-4"/>
+                            </>
+                        );                    
                     })}
                     </ul>
 
@@ -95,7 +97,7 @@ function Peers(props) {
     )
 
 })}
-{data1.map(course=>{
+{/* {data1.map(course=>{
     return(
           
                 ( course._id === props.match.params.id ) && 
@@ -164,7 +166,7 @@ function Peers(props) {
               
     )
 
-})}
+})} */}
 
 </div>
 </div>

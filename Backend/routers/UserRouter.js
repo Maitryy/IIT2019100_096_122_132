@@ -237,20 +237,9 @@ router.post("/enrollCourse", async (req,res) => {
 
         await Student.findByIdAndUpdate({_id: decoded}, {$push: {course: enCourse}} );
 
-        var course = await Course.findById(enCourse);
+        await Course.findOneAndUpdate({id: enCourse}, {$push: {student: user._id}} );
         
-        if(course.student == user)
-        return res
-                .status(400)
-                .json({errorMessage: "Student already exist"});
-
-        await Course.findByIdAndUpdate({_id: enCourse}, {$push: {student: user}} );
-       
-        
-          
-        res.send();
-
-        
+        res.send();         
         
     } catch (err) {
         console.error(err);
@@ -258,5 +247,17 @@ router.post("/enrollCourse", async (req,res) => {
     };
 });
 
+router.get("/GetAllUsers", async (req,res) => {
+    try {
+        const getUsers = await Student.find();
+        res.send(getUsers);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
 
 module.exports = router;
