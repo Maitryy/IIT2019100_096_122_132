@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useState } from 'react'
 import { useHistory } from 'react-router';
 
-function Announcement() {
+function Announcement(props) {
     const [type,setType] = useState();
     const [description,setDescription] = useState();
     const [link,setLink] = useState();
@@ -13,13 +13,16 @@ function Announcement() {
          e.preventDefault();
 
         try {
+            const course_id = props.match.params.id ;
+            console.log(course_id);
             const newAnnouncement = {
+                course_id,
                 type,
                 description,
                  link
             };
 
-            await axios.post("http://localhost:5000/Announcement/:id", newAnnouncement);
+            await axios.post("http://localhost:5000/course/Announcement", newAnnouncement);
              history.push("/HomeTeacher");
             
         } catch (err) {

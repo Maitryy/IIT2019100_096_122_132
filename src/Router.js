@@ -46,16 +46,7 @@ function Router() {
 
                 <Route exact path = '/course'>
                     <Course />
-                </Route>
-
-                <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
-                 <Route path="/peers/:id" render={(props) => <Peers  {...props} />} />
-                 <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
-                 <Route path="/test/:id" render={(props) => <Test {...props} />} />
-
-              
-
-
+                </Route>        
 
 
               <Route path='/Faq'>
@@ -111,6 +102,7 @@ function Router() {
                         <Route exact path = '/mycoursestudent'>
                             <MyCourseStudent />
                         </Route>
+                        <Route path="/peers/:id" render={(props) => <Peers  {...props} />} />
 
                         { user === "Student" &&
                             <>
@@ -128,6 +120,9 @@ function Router() {
                                 <Route exact path = '/AddCourse'>
                                     <AddCourses />
                                 </Route>
+                                <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+                                <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
+                                <Route path="/test/:id" render={(props) => <Test {...props} />} />
                             </>
                         }
 

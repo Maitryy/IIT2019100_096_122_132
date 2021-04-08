@@ -156,7 +156,7 @@ router.get("/course/:id", async(req, res) => {
     }
 });
 
-router.post("/Announcement/:id", async(req, res) => {
+router.post("/Announcement", async(req, res) => {
     try {
         const{course_id,type,description,link} = req.body;
         
