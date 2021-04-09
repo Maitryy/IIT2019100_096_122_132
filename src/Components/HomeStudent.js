@@ -198,7 +198,7 @@ function HomeStudent() {
                                         <p className="text-muted">Mentors: { course.teacher}</p>
                                         <p className="text-muted">Description: { course.description}</p>
                                         <Link  to= {`/courseTeacher/${course._id}`} >
-                                            <button className="btn btn-primary btn-course">Edit Course</button>
+                                            <button className="btn btn-primary btn-course">Go to Course</button>
                             
                                         </Link>
                                 </div>
@@ -216,7 +216,7 @@ function HomeStudent() {
            
           
        
-            <div className="All-courses row row-cols-3">
+            
             {userCourse.map(Course=>{
                 return (
 
@@ -244,7 +244,7 @@ function HomeStudent() {
                                         <p className="text-muted">Mentors: { course.teacher}</p>
                                         <p className="text-muted">Description: { course.description}</p>
                                         <Link  to= {`/courseTeacher/${course._id}`} >
-                                            <button className="btn btn-primary btn-course">Edit Course</button>
+                                            <button className="btn btn-primary btn-course">Go to Course</button>
                             
                                         </Link>
                                 </div>
@@ -259,10 +259,8 @@ function HomeStudent() {
                     </>)
             })}
          
-            </div>
+            
           
-         
-            <div className="All-courses row row-cols-3">
              {userCourse.map(Course=>{
                 return (
 
@@ -290,7 +288,7 @@ function HomeStudent() {
                                         <p className="text-muted">Mentors: { course.teacher}</p>
                                         <p className="text-muted">Description: { course.description}</p>
                                         <Link  to= {`/courseTeacher/${course._id}`} >
-                                            <button className="btn btn-primary btn-course">Edit Course</button>
+                                            <button className="btn btn-primary btn-course">Go to Course</button>
                             
                                         </Link>
                                 </div>
@@ -304,8 +302,7 @@ function HomeStudent() {
                     })}
                     </>)
             })}
-            </div>
-             
+         
 
 
        
