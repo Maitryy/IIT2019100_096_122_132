@@ -193,5 +193,25 @@ router.post("/Announcement", async(req, res) => {
 });
 
 
+router.get("/getAnnouncements",  async(req, res) => {
+    try {
+       
+        const AllAnnouncemt= await Announcement.find();
+        if(!AllAnnouncemt)
+        res
+        .status(401)
+        .json({errorMessage: "No announcement exist"});
+        res.send(AllAnnouncemt);
+
+
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No announcement"});
+    }
+});
+
 
 module.exports = router;
