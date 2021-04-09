@@ -53,6 +53,8 @@ useEffect( () => {
         console.log(data2);
     }, [data2]);
 
+    console.log("Annoucement length ---", Announcement.length);
+
     const {userName} = useContext(userContext);
     return (
        
@@ -214,29 +216,34 @@ useEffect( () => {
                 <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80"/>
                 <div className="card-img-overlay">
                     <h1 className=" enroll-card-title card-title"> Announcements.. </h1>
-                    {Announcement.map(announcement=>{
-                return(
-                      <div>
 
-                      console.log(announcement);
-                            ( announcement.course === props.match.params.id ) && 
-                                <div className="jumbotron course">
-                                    <h1>{announcement.course}</h1>
-                                    <h1 className="display-4">{announcement.type}</h1>
-                                    <p className="lead">{announcement.description} </p>
-                                    <hr className="my-4"/>
-                                    
-                                    <div className='course_sudents row ml-2 mr-2'>
-                                    <Link  to= {`${announcement.link}`} >  <button className="btn btn-primary btn-lg btn-course">Link</button></Link>
-                {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
-            </div>
+                    </div>
+                    </div>
+                    {Announcement.map(announcement=>{
+                        console.log(announcement.course);
+                        return(
+                            <div>
+
+                                
+                                
+                                    { announcement.course === props.match.params.id  && 
+                                         
+                                        <div className="jumbotron course">
+                                            <p className="display-4">{announcement.type}</p>
+                                            <p className="lead">{announcement.description} </p>
+                                            <hr className="my-4"/>
+                                            
+                                            <div className='course_sudents row ml-2 mr-2'>
+                                                <a  href= {announcement.link} target="_blank" >  <button className="btn btn-primary btn-lg btn-course">Link</button></a>
+                        {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
+                                            </div>
           
 
        
             
         
                                 </div>
-                            
+                    }
                                 </div>
                         
                     
@@ -246,8 +253,8 @@ useEffect( () => {
             })}
 
 
-                </div>
-            </div>
+            
+            
             
             <div className="container-fluid">
                 <div className="row">

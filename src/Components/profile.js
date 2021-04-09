@@ -39,7 +39,8 @@ const {userPassword} = useContext(userContext);
                         {user === 'Student' &&
                           <div>
                           <li className="peer"> <i className="fas fa-adjust stu"></i> <strong>Semester: </strong> {userSemester}</li>
-                          </div> }
+                          </div> 
+                          }
                     </ul>
                 </div>
       </div>
