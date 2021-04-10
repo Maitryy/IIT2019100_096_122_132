@@ -3,6 +3,7 @@ const Course = require("../models/courseModel");
 const jwt = require("jsonwebtoken");
 const Student = require("../models/studentModel");
 const Announcement = require("../models/announcementModel");
+const Faq = require("../models/faqModel");
 
 router.post("/AddCoreCourse",async (req,res) => {
     try {
@@ -210,6 +211,50 @@ router.get("/getAnnouncements",  async(req, res) => {
         res
             .status(401)
             .json({errorMessage: "No announcement"});
+    }
+});
+
+router.post("/Faq", async(req, res) => {
+    try {
+        const{course_id,question,student} = req.body;
+        
+        newFaq = new Faq({
+            course: course_id,
+            question:question,
+            student:student
+            
+        });
+
+        await newFaq.save();
+
+        res.send(true);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
+
+
+router.get("/getFaq",  async(req, res) => {
+    try {
+       
+        const AllFaq= await Faq.find();
+        if(!AllFaq)
+        res
+        .status(401)
+        .json({errorMessage: "No faq exist"});
+        res.send(AllFaq);
+
+
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No Faq"});
     }
 });
 

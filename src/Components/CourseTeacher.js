@@ -15,6 +15,7 @@ function CourseTeacher(props) {
     const [data1,setData1] = useState([]);
     const [data2,setData2] = useState([]);
   const[Announcement,setAnnouncement]= useState([]);
+  const[Faq,setFaq]= useState([]);
 
   useEffect(async() => {
     const response = await fetch("http://localhost:5000/course/getAnnouncements");
@@ -24,6 +25,15 @@ function CourseTeacher(props) {
 useEffect( () => {
    
 }, [Announcement]);
+
+useEffect(async() => {
+    const response = await fetch("http://localhost:5000/course/getFaq");
+    const da = await response.json();
+    setFaq(da);
+}, []);
+useEffect( () => {
+   
+}, [Faq]);
 
     useEffect(async() => {
         const response = await fetch("http://localhost:5000/course/GetCoreCourses");
@@ -56,6 +66,7 @@ useEffect( () => {
     console.log("Annoucement length ---", Announcement.length);
 
     const {userName} = useContext(userContext);
+
     return (
        
         <div className=' container' >
@@ -322,8 +333,65 @@ useEffect( () => {
                     </div>
                 </div>
             </div>
+ 
+ 
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-12 mt-3">
+                        <div className="card">
+                            <div className="card-horizontal card-announcements">
+                            <div className="img-square-wrapper">
+                                    <img className="" src={image2} alt="Card image cap"/>
+                                </div>
+                                <div className="card-body">
+                                    <h4 className="card-title explore-title">Feedback and queries</h4>
+                                    <p className="card-text">Students can ask questions</p>
+                                    <a className="card-text text-muted" href="https://uigradients.com/#Shalala">
+                                    https://uigradients.com/#Shalala
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            { user==='Student' &&
+            <div>
+              <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
 
+                </div>
+
+        }
+
+{Faq.map(faq=>{
+                        console.log(faq.question);
+                        return(
+                            <div>
+
+                                
+                                
+                                    { faq.course === props.match.params.id  && 
+                                         
+                                        <div className="jumbotron course">
+                                            <p className="display-4">{faq.student}</p>
+                                            <p className="lead">{faq.question} </p>
+                                            <hr className="my-4"/>
+                                            
+                                           
+
+       
             
+        
+                                </div>
+                    }
+                                </div>
+                        
+                    
+                    
+                )
+            
+            })}
           </div>
     )
 }

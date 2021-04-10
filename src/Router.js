@@ -24,6 +24,7 @@ import EditProfile from './Auth/editprofile';
 import MyCourseStudent from './Components/MyCourseStudent';
 import Announcement from './Components/Announcement';
 import Test from './Components/Test';
+
 function Router() {
     const {loggedIn} = useContext(AuthContext);
     const {user} = useContext(userContext)
@@ -109,8 +110,11 @@ function Router() {
                                 <Route exact path = '/HomeStudent'>
                                     <HomeStudent />
                                 </Route>
+                                <Route path="/Faq/:id" render={(props) => <Faq {...props} />} />
                             </>
                         }
+                          <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+
 
                         { user === "Teacher" &&
                             <>
@@ -120,8 +124,10 @@ function Router() {
                                 <Route exact path = '/AddCourse'>
                                     <AddCourses />
                                 </Route>
-                                <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+                                
+                              
                                 <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
+                              
                                 <Route path="/test/:id" render={(props) => <Test {...props} />} />
                             </>
                         }
