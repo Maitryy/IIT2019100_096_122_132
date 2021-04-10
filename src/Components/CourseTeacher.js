@@ -76,7 +76,7 @@ useEffect( () => {
                       
                             ( course._id === props.match.params.id ) && 
                               <div>
-                                  console.log(course);
+                               
 
                                 <div className="jumbotron course">
                                     <h1 className="display-4">{course.name}</h1>
@@ -117,6 +117,13 @@ useEffect( () => {
                                     </div>
                                    
                                   }
+                                    { user==='Student' &&
+            <div>
+              <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
+
+                </div>
+
+        }
                                 </div>
                                 </div>
 </div> 
@@ -135,7 +142,7 @@ useEffect( () => {
                       
                             ( course._id === props.match.params.id ) && 
                                 <div className="jumbotron course">
-                                       console.log(course);
+                                      
                                     <h1 className="display-4">{course.name}</h1>
                                     <p className="lead">{course.description} </p>
                                     <hr className="my-4"/>
@@ -163,7 +170,13 @@ useEffect( () => {
             
             </div>
 }
+{ user==='Student' &&
+            <div>
+              <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
 
+                </div>
+
+        }
           
        
                                     
@@ -182,7 +195,7 @@ useEffect( () => {
                       
                             ( course._id === props.match.params.id ) && 
                                 <div className="jumbotron course">
-                                       console.log(course);
+                                      
                                     <h1 className="display-4">{course.name}</h1>
                                     <p className="lead">{course.description} </p>
                                     <hr className="my-4"/>
@@ -208,6 +221,13 @@ useEffect( () => {
             </div> 
             </Link>
             </div>}
+            { user==='Student' &&
+            <div>
+              <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
+
+                </div>
+
+        }
 
 
 
@@ -356,13 +376,10 @@ useEffect( () => {
                     </div>
                 </div>
             </div>
-            { user==='Student' &&
-            <div>
-              <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
-
-                </div>
-
-        }
+            <br></br>
+            <br></br>
+     
+          
 
 {Faq.map(faq=>{
                         console.log(faq.question);
@@ -372,11 +389,34 @@ useEffect( () => {
                                 
                                 
                                     { faq.course === props.match.params.id  && 
-                                         
-                                        <div className="jumbotron course">
-                                            <p className="display-4">{faq.student}</p>
-                                            <p className="lead">{faq.question} </p>
-                                            <hr className="my-4"/>
+                                          <div className="jumbotron list-stu">
+                                         <ul>
+                    
+                                         <li className="peer"><strong>Asked by: </strong>{faq.student}  </li>
+                                         <li className="peer"> <i className="fas fa-user-circle stu "></i><strong>Q: </strong>{faq.question} </li>
+                                       
+                                          {
+                                              faq.answer.map(ans=>{
+                                                  return(
+
+                                                  <div>
+                                               <ul>
+                                               <li className="peer"> <i className="fas fa-user-circle stu "></i><strong>A: </strong>{ans} </li>
+                                        
+                                               </ul>
+                                               </div>
+                                                  )
+                                              })
+                                          }
+                                          </ul>
+
+                                            { user==='Teacher' &&
+            <div>
+              <Link  to= {`/AnswerFaq/${faq._id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Answer</button></Link>
+
+                </div>
+
+        }
                                             
                                            
 
@@ -385,10 +425,11 @@ useEffect( () => {
         
                                 </div>
                     }
+                           <br></br>
+                    
                                 </div>
                         
-                    
-                    
+                 
                 )
             
             })}

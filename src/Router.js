@@ -12,6 +12,7 @@ import HomeStudent from './Components/HomeStudent';
 import Peers from './Components/peers';
 import Grades from './Components/grades';
 import Faq from './Components/Faq';
+import AnswerFaq from './Components/AnswerFaq';
 import CourseTeacher from './Components/CourseTeacher';
 import userContext from './Context/UserContext';
 import AddCourses from './Courses/AddCourses';
@@ -123,7 +124,7 @@ function Router() {
                                     <AddCourses />
                                 </Route>
                                 
-                              
+                                <Route path="/AnswerFaq/:id" render={(props) => <AnswerFaq {...props} />} />
                                 <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
                               
                                 <Route path="/test/:id" render={(props) => <Test {...props} />} />

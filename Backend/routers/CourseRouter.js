@@ -236,7 +236,22 @@ router.post("/Faq", async(req, res) => {
             .json({errorMessage: "Unauthorised"});
     }
 });
+router.post("/AnswerFaq", async(req, res) => {
+    try {
+        const{course_id,answer} = req.body;
+      
+        await Faq.findByIdAndUpdate({_id: course_id}, {$push: {answer: answer}} );
 
+     
+        
+        res.send();         
+        
+    } catch (err) {
+        console.error(err);
+        res.json(false);        
+    };
+       
+});
 
 router.get("/getFaq",  async(req, res) => {
     try {
