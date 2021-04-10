@@ -50,9 +50,7 @@ function Router() {
                 </Route>        
 
 
-              <Route path='/Faq'>
-                  <Faq />
-              </Route>
+              
                 {/* <Route exact path = '/courseTeacher'>
                     <CourseTeacher />
                 </Route> */}
