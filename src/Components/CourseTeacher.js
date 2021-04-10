@@ -12,8 +12,7 @@ import image4 from '../images/clndr-01.png'
 function CourseTeacher(props) {
     const {user} = useContext(userContext);
     const [data,setData] = useState([]);
-    const [data1,setData1] = useState([]);
-    const [data2,setData2] = useState([]);
+
   const[Announcement,setAnnouncement]= useState([]);
   const[Faq,setFaq]= useState([]);
 
@@ -35,33 +34,15 @@ useEffect( () => {
    
 }, [Faq]);
 
-    useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetCoreCourses");
-        const da = await response.json();
-        setData(da);
-    }, []);
-    useEffect( () => {
-        console.log(data);
-    }, [data]);
+useEffect(async() => {
+    const response = await fetch("http://localhost:5000/course/GetAllCourses");
+    const da = await response.json();
+    setData(da);
+}, []);
+useEffect( () => {
+    console.log(data);
+}, [data]);
 
-  
-    useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetTechnicalElectiveCourses");
-        const da = await response.json();
-        setData1(da);
-    }, []);
-    useEffect( () => {
-        console.log(data1);
-    }, [data1]);
-
-    useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
-        const da = await response.json();
-        setData2(da);
-    }, []);
-    useEffect( () => {
-        console.log(data2);
-    }, [data2]);
 
     console.log("Annoucement length ---", Announcement.length);
 
@@ -137,111 +118,7 @@ useEffect( () => {
 
 
             
-{data1.map(course=>{
-                return(
-                      
-                            ( course._id === props.match.params.id ) && 
-                                <div className="jumbotron course">
-                                      
-                                    <h1 className="display-4">{course.name}</h1>
-                                    <p className="lead">{course.description} </p>
-                                    <hr className="my-4"/>
-                                    <strong>
-                                    <p>Course credits : {course.credits}</p>
-                                    <p>Mentors: {course.teacher}</p>
-                                    </strong>
-                                
-                                    <div className='course_sudents row ml-2 mr-2'>
-                                    <Link  to= {`/peers/${course._id}`} ><button   className="btn btn-primary btn-lg btn-course">Student's List</button></Link>
-                {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
-            </div>
-            <br/>
-            { user === 'Teacher' &&
-                          <div>
-            <div className='course_doubts row ml-2 mr-2'>
-            <Link  to= {`/Announcement/${course._id}`} > <button className="btn btn-primary btn-lg btn-course">Post Announcements</button></Link>
-            </div>
-            <br/>
-            <Link  to= {`/test/${course._id}`} >  
-            <div className='course_doubts row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Take Test</button>
-            </div> 
-            </Link>
-            
-            </div>
-}
-{ user==='Student' &&
-            <div>
-              <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
 
-                </div>
-
-        }
-          
-       
-                                    
-                                </div>
-                            
-                        
-                        
-                    
-                    
-                )
-            })}
-
-            
-{data2.map(course=>{
-                return(
-                      
-                            ( course._id === props.match.params.id ) && 
-                                <div className="jumbotron course">
-                                      
-                                    <h1 className="display-4">{course.name}</h1>
-                                    <p className="lead">{course.description} </p>
-                                    <hr className="my-4"/>
-                                    <strong>
-                                    <p>Course credits : {course.credits}</p>
-                                    <p>Mentors: {course.teacher}</p>
-                                    </strong>
-                                    
-                                    <div className='course_sudents row ml-2 mr-2'>
-                                    <Link  to= {`/peers/${course._id}`} >  <button className="btn btn-primary btn-lg btn-course">Student's List</button></Link>
-                {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
-            </div>
-            <br/>
-            { user === 'Teacher' &&
-                          <div>
-            <div className='course_doubts row ml-2 mr-2'>
-            <Link  to= {`/Announcement/${course._id}`} >   <button className="btn btn-primary btn-lg btn-course">Post Announcements</button></Link>
-            </div>
-            <br/>
-            <Link  to= {`/test/${course._id}`} >  
-            <div className='course_doubts row ml-2 mr-2'>
-                <button className="btn btn-primary btn-lg btn-course">Take Test</button>
-            </div> 
-            </Link>
-            </div>}
-            { user==='Student' &&
-            <div>
-              <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
-
-                </div>
-
-        }
-
-
-
-       
-            
-        
-                                </div>
-                            
-                        
-                        
-                    
-                    
-                )
-            })}
 
 <div className="card bg-dark text-white enroll-card">
                 <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80"/>
