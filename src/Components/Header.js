@@ -14,38 +14,7 @@ function Header() {
     const [dropdown, setDropdown] = useState(false);
     const handleDropdown = () => setDropdown(!dropdown)
     
-    const [data,setData] = useState([]);
-    const [data1,setData1] = useState([]);
-    const [data2,setData2] = useState([]);
-    useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetCoreCourses");
-        const da = await response.json();
-        setData(da);
-    }, []);
-    useEffect( () => {
-        //console.log(data);
-    }, [data]);
-
-  
-    useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetTechnicalElectiveCourses");
-        const da = await response.json();
-        setData1(da);
-    }, []);
-    useEffect( () => {
-        //console.log(data1);
-    }, [data1]);
-
-    useEffect(async() => {
-        const response = await fetch("http://localhost:5000/course/GetNonTechnicalElectiveCourses");
-        const da = await response.json();
-        setData2(da);
-    }, []);
-    useEffect( () => {
-        //console.log(data2);
-    }, [data2]);
-
-      return (
+    return (
         <nav className = 'navbar header  navbar-collapse sticky-top'>
         <div className="container">
           {!loggedIn && (
