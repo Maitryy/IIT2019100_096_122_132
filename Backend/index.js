@@ -24,4 +24,6 @@ app.use("/auth", require("./routers/UserRouter"));
 
 app.use("/course", require("./routers/CourseRouter"));
 
+app.use("/test", require("./routers/TestRouter"));
+
 app.listen(PORT, () => console.log('Server started on port:'+ PORT));

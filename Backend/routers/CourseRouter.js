@@ -273,5 +273,19 @@ router.get("/getFaq",  async(req, res) => {
     }
 });
 
+router.get("/ACourse", async (req,res) => {
+    try {
+        const {course_ID} = req.body;
+        const c = await Course.findById(course_ID);
+        res.send(c);
+        
+    } catch (err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No Faq"});
+    }
+})
+
 
 module.exports = router;
