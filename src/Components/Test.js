@@ -28,7 +28,7 @@ function Test(props) {
 
             const newFaq = {
                 course_id,
-                testName,
+                test,
                 question,
                 dueTime
              
@@ -57,7 +57,7 @@ function Test(props) {
                             type='string' 
                             placeholder = 'test name' 
                             onChange = {(e) => setTest(e.target.value)}
-                            value= {testName}
+                            value= {test}
                         />
                          </div>
                       
@@ -90,10 +90,10 @@ function Test(props) {
                        
 
                                        
-                        <button className="btn btn-course" type = 'submit'>Submit</button>
+                        <button className="btn btn-course" type = 'submit'>Add Question</button>
                     </form>       
         </div>
     )
 }
 
-export default Faq
+export default Test
