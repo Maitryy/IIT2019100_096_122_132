@@ -8,7 +8,7 @@ function Announcement(props) {
     const [link,setLink] = useState();
 
     const history = useHistory();
-    
+   
      async function createAnnouncement(e){
          e.preventDefault();
 

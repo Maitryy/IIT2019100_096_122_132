@@ -103,16 +103,18 @@ function Router() {
                             <MyCourseStudent />
                         </Route>
                         <Route path="/peers/:id" render={(props) => <Peers  {...props} />} />
-
+                        <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+                        
                         { user === "Student" &&
                             <>
                                 <Route exact path = '/HomeStudent'>
                                     <HomeStudent />
                                 </Route>
                                 <Route path="/Faq/:id" render={(props) => <Faq {...props} />} />
+
                             </>
                         }
-                          <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+                       
 
 
                         { user === "Teacher" &&
@@ -128,6 +130,7 @@ function Router() {
                                 <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
                               
                                 <Route path="/test/:id" render={(props) => <Test {...props} />} />
+                               
                             </>
                         }
 

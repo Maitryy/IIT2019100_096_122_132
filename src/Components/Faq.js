@@ -72,8 +72,7 @@ import userContext from '../Context/UserContext'
 
 function Faq(props) {
     const [question,setQuestion] = useState();
-    
-  
+ 
     const history = useHistory();
     const {userName} = useContext(userContext);
    
