@@ -1,13 +1,14 @@
 const router =  require("express").Router();
+const Question = require("../models/questionModel");
 const Test = require("../models/testModel");
 
 
 
 router.post("/NewTest", async(req, res) => {
     try {
-        const{course_id,question,testName,dueTime} = req.body;
+        const{course_id,quest,testName,dueTime} = req.body;
+        const num = 1;
 
-        
         newTest = new Test({
             course: course_id,
             testName: testName,
@@ -15,10 +16,21 @@ router.post("/NewTest", async(req, res) => {
         });
 
         await newTest.save();
-        const num = 1;
 
-        await newTest.update( {$push: {question: {quesNo: {num}, ques: {question}}}} );
+        const test_ID = newTest._id;
 
+        firstQuestion = new Question({
+            testID: test_ID,
+            questionNumber: num,
+            ques: quest
+        });
+
+        await firstQuestion.save();
+
+        const quesID = firstQuestion._id;
+        
+        await Test.findOneAndUpdate({_id: test_ID},{$push: {question: quesID}});
+       
         res.send(newTest._id);
 
     }catch(err) {
@@ -31,9 +43,19 @@ router.post("/NewTest", async(req, res) => {
 
 router.post("/AddQuestions", async(req,res) => {
     try {
-        const {test_ID,num, newQuestion} = req.body;
+        const {test_ID,questionNum, quest} = req.body;
 
-        await Test.findByIdAndUpdate({test_ID},{$push: {question: {quesNo: {num}, ques: {newQuestion}}}});
+        newQuestion = new Question({
+            testID: test_ID,
+            questionNumber: questionNum,
+            ques: quest
+        });
+
+        await newQuestion.save();
+
+        const quesID = newQuestion._id;
+
+        await Test.findOneAndUpdate({_id: test_ID},{$push: {question: quesID}});
 
         res.send(true);
         
