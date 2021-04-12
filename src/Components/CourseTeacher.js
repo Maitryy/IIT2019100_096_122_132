@@ -15,7 +15,16 @@ function CourseTeacher(props) {
 
   const[Announcement,setAnnouncement]= useState([]);
   const[Faq,setFaq]= useState([]);
+  const[Test,setTest]=useState([]);
 
+ useEffect(async() => {
+    const response = await fetch("http://localhost:5000/test/getTest");
+    const da = await response.json();
+    setTest(da);
+}, []);
+useEffect( () => {
+   
+}, [Test]);
   useEffect(async() => {
     const response = await fetch("http://localhost:5000/course/getAnnouncements");
     const da = await response.json();
@@ -45,6 +54,7 @@ useEffect( () => {
 
 
     console.log("Annoucement length ---", Announcement.length);
+    console.log("test length ---", Test.length);
 
     const {userName} = useContext(userContext);
 
@@ -163,7 +173,51 @@ useEffect( () => {
 
             
             
+<div className="container-fluid">
+                <div className="row">
+                    <div className="col-12 mt-3">
+                        <div className="card">
+                            <div className="card-horizontal card-announcements">
+                            <div className="img-square-wrapper">
+                                    <img className="" src={image3} alt="Card image cap"/>
+                                </div>
+                                <div className="card-body">
+                                    <h4 className="card-title explore-title">Test</h4>
+                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a className="card-text text-muted" href="https://uigradients.com/#Shalala">
+                                    https://uigradients.com/#Shalala
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {Test.map(test=>{
+                      
+                        return(
+                            
+                    (test.course === props.match.params.id)  && 
+                            <div>
+
+                                         
+                                
+                               
+              <Link  to= {`/viewtest/${test._id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Test Links </button></Link>
+
+                </div>
+
+    
+                                            
+                                           
+
+       
+                    
+                )
             
+            })}
+
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 mt-3">

@@ -25,6 +25,7 @@ import EditProfile from './Auth/editprofile';
 import MyCourseStudent from './Components/MyCourseStudent';
 import Announcement from './Components/Announcement';
 import Test from './Components/Test';
+import ViewTest from './Components/ViewTest';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -104,6 +105,8 @@ function Router() {
                         </Route>
                         <Route path="/peers/:id" render={(props) => <Peers  {...props} />} />
                         <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
+
+                        <Route path="/viewtest/:id" render={(props) => <ViewTest {...props} />} />
                         
                         { user === "Student" &&
                             <>

@@ -67,7 +67,44 @@ router.post("/AddQuestions", async(req,res) => {
     }
 
 });
+router.get("/getTest",  async(req, res) => {
+    try {
+       
+        const AllTest= await Test.find();
+        if(!AllTest)
+        res
+        .status(401)
+        .json({errorMessage: "No test exist"});
+        res.send(AllTest);
 
+
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No Test"});
+    }
+});
+router.get("/getQuestion",  async(req, res) => {
+    try {
+       
+        const AllTest= await Question.find();
+        if(!AllTest)
+        res
+        .status(401)
+        .json({errorMessage: "No question exist"});
+        res.send(AllTest);
+
+
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No Question"});
+    }
+});
 router.get("/Test", async(req,res) => {
     try {
        const {test_ID} = req.body;
