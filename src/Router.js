@@ -24,6 +24,7 @@ import MyCourses from './Components/MyCourses';
 import EditProfile from './Auth/editprofile';
 import MyCourseStudent from './Components/MyCourseStudent';
 import Announcement from './Components/Announcement';
+import Schedule from './Components/schedule';
 import Test from './Components/Test';
 import ViewTest from './Components/ViewTest';
 
@@ -80,7 +81,11 @@ function Router() {
                             <Profile />
                         </Route>
 
+                        {/* <Route exact path="/Schedule/:id" render={(props) => <Schedule {...props} />} /> */}
+                        <Route exact path="/Schedule/:id"  >
 
+                        <Schedule />
+                        </Route>
 
                         <Route exact path = '/courseid'>
                             <Course />
@@ -131,6 +136,7 @@ function Router() {
                                 
                                 <Route path="/AnswerFaq/:id" render={(props) => <AnswerFaq {...props} />} />
                                 <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
+                                
                               
                                 <Route path="/test/:id" render={(props) => <Test {...props} />} />
                                

@@ -14,6 +14,7 @@ function CourseTeacher(props) {
     const [data,setData] = useState([]);
 
   const[Announcement,setAnnouncement]= useState([]);
+  const[Schedule,setSchedule]= useState([]);
   const[Faq,setFaq]= useState([]);
   const[Test,setTest]=useState([]);
 
@@ -33,6 +34,12 @@ useEffect( () => {
 useEffect( () => {
    
 }, [Announcement]);
+
+useEffect(async() => {
+    const response = await fetch("http://localhost:5000/course/getSchedule");
+    const da = await response.json();
+    setSchedule(da);
+}, []);
 
 useEffect(async() => {
     const response = await fetch("http://localhost:5000/course/getFaq");
@@ -83,7 +90,7 @@ useEffect( () => {
                                 <div className = "row">
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
                                     {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
-                                    <Link to="#" ><img className = "calendar" src={image4} alt=""/> </Link>
+                                    <Link to={`/Schdeule/${course._id}`} ><img className = "calendar" src={image4} alt=""/> </Link>
                                     </div>
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12 course-btns">
                                    

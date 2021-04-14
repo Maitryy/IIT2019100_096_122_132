@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const Student = require("../models/studentModel");
 const Announcement = require("../models/announcementModel");
 const Faq = require("../models/faqModel");
+const Schedule = require("../models/scheduleModel");
 
 router.post("/AddCoreCourse",async (req,res) => {
     try {
@@ -193,6 +194,30 @@ router.post("/Announcement", async(req, res) => {
     }
 });
 
+router.post("/Schedule", async(req, res) => {
+    try {
+        const{month,classnum,topics,days,course_id} = req.body;
+        
+        newSchedule = new Schedule({
+            course: course_id,
+            month: month,
+            classnum: classnum,
+            topics: topics,
+            days: days,
+        });
+
+        await newSchedule.save();
+
+        res.send(true);
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
+
 
 router.get("/getAnnouncements",  async(req, res) => {
     try {
@@ -211,6 +236,27 @@ router.get("/getAnnouncements",  async(req, res) => {
         res
             .status(401)
             .json({errorMessage: "No announcement"});
+    }
+});
+
+
+router.get("/getSchedule",  async(req, res) => {
+    try {
+       
+        const Fullschedule= await Schedule.find();
+        if(!Fullschedule)
+        res
+        .status(401)
+        .json({errorMessage: "No schedule exist"});
+        res.send(Fullschedule);
+
+
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No schedule"});
     }
 });
 
