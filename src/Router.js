@@ -80,12 +80,12 @@ function Router() {
                         <Route exact path = '/profile'>
                             <Profile />
                         </Route>
-
-                        {/* <Route exact path="/Schedule/:id" render={(props) => <Schedule {...props} />} /> */}
-                        <Route exact path="/Schedule/:id"  >
+                        
+                        
+                        {/* <Route path="/Schedule/:id"  >
 
                         <Schedule />
-                        </Route>
+                        </Route> */}
 
                         <Route exact path = '/courseid'>
                             <Course />
@@ -136,7 +136,7 @@ function Router() {
                                 
                                 <Route path="/AnswerFaq/:id" render={(props) => <AnswerFaq {...props} />} />
                                 <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
-                                
+                                <Route path="/Schedule/:id" render={(props) => <Schedule {...props} />} />
                               
                                 <Route path="/test/:id" render={(props) => <Test {...props} />} />
                                

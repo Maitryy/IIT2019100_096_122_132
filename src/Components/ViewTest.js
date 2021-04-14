@@ -57,34 +57,26 @@ console.log("question length===", Question.length);
     
                             
                         </div>
-    
-                
-            )
+           )
             
         })}
 
 {Question.map(qu=>{
                                                      
-                                                          return(
-                                                            (qu.testID ===  props.match.params.id) && 
-                                                               
-                                                              <div>
-                                             <ul>
-                                                 
-                                               <li className="peer"> <strong>Ques no: {qu.questionNumber} </strong> {qu.ques} ?</li>
-                                              <button  className="btn btn-primary btn-lg btn-course btn-peers">Attemp the question </button>
-                                        
-                                               </ul>
-                                                                  </div>
-
-                                                        
-                                                        )})}
-
-                                                    
-                                                       
-                                             
-                                             
-        </div>
+    return(
+       (qu.testID ===  props.match.params.id) && 
+          
+         <div>
+           <ul>
+               
+             <li className="peer"> <strong>Ques no: {qu.questionNumber} </strong> {qu.ques} ?</li>
+             <button  className="btn btn-primary btn-lg btn-course btn-peers">Attemp the question </button>
+       
+             </ul>
+         </div>
+   
+   )})}                                                    
+      </div>
         )}
 
 export default ViewTest

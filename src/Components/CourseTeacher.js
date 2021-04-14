@@ -90,7 +90,7 @@ useEffect( () => {
                                 <div className = "row">
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
                                     {/* <button className="btn btn-primary btn-lg btn-course btn-cal">Edit Calendar</button> */}
-                                    <Link to={`/Schdeule/${course._id}`} ><img className = "calendar" src={image4} alt=""/> </Link>
+                                    <Link to={`/Schedule/${course._id}`} ><img className = "calendar" src={image4} alt=""/> </Link>
                                     </div>
                                     <div className="col col-lg-6 col-md-6 col-sm-12 col-12 course-btns">
                                    
