@@ -27,6 +27,7 @@ import Announcement from './Components/Announcement';
 import Schedule from './Components/schedule';
 import Test from './Components/Test';
 import ViewTest from './Components/ViewTest';
+import Answer from './Components/Answer';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -112,6 +113,7 @@ function Router() {
                         <Route path="/courseTeacher/:id" render={(props) => <CourseTeacher  {...props} />} />
 
                         <Route path="/viewtest/:id" render={(props) => <ViewTest {...props} />} />
+                        <Route path="/Answer/:id/:id2" render={(props) => <Answer {...props}/>} />
                         
                         { user === "Student" &&
                             <>
