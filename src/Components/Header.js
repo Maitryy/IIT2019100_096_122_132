@@ -9,10 +9,24 @@ import './Header.css';
 function Header() {
     const {loggedIn} = useContext(AuthContext);
     const {user} = useContext(userContext);
-    
-
+    const [data,setData] = useState([]);
+    const [searchTerm,setSearchTerm] = useState([]);
+  
     const [dropdown, setDropdown] = useState(false);
+    const [Dropdown, setdropdown] = useState(false);
+    useEffect(async() => {
+      const response = await fetch("http://localhost:5000/course/GetAllCourses");
+      const da = await response.json();
+      setData(da);
+  }, []);
+  useEffect( () => {
+      console.log(data);
+  }, [data]);
+  console.log("data  ", data);
+
+
     const handleDropdown = () => setDropdown(!dropdown)
+    const handledropdown = () => setdropdown(!Dropdown)
     
     return (
         <nav className = 'navbar header  navbar-collapse sticky-top'>
@@ -65,7 +79,36 @@ function Header() {
               </div>
 
               <div className = 'header-search'>
-                  <input type='text' placeholder='Search Course'/>  
+              <button className="nav-icon stu" onClick = {handledropdown}>  <input type='text' placeholder='Search Course' onChange={event => {setSearchTerm(event.target.value) }}/> </button> 
+                
+                  {Dropdown && 
+                  <>
+                   <ul onClick={handledropdown} className = {Dropdown? 'dropdown-active drop':'dropdown-inactive'}>
+                  {
+                    data.filter((val)=>
+                    {
+                      if(searchTerm == "")
+                      {
+                        return val
+                      }
+                      else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                        return val
+                      }
+                    })
+                    .map((val,key) =>{
+                      return(
+                        <div className="searching" key={key}>
+                          <li className = 'dropdown-item'  ><button ><Link  to= {`/courseTeacher/${val._id}`}  >  {val.name}</Link></button> </li>
+                          </div>
+                      )
+
+                    })
+                 
+                  
+                  }
+                  </ul>
+                  </>
+}
                    
                   
               </div>
@@ -121,8 +164,36 @@ function Header() {
 
               <div className = 'header-search'>
                 
-              <input type='text' placeholder='Search Course'/>  
-                   
+              <button className="nav-icon stu" onClick = {handledropdown}>  <input type='text' placeholder='Search Course' onChange={event => {setSearchTerm(event.target.value) }}/> </button> 
+                
+                {Dropdown && 
+                <>
+                 <ul onClick={handledropdown} className = {Dropdown? 'dropdown-active drop':'dropdown-inactive'}>
+                {
+                  data.filter((val)=>
+                  {
+                    if(searchTerm == "")
+                    {
+                      return val
+                    }
+                    else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                      return val
+                    }
+                  })
+                  .map((val,key) =>{
+                    return(
+                      <div className="searching" key={key}>
+                        <li className = 'dropdown-item'  ><button ><Link  to= {`/courseTeacher/${val._id}`}  >  {val.name}</Link></button> </li>
+                        </div>
+                    )
+
+                  })
+               
+                
+                }
+                </ul>
+                </>
+}
                   
               </div>
 
