@@ -260,4 +260,49 @@ router.get("/GetAllUsers", async (req,res) => {
     }
 });
 
+// router.post('/update', async (req, res) => {
+//     const token = req.body.token
+//     if(!token) res.status(403).json("Permission denied.")
+//     else{
+//         User.findOne({token: token, email: req.body.email}, (err, user) => {
+//             if(err) res.status(500).json("Something went wrong.")
+//             else if(!user) res.status(404).json("User not found.")
+//             else{
+//                 const token = generateToken();
+//                 user.token = token;
+//                 user.email = req.body.email;
+//                 user.username = req.body.username;
+//                 user.save()
+//                 .then(() => res.json({message:"Updated", token: token}))
+//                 .catch(err => res.status(500).json(err));
+//             }
+//         })
+//     }
+// })
+
+// //update user password
+// router.post('/password/update', jsonParser, (req, res) => {
+//     const token = req.body.token;
+//     if(!token) res.status(403).json("Permission denied.")
+//     else{
+//         User.findOne({token: token, email: req.body.email}, (err, user) => {
+//             if(err) res.status(500).json("Something went wrong.")
+//             else if(!user) res.status(404).json("User not found.")
+//             else{
+//                 user.comparePassword(req.body.oldpassword, (err, isMatch) => {
+//                     if(err) res.status(500).json("Error is occured.")
+//                     if(isMatch){
+//                         const token = generateToken();
+//                         user.token = token;
+//                         user.password = req.body.password;
+//                         user.save()
+//                         .then(() => res.json({message: "Success", token}))
+//                         .catch(err => res.status(400).json(err))
+//                     }else res.status(400).json("Wrong password.")
+//                 })
+//             }
+//         })
+//     }
+// })
+
 module.exports = router;
