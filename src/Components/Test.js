@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, {useState} from 'react'
 import { useHistory } from 'react-router';
+import './ViewTest.css'
+import '../Auth/Register.css'
+import '../Courses/AddCourse.css';
+import '../bootstrap/bootstrap.css'
 
 function Test(props) {
     const [testName,setTest] = useState();
@@ -115,18 +119,23 @@ function Test(props) {
             }
             {xyz &&!abc && 
             <>
-                <div> Add more questions?</div>
-                <button onClick = {Add}>Yes</button>
-                <button onClick = {previousPage}>No</button>
+                <div className="question">
+                <h1 className="headq"> Add more questions?</h1>
+                <div className="questions">
+                <button className = "btn btn-lg btn-q btn-course" onClick = {Add}>Yes</button>
+                <button className = "btn btn-lg btn-q btn-course" onClick = {previousPage}>No</button>
+                </div>
+                </div>
             </>
             }
             {xyz && abc &&
             <>
-                <form onSubmit = {addQuestion}>
-                    <div>Question Number: {questionNum}</div>
-                    <div>
+                <form className = "create" onSubmit = {addQuestion}>
+                    <h2 className="number">Question Number: {questionNum}</h2>
+                    <div className="props">
                         <label>Question Text</label>
-                        <input 
+                        <textarea
+                             
                             type='String' 
                             placeholder = 'Question Text' 
                             onChange = {(e) => setQuestion1(e.target.value)}
@@ -142,7 +151,7 @@ function Test(props) {
                             value= {maxMarks}
                         />
                     </div> 
-                    <button className="btn btn-course" type = 'submit'>Add Question</button>
+                    <button className="btn btn-course btn-q" type = 'submit'>Add Question</button>
                 </form>
             </>            
             }

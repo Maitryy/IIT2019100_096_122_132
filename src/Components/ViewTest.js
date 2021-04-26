@@ -2,6 +2,8 @@ import React, { useContext , useEffect, useState }  from 'react'
 import '../bootstrap/bootstrap.css'
 import './Course.css'
 import './CourseTeacher.css'
+import './ViewTest.css'
+import '../Courses/AddCourse.css';
 import { Link } from 'react-router-dom';
 import userContext from '../Context/UserContext';
 
@@ -45,7 +47,7 @@ return (
     {Question.map(qu=>{                                                   
       return(
          (qu.testID ===  props.match.params.id) &&   
-          <div>
+          <div className="questions">
             <ul>   
               <li className="peer"> <strong>Ques no: {qu.questionNumber} </strong>
               <strong>Max Marks: {qu.maxMarks}</strong> {qu.ques} ?</li>
