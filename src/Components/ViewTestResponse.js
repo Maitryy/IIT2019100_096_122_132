@@ -38,7 +38,7 @@ function ViewTestResponse(props) {
                                     </>
                                     }
                                     {space}
-                                    Link 
+                                    <Link to = {`/StudentResponse/${te.test}/${te.student}`}><button>Review Test</button></Link>
                                 </li>
                         </>
                 )})}
