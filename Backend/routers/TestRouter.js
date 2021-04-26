@@ -229,7 +229,6 @@ router.get("/StudentResponse/:id/:id2",  async(req, res) => {
         const q = AllTest.question;
         const len2 = q.length;
         var quesArr = new Array;
-        //var ansArr = new Array;
         var ii = 0;
         for(i=0;i<len;i++)
         {
@@ -239,24 +238,24 @@ router.get("/StudentResponse/:id/:id2",  async(req, res) => {
                 const y = await Answer.findById(ans[ii]);
                 if(x.questionNumber === y.questionNumber)
                 {
-                    const z = {ques: x.ques, ans: y.ans};
+                    const z = {ques: x.ques, ans: y.ans, marks: x.maxMarks};
                     quesArr.push(z);
                     ii++;
                 }
                 else if(x.questionNumber < y.questionNumber)
                 {
-                    const z = {ques: x.ques, ans: " "};
+                    const z = {ques: x.ques, ans: " ", marks: x.maxMarks};
                     quesArr.push(z); 
                 }
             }
             else
             {
                 const x = await Question.findById(ques[i]);
-                const z = {ques: x.ques, ans: " "};
+                const z = {ques: x.ques, ans: " ", marks: x.maxMarks};
                 quesArr.push(z);
             }                        
         }
-        const sending = {Arr: quesArr};
+        const sending = {id:AllTest._id , Arr: quesArr};
         res.send(sending);
     }
     catch(err) {
@@ -266,5 +265,27 @@ router.get("/StudentResponse/:id/:id2",  async(req, res) => {
             .json({errorMessage: "No Test"});
     }
 });
+
+router.post("/UpdateMarks",  async(req, res) => {
+    try {
+        const x = req.body;
+        const AllTest= await StudentTest.findById(x.id);
+        if(!AllTest)
+        res
+        .status(401)
+        .json({errorMessage: "No test exist"});
+
+        await AllTest.update({$set: {marks: x.marks}});  
+        res.send();     
+        
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No Test"});
+    }
+});
+
 
 module.exports = router;
