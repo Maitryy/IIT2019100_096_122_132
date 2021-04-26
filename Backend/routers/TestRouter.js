@@ -209,4 +209,62 @@ router.get("/getTestStudent",  async(req, res) => {
     }
 });
 
+router.get("/StudentResponse/:id/:id2",  async(req, res) => {
+    try {
+        test = req.params.id;
+        student = req.params.id2;
+        const AllTest= await StudentTest.findOne({test: test, student: student});
+        if(!AllTest)
+        res
+        .status(401)
+        .json({errorMessage: "No test exist"});
+        const t = await Test.findById(test);
+        if(!t)
+        res
+        .status(401)
+        .json({errorMessage: "No test exist"});
+        const ques = t.question;
+        const len = ques.length;
+        const ans = AllTest.answer;
+        const q = AllTest.question;
+        const len2 = q.length;
+        var quesArr = new Array;
+        //var ansArr = new Array;
+        var ii = 0;
+        for(i=0;i<len;i++)
+        {
+            if(ii<len2)
+            {
+                const x = await Question.findById(ques[i]);
+                const y = await Answer.findById(ans[ii]);
+                if(x.questionNumber === y.questionNumber)
+                {
+                    const z = {ques: x.ques, ans: y.ans};
+                    quesArr.push(z);
+                    ii++;
+                }
+                else if(x.questionNumber < y.questionNumber)
+                {
+                    const z = {ques: x.ques, ans: " "};
+                    quesArr.push(z); 
+                }
+            }
+            else
+            {
+                const x = await Question.findById(ques[i]);
+                const z = {ques: x.ques, ans: " "};
+                quesArr.push(z);
+            }                        
+        }
+        const sending = {Arr: quesArr};
+        res.send(sending);
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No Test"});
+    }
+});
+
 module.exports = router;
