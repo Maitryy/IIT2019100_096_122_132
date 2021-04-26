@@ -30,6 +30,7 @@ import ViewTest from './Components/ViewTest';
 import Answer from './Components/Answer';
 import ViewTestResponse from './Components/ViewTestResponse';
 import StudentResponse from './Components/StudentResponse';
+import ViewSchedule from './Components/ViewSchedule';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -123,7 +124,7 @@ function Router() {
                                     <HomeStudent />
                                 </Route>
                                 <Route path="/Faq/:id" render={(props) => <Faq {...props} />} />
-
+                                <Route path="/ViewSchedule/:id" render={(props) => <ViewSchedule {...props} />} />
                             </>
                         }
                        

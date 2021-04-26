@@ -36,7 +36,6 @@ function Schedule(props) {
     }, [])
     return (
         <div>
-
              <form className = "create"
                         onSubmit = {createSchedule}
                     >
