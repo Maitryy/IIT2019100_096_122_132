@@ -37,8 +37,9 @@ function Answer(props) {
                 return(
                     (q._id === props.match.params.id)&&
                     <>
-                        <h3>{q.questionNumber}</h3>
-                        <h2>{q.ques}</h2>
+                        <h3>Question Number: {q.questionNumber}</h3>
+                        <h3>Max Marks: {q.maxMarks}</h3>
+                        <h3>Ques: {q.ques}</h3>
                         <form onSubmit = {() => upload(q.questionNumber,q._id)}>
                             <input 
                                 type='string'    

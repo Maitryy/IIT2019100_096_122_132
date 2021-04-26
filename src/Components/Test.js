@@ -9,6 +9,7 @@ function Test(props) {
     const [quest,setQuestion1] = useState();
     const [xyz,setXyz]= useState(false);
     const [test_ID, setTestId]= useState();
+    const [maxMarks, setMaxMarks]= useState(1);
     const history = useHistory();
     const [abc,setabc]= useState(false);
    
@@ -20,14 +21,15 @@ function Test(props) {
                 course_id,
                 quest,
                 testName,
-                dueTime
-             
+                dueTime,
+                maxMarks             
             };
             const test_id=await axios.post("http://localhost:5000/test/NewTest",newTest );
             console.log(test_id);
             setTestId(test_id.data);
             setXyz(true);
             setQuestion1(null);
+            setMaxMarks(1);
 
         } catch (err) {
          console.error(err);
@@ -40,11 +42,13 @@ function Test(props) {
             const newQuestion = {
                 test_ID,
                 questionNum,
-                quest
+                quest, 
+                maxMarks
             }
             await axios.post("http://localhost:5000/test/AddQuestions", newQuestion);
             setQuestion1(null);
             setabc(false);
+            setMaxMarks(1);
 
         } catch (err) {
             console.error(err);            
@@ -94,7 +98,16 @@ function Test(props) {
                             onChange = {(e) => setQuestion1(e.target.value)}
                             value= {quest}
                         />
-                    </div>                     
+                    </div>  
+                    <div className = "props">
+                        <label>Maximum Marks</label>
+                        <input 
+                            type='Number' 
+                            placeholder = 'Max Marks' 
+                            onChange = {(e) => setMaxMarks(e.target.value)}
+                            value= {maxMarks}
+                        />
+                    </div>                   
                     
                     <button className="btn btn-course" type = 'submit'>Submit</button>
                 </form>
@@ -120,6 +133,15 @@ function Test(props) {
                             value= {quest}
                         />
                     </div>
+                    <div className = "props">
+                        <label>Maximum Marks</label>
+                        <input 
+                            type='Number' 
+                            placeholder = 'Max Marks' 
+                            onChange = {(e) => setMaxMarks(e.target.value)}
+                            value= {maxMarks}
+                        />
+                    </div> 
                     <button className="btn btn-course" type = 'submit'>Add Question</button>
                 </form>
             </>            

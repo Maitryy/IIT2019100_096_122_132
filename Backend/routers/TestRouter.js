@@ -4,17 +4,18 @@ const Test = require("../models/testModel");
 const jwt = require("jsonwebtoken");
 const StudentTest = require("../models/studentTestModel");
 const Answer = require("../models/answerModel");
+const Student = require("../models/studentModel");
 
 
 router.post("/NewTest", async(req, res) => {
     try {
-        const{course_id,quest,testName,dueTime} = req.body;
+        const{course_id,quest,testName,dueTime,maxMarks} = req.body;
         const num = 1;
 
         newTest = new Test({
             course: course_id,
             testName: testName,
-            dueTime: dueTime            
+            dueTime: dueTime           
         });
 
         await newTest.save();
@@ -24,7 +25,8 @@ router.post("/NewTest", async(req, res) => {
         firstQuestion = new Question({
             testID: test_ID,
             questionNumber: num,
-            ques: quest
+            ques: quest,
+            maxMarks: maxMarks
         });
 
         await firstQuestion.save();
@@ -45,12 +47,13 @@ router.post("/NewTest", async(req, res) => {
 
 router.post("/AddQuestions", async(req,res) => {
     try {
-        const {test_ID,questionNum, quest} = req.body;
+        const {test_ID,questionNum, quest, maxMarks} = req.body;
 
         newQuestion = new Question({
             testID: test_ID,
             questionNumber: questionNum,
-            ques: quest
+            ques: quest, 
+            maxMarks: maxMarks
         });
 
         await newQuestion.save();
@@ -144,9 +147,13 @@ router.post("/Answer", async(req,res) =>{
 
         if(!existing)
         {
+            const fStudent = await Student.findById(decoded);
+            const name = fStudent.firstName + " " + fStudent.lastName; 
             const newStudentTest = new StudentTest({
                 student: decoded,
-                test: testID
+                name: name,
+                test: testID,
+                marks: -1
             }) 
             await newStudentTest.save();
         }
@@ -182,6 +189,23 @@ router.post("/Answer", async(req,res) =>{
         res
             .status(400)
             .json({errorMessage: "Not working"});
+    }
+});
+
+router.get("/getTestStudent",  async(req, res) => {
+    try {
+        const AllTest= await StudentTest.find();
+        if(!AllTest)
+        res
+        .status(401)
+        .json({errorMessage: "No test exist"});
+        res.send(AllTest);
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No Test"});
     }
 });
 

@@ -164,9 +164,17 @@ useEffect( () => {
             </div>
             {Test.map(test=>{
                 return(     
-                    (test.course === props.match.params.id)  && 
+                    (test.course === props.match.params.id && user === "Student")  && 
                         <div>                               
                             <button className="btn btn-primary btn-lg btn-course btn-peers" onClick = {()=> VT(test._id)}>Test Links </button>
+                        </div>   
+                    )           
+            })}
+            {Test.map(test=>{
+                return(     
+                    (test.course === props.match.params.id && user === "Teacher")  && 
+                        <div>                               
+                            <button className="btn btn-primary btn-lg btn-course btn-peers"><Link to= {`/ReviewTest/${test._id}`}> Review {test.testName} </Link> </button>
                         </div>   
                     )           
             })}
