@@ -36,12 +36,7 @@ function Schedule(props) {
     }, [])
     return (
         <div>
-<<<<<<< Updated upstream
-          
-            <h1>heyyyyyy</h1>
-=======
            
->>>>>>> Stashed changes
              <form className = "create"
                         onSubmit = {createSchedule}
                     >
@@ -86,7 +81,7 @@ function Schedule(props) {
                         </div>
                                        
                         <button className="btn btn-course" type = 'submit'>Submit</button>
-                    </form>       
+            </form>       
         </div>
     )
 }
