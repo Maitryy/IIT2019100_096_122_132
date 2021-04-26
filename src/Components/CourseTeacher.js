@@ -136,15 +136,31 @@ useEffect( () => {
                 return(
                     <div>
                         { announcement.course === props.match.params.id  && 
-                            <div className="jumbotron course">
-                                <p className="display-4">{announcement.type}</p>
-                                <p className="lead">{announcement.description} </p>
-                                <hr className="my-4"/>
-                                <div className='course_sudents row ml-2 mr-2'>
-                                    <a  href= {announcement.link} target="_blank" >  <button className="btn btn-primary btn-lg btn-course">Link</button></a>
-                                    {/* <button className="btn btn-primary btn-lg btn-course">Post your Doubts</button> */}
+                            
+                        <div className="row">
+                            <div className="col-12 mt-3">
+                                <div className="card">
+                                    <div className="card-horizontal card-announcements">
+                                    <div className="img-square-wrapper">
+                                            { announcement.type === "image" && <img className="" src={image2} alt="Card image cap"/>}
+                                            { announcement.type === "video" && <img className="" src={image1} alt="Card image cap"/>}
+                                            { announcement.type === "pdf" && <img className="" src={image3} alt="Card image cap"/>}
+                                        </div>
+                                        <div className="card-body">
+                                            {/* <h4 className="card-title explore-title">Resources for class diagrams</h4> */}
+                                            <p className="card-text">{announcement.description}</p>
+                                            <a className="card-text text-muted" href=" {announcement.link}">
+                                            {announcement.link}
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+            
+                            
+                            
                         }
                     </div>
                 )})}
