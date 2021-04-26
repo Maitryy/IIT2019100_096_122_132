@@ -20,3 +20,19 @@
     color:rgb(85, 31, 82);
     text-decoration-color: rgb(85, 31, 82);
 }
+
+.card-schedule{
+    /* text-align: center; */
+}
+
+.scmonth{
+    text-align: center;
+    text-transform: capitalize;
+    color: indigo;
+    font-weight: bold;
+}
+
+.card-pxyz{
+    margin-left: 10px;
+}
+
