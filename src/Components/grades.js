@@ -44,7 +44,7 @@ const Grades = () => {
                 <td><i className="fas fa-adjust stu "></i></td>
                     <td>Test-3</td>
                     <td>6</td>
-                    <td>Plaigrism</td>
+                    <td>Plagiarism</td>
                 </tr>
                 </table>
                    
