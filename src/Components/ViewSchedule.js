@@ -32,6 +32,13 @@ function ViewSchedule(props) {
 
         <div className="ViewSchedule">
                         <div className="card-body">
+                        <div className="card bg-dark text-white enroll-card">
+                            <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" alt="Card image"/>
+                            <div className="card-img-overlay">
+                        
+                                <h1 className=" enroll-card-title card-title">Schedule</h1>
+                            </div>
+                        </div>
                        
 
 {data.map(course=>{
@@ -42,7 +49,7 @@ function ViewSchedule(props) {
                   
                             <div className="Students">
                 
-                <div className="jumbotron list-stu">
+                
                 
                     <ul>
                     {data1.map(Schedule=>{
@@ -60,7 +67,7 @@ function ViewSchedule(props) {
                 )})}
                     </ul>
 
-                </div>
+                
 
                 </div>
                 )
