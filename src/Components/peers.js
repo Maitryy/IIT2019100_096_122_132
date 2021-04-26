@@ -39,60 +39,48 @@ function Peers(props) {
                         <h1 className=" enroll-card-title card-title">People</h1>
                     </div>
                 </div>
-                <div className="Teachers">
-                
-                <div className="teach-list">
-                <div className="card-horizontal ">
-                    <div className="img-square-wrapper">
-                            <img className="" src = {image} alt="Card image cap"/>
-                        </div>
-                        <div className="card-body">
-                       
-
-{data.map(course=>{
-    return(
-          
+                </div>
+                {data.map(course=>{
+                return(
                 ( course._id === props.match.params.id ) && 
-                  <div>
-                  
-                            <h4 className="card-title explore-title">Teacher: </h4>
-                            <p className="card-text">{course.teacher}</p>
-                            <p className="card-text"> Professor at Indian Institute of Information Technology, Allahabad.<br/> Devghat, Jhalwa, Allahabad, India</p>
-                            <div className="Students">
-                
-                <div className="jumbotron list-stu">
-                <h3 className="stu-head">Students: </h3>
-                    <ul>
-                    {data1.map(students=>{
-                        return(
-                            (course.student == students._id)&&
-                            <>
-                                <li className="peer"> <i className="fas fa-user-circle stu "></i> {students.firstName} {students.lastName}</li>
-                                <hr className="my-4"/>
-                            </>
-                        );                    
-                    })}
-                    </ul>
-
-                </div>
-
-                </div>
-                )
-                      
+                <div className="container">
+                    <div className="Teachers">
+                    
+                        <div className="teach-list">
+                            <div className="card-horizontal ">
+                                <div className="img-square-wrapper">
+                                        <img className="" src = {image} alt="Card image cap"/>
+                                </div>
+                                <div className="card-body">
+                                    <h4 className="card-title explore-title">Teacher: </h4>
+                                        <p className="card-text">{course.teacher}</p>
+                                        <p className="card-text"> Professor at Indian Institute of Information Technology, Allahabad.<br/> Devghat, Jhalwa, Allahabad, India</p>
+                                </div>
+                            </div>
+                        </div> 
                     </div>
-                
+                    <div className="Students">
+                        <div className="jumbotron list-stu">
+                        <h3 className="stu-head">Students: </h3>
+                            <ul>
+                                {data1.map(students=>{
+                                    return(
+                                        (course.student == students._id)&&
+                                        <>
+                                            <li className="peer"> <i className="fas fa-user-circle stu "></i> {students.firstName} {students.lastName}</li>
+                                            <hr className="my-4"/>
+                                        </>
+                                    );                    
+                                })}
+                            </ul>
 
-              
-    )
+                        </div>
+                    </div>
+                </div> ) })}     
 
-})}
 
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-)
-}
+
+
+)}
 export default Peers

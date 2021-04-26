@@ -1,0 +1,22 @@
+.questions{
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 45%;
+    padding-right: auto;
+}
+
+.btn-q{
+    /* padding: 1em; */
+    margin: 0.5rem;
+    color: lightpink;
+}
+
+.headq{
+    color: rgb(85, 31, 82);
+}
+
+.number{
+    color:rgb(85, 31, 82);
+    text-decoration-color: rgb(85, 31, 82);
+}
