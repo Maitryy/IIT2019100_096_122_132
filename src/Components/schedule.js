@@ -9,7 +9,7 @@ function Schedule(props) {
     const [days,setDays] = useState();
     console.log( "props are" , props);
     const history = useHistory();
-   
+
      async function createSchedule(e){
          e.preventDefault();
 
@@ -26,7 +26,7 @@ function Schedule(props) {
 
             await axios.post("http://localhost:5000/course/Schedule", newSchedule);
              history.push("/HomeTeacher");
-            
+
         } catch (err) {
          console.error(err);
          }
@@ -36,15 +36,14 @@ function Schedule(props) {
     }, [])
     return (
         <div>
-           
              <form className = "create"
                         onSubmit = {createSchedule}
                     >
                         <div className="prop">
                             <label >Month</label>
-                        <input 
-                            type='string' 
-                            placeholder = 'month' 
+                        <input
+                            type='string'
+                            placeholder = 'month'
                             onChange = {(e) => setMonth(e.target.value)}
                             value= {month}
                         />
@@ -52,9 +51,9 @@ function Schedule(props) {
 
                         <div className="prop">
                             <label >Number of classes</label>
-                        <input 
-                            type='string' 
-                            placeholder = 'classnum' 
+                        <input
+                            type='string'
+                            placeholder = 'classnum'
                             onChange = {(e) => setClassnum(e.target.value)}
                             value= {classnum}
                         />
@@ -62,9 +61,9 @@ function Schedule(props) {
 
                         <div className="prop">
                             <label >Topics to be covered</label>
-                        <input 
-                            type='string' 
-                            placeholder = 'Topics' 
+                        <input
+                            type='string'
+                            placeholder = 'Topics'
                             onChange = {(e) => setTopics(e.target.value)}
                             value= {topics}
                         />
@@ -72,16 +71,16 @@ function Schedule(props) {
 
                         <div className="prop">
                             <label >Active Days</label>
-                        <input 
-                            type='string' 
-                            placeholder = 'Days' 
+                        <input
+                            type='string'
+                            placeholder = 'Days'
                             onChange = {(e) => setDays(e.target.value)}
                             value= {days}
                         />
                         </div>
-                                       
+
                         <button className="btn btn-course" type = 'submit'>Submit</button>
-            </form>       
+                    </form>
         </div>
     )
 }
