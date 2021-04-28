@@ -15,7 +15,8 @@ router.post("/NewTest", async(req, res) => {
         newTest = new Test({
             course: course_id,
             testName: testName,
-            dueTime: dueTime           
+            dueTime: dueTime, 
+            maxMarks: maxMarks           
         });
 
         await newTest.save();
@@ -59,8 +60,13 @@ router.post("/AddQuestions", async(req,res) => {
         await newQuestion.save();
 
         const quesID = newQuestion._id;
+        
+        const x = await Test.findOne({_id: test_ID});
+        var num = parseInt(maxMarks);
+        num += x.maxMarks;
 
         await Test.findOneAndUpdate({_id: test_ID},{$push: {question: quesID}});
+        await Test.findOneAndUpdate({_id: test_ID},{$set: {maxMarks: num}});
 
         res.send(true);
         
