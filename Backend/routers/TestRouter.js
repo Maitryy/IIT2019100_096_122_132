@@ -293,5 +293,47 @@ router.post("/UpdateMarks",  async(req, res) => {
     }
 });
 
+router.get("/Grades/:id",  async(req, res) => {
+    try {
+        course = req.params.id;
+        
+        const AllTest= await Test.find({course: course});
+        if(!AllTest)
+        res
+        .status(401)
+        .json({errorMessage: "No test exist"});
+
+        const num = AllTest.length;
+
+        var token = req.cookies.token;
+        if(!token)
+            return res.json(false);
+
+        token = token.replace('Bearer','');
+        var decoded = jwt.decode(token);
+        decoded = decoded.student;
+        
+        var gradesArr = new Array;
+        for(i=0;i<num;i++)
+        {
+            const x = AllTest[i]._id;
+            const y = await StudentTest.findOne({student: decoded, test: x});
+            const name = AllTest[i].testName;
+            const marks = y.marks;
+            const maxMarks = AllTest[i].maxMarks;
+            gradesArr.push({name,marks,maxMarks});
+        }
+
+
+        res.send({gradesArr});
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "XoXo"});
+    }
+});
+
 
 module.exports = router;

@@ -1,13 +1,30 @@
 import { render } from '@testing-library/react'
-import React, { useContext } from 'react'
+import axios from 'axios'
+import React, { useContext, useEffect } from 'react'
+import { useState } from 'react/cjs/react.development'
 import '../bootstrap/bootstrap.css'
 import image from '../images/grade-02.png'
 import './grades.css'
 
 
-const Grades = () => {
+const Grades = (props) => {
+    const [data,setData] = useState();
+    const [isLoading,setLoading] = useState(true);
+
+    useEffect(async() => {
+        const id = props.match.params.id;
+        const x = await axios.get(`http://localhost:5000/test/Grades/${id}`);
+        const y = await x.data;
+        setData(y);
+        console.log(y.gradesArr);
+        setLoading(false);        
+    },[])
+
     return ( 
-        <div className="container">
+        <>
+            {!isLoading &&
+            
+            <div className="container">
             <div className="row ">
             <div className= " g-div col-lg-12 col-md-12 col-sm-12     col-12">
                 <div className="grade-image-div">
@@ -17,40 +34,36 @@ const Grades = () => {
             </div>
 
             <div className="jumbotron list-stu">
-                <h3 className="stu-head">Students: </h3>
+                <h3 className="stu-head">Grades </h3>
                 <table className="table">
                 <tr>
                     <th >#</th>
                     <th>Test Name</th>
-                    <th>Marks</th>
-                    <th>Remarks</th>
+                    <th>Marks Obtained</th>
+                    <th>Total Marks</th>
                 </tr>
+                { data.gradesArr.map(obj => {
+                    return(
+                        <tr>
+                            <td><i className="fas fa-adjust stu "></i></td>
+                            <td>{obj.name}</td>
+                            <td>{obj.marks === -1 && <>Not Reviewed</>}
+                                {obj.marks !== -1 && <>{obj.marks}</>}</td>
+                            <td>{obj.maxMarks}</td>
+                        </tr>                    
+                    )})}
                 
-                <tr>
-                    <td><i className="fas fa-adjust stu "></i></td>
-                    <td>Test 1</td>
-                    <td>8</td>
-                    <td>good</td>
-                </tr>
-                
-                <tr>
-                <td><i className="fas fa-adjust stu "></i></td>
-                    <td>Test-2</td>
-                    <td>9</td>
-                    <td>Very Good</td>
-                </tr>
-                
-                <tr>
-                <td><i className="fas fa-adjust stu "></i></td>
-                    <td>Test-3</td>
-                    <td>6</td>
-                    <td>Plagiarism</td>
-                </tr>
                 </table>
                    
                 </div>
 
         </div>
+            
+            
+            
+            
+            }
+        </>        
      )}
 
 export default  Grades

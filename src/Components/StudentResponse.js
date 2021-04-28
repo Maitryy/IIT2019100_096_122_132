@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 function StudentResponse(props) {
     const [da,setDa] = useState([]);
     const [marks,setMarks] = useState(0);
+    const [isLoading,setLoading] = useState(true);
     const history = useHistory();
     useEffect(async() =>{
         const id = props.match.params.id;
@@ -12,10 +13,11 @@ function StudentResponse(props) {
         const res = await axios.get(`http://localhost:5000/test/StudentResponse/${id}/${id2}`);
         const data = await res.data;
         setDa(data);
+        setLoading(false);
     },[]);
-    useEffect(()=>{
-        console.log(da);
-    },[da]);
+    // useEffect(()=>{
+    //     console.log(da);
+    // },[da]);
 
     async function AddMarks(e){
         e.preventDefault();
@@ -35,6 +37,8 @@ function StudentResponse(props) {
 
     return (
         <div>
+            {!isLoading &&
+            <>
             {
                 da.Arr.map(x =>{
                     return(
@@ -64,7 +68,13 @@ function StudentResponse(props) {
                     />
                 <button type = 'submit'>Submit Marks</button>
             </form>
-            
+            </>
+            }
+            {isLoading &&
+            <>
+                <div>Loading</div>
+            </>
+            }
         </div>
     )
 }

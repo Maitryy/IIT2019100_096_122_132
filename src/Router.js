@@ -48,10 +48,6 @@ function Router() {
                     <Peers />
                 </Route>
 
-                <Route exact path = '/grades'>
-                    <Grades />
-                </Route>
-
                 <Route exact path = '/course'>
                     <Course />
                 </Route>        
@@ -123,6 +119,7 @@ function Router() {
                                 <Route exact path = '/HomeStudent'>
                                     <HomeStudent />
                                 </Route>
+                                <Route path = '/Grades/:id' render={(props) => <Grades {...props} />} />
                                 <Route path="/Faq/:id" render={(props) => <Faq {...props} />} />
                                 <Route path="/ViewSchedule/:id" render={(props) => <ViewSchedule {...props} />} />
                             </>

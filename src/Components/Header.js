@@ -20,9 +20,9 @@ function Header() {
       setData(da);
   }, []);
   useEffect( () => {
-      console.log(data);
+      //console.log(data);
   }, [data]);
-  console.log("data  ", data);
+  //console.log("data  ", data);
 
 
     const handleDropdown = () => setDropdown(!dropdown)
