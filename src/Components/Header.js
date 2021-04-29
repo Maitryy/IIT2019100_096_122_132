@@ -65,7 +65,7 @@ function Header() {
                 </li>
                 <li className = 'dropdown-item'>
                     <Link to = '/EditProfile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
-                        Edit Profile
+                        Edit Password
                     </Link>
                 </li>
                 <li className = 'dropdown-item ' onClick={() => setDropdown(false)} >
@@ -148,7 +148,7 @@ function Header() {
                 </li>
                 <li className = 'dropdown-item'>
                     <Link to = '/EditProfile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
-                        Edit Profile
+                        Edit Password
                     </Link>
                 </li>
                 <li className = 'dropdown-item logout' onClick={() => setDropdown(false)} ><LogoutStudent />

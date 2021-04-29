@@ -21,7 +21,6 @@ import NonTechnicalElectiveCoursePage from './Components/ExploreCourses/NonTechn
 import TechnicalElectiveCoursePage from './Components/ExploreCourses/TechnicalElectiveCoursePage';
 import Profile from './Components/profile';
 import MyCourses from './Components/MyCourses';
-import EditProfile from './Auth/editprofile';
 import MyCourseStudent from './Components/MyCourseStudent';
 import Announcement from './Components/Announcement';
 import Schedule from './Components/schedule';
@@ -31,6 +30,7 @@ import Answer from './Components/Answer';
 import ViewTestResponse from './Components/ViewTestResponse';
 import StudentResponse from './Components/StudentResponse';
 import ViewSchedule from './Components/ViewSchedule';
+import EditProfile from './Components/EditProfile';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -81,6 +81,9 @@ function Router() {
                             <Profile />
                         </Route>
                         
+                        <Route exact path = '/EditProfile'>
+                            <EditProfile />
+                        </Route>
                         
                         {/* <Route path="/Schedule/:id"  >
 
@@ -89,9 +92,6 @@ function Router() {
 
                         <Route exact path = '/courseid'>
                             <Course />
-                        </Route>
-                        <Route exact path = '/EditProfile'>
-                            <EditProfile />
                         </Route>
                         <Route exact path = '/MyCourses'>
                             <MyCourses />

@@ -260,49 +260,43 @@ router.get("/GetAllUsers", async (req,res) => {
     }
 });
 
-// router.post('/update', async (req, res) => {
-//     const token = req.body.token
-//     if(!token) res.status(403).json("Permission denied.")
-//     else{
-//         User.findOne({token: token, email: req.body.email}, (err, user) => {
-//             if(err) res.status(500).json("Something went wrong.")
-//             else if(!user) res.status(404).json("User not found.")
-//             else{
-//                 const token = generateToken();
-//                 user.token = token;
-//                 user.email = req.body.email;
-//                 user.username = req.body.username;
-//                 user.save()
-//                 .then(() => res.json({message:"Updated", token: token}))
-//                 .catch(err => res.status(500).json(err));
-//             }
-//         })
-//     }
-// })
 
-// //update user password
-// router.post('/password/update', jsonParser, (req, res) => {
-//     const token = req.body.token;
-//     if(!token) res.status(403).json("Permission denied.")
-//     else{
-//         User.findOne({token: token, email: req.body.email}, (err, user) => {
-//             if(err) res.status(500).json("Something went wrong.")
-//             else if(!user) res.status(404).json("User not found.")
-//             else{
-//                 user.comparePassword(req.body.oldpassword, (err, isMatch) => {
-//                     if(err) res.status(500).json("Error is occured.")
-//                     if(isMatch){
-//                         const token = generateToken();
-//                         user.token = token;
-//                         user.password = req.body.password;
-//                         user.save()
-//                         .then(() => res.json({message: "Success", token}))
-//                         .catch(err => res.status(400).json(err))
-//                     }else res.status(400).json("Wrong password.")
-//                 })
-//             }
-//         })
-//     }
-// })
+router.post('/update', async (req, res) => {
+    try {
+        const {oldPassword, newPassword1, newPassword2} = req.body;
+
+        var token = req.cookies.token;
+        if(!token) 
+            res.status(403).json("Permission denied.");
+        
+        token = token.replace('Bearer','');
+        var decoded = jwt.decode(token);
+        decoded = decoded.student;
+
+        const stu = await Student.findById(decoded);
+        
+        const passwordCorrect = await bcrypt.compare(oldPassword,stu.passwordHash);
+
+        if(!passwordCorrect)
+            return res
+                .json({errorMessage: "Wrong password"});
+
+        if(newPassword1 !== newPassword2)
+            return res
+                    .json({errorMessage: "Password does not match"});
+
+        const salt = await bcrypt.genSalt();
+        const passwordHash = await bcrypt.hash(newPassword1,salt);
+
+        await stu.update({$set: {passwordHash: passwordHash}});
+        
+        res.send(true);
+        
+        
+    } catch (err) {
+        console.error(err);
+    }
+   
+})
 
 module.exports = router;
