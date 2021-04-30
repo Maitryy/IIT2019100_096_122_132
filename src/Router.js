@@ -31,6 +31,7 @@ import ViewTestResponse from './Components/ViewTestResponse';
 import StudentResponse from './Components/StudentResponse';
 import ViewSchedule from './Components/ViewSchedule';
 import EditProfile from './Components/EditProfile';
+import GradesMain from './Components/GradesMain';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -119,7 +120,10 @@ function Router() {
                                 <Route exact path = '/HomeStudent'>
                                     <HomeStudent />
                                 </Route>
-                                <Route path = '/Grades/:id' render={(props) => <Grades {...props} />} />
+                                <Route path = '/GradesCourse/:id' render={(props) => <Grades {...props} />} />
+                                <Route exact path = '/grades'>
+                                    <GradesMain/>
+                                </Route>
                                 <Route path="/Faq/:id" render={(props) => <Faq {...props} />} />
                                 <Route path="/ViewSchedule/:id" render={(props) => <ViewSchedule {...props} />} />
                             </>

@@ -333,5 +333,41 @@ router.get("/ACourse", async (req,res) => {
     }
 })
 
+router.get("/GetStuCourses", async (req,res) => {
+    try {
+        var token = req.cookies.token;
+        if(!token) 
+            res.status(403).json("Permission denied.");
+        
+        token = token.replace('Bearer','');
+        var decoded = jwt.decode(token);
+        decoded = decoded.student;
+        const stu = await Student.findById(decoded);
+        const len = stu.course.length;
+        
+        const arr = new Array;
+        for(i=0;i<len;i++)
+        {
+            const y = stu.course[i];
+            if(y !== null)
+            {
+                const x = await Course.findOne({id: y});
+                const name = x.name;
+                const id = x._id;
+                arr.push({name,id});
+            }
+
+        }
+
+        res.send({arr});
+
+    }catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+    }
+});
+
 
 module.exports = router;

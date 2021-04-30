@@ -20,8 +20,6 @@ function UserContextProvider(props) {
 
     async function getUser(){
         const type = await axios.get("http://localhost:5000/auth/TypeOfUser");
-        // console.log(type.data);
-        // console.log(type.data.proffesion)
         const x = type.data;
         setUser(x.proffesion);
         setUserName(x.firstName);
