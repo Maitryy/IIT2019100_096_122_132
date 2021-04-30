@@ -354,7 +354,10 @@ router.get("/GetStuCourses", async (req,res) => {
                 const x = await Course.findOne({id: y});
                 const name = x.name;
                 const id = x._id;
-                arr.push({name,id});
+                const credits = x.credits;
+                const teacher = x.teacher;
+                const description = x.description;
+                arr.push({name,id,credits,teacher,description});
             }
 
         }
