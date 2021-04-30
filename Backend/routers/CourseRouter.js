@@ -357,7 +357,8 @@ router.get("/GetStuCourses", async (req,res) => {
                 const credits = x.credits;
                 const teacher = x.teacher;
                 const description = x.description;
-                arr.push({name,id,credits,teacher,description});
+                const image = x.image;
+                arr.push({name,id,credits,teacher,description, image});
             }
 
         }
