@@ -59,7 +59,7 @@ function Test(props) {
         }
     }
     async function previousPage(){
-        history.push('/HomeTeacher');
+        history.push(`/courseTeacher/${props.match.params.id}`);
     }
 
     function Add(){

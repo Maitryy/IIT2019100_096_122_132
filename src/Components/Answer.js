@@ -5,11 +5,13 @@ import './Answer.css'
 import '../Auth/Register.css'
 import '../Courses/AddCourse.css';
 import '../bootstrap/bootstrap.css'
+import { useHistory } from 'react-router';
 
 function Answer(props) {
     const [ques,getQues] = useState([]);
     const [ans,setAns] = useState();
-    const testID = props.match.params.id2;
+    const testID = props.match.params.id;
+    const history = useHistory();
 
     useEffect(async() => {
         const response = await axios.get("http://localhost:5000/test/getQuestion");
@@ -29,7 +31,8 @@ function Answer(props) {
                 quesNo,
                 quesID
             }
-            await axios.post("http://localhost:5000/test/Answer",a);          
+            await axios.post("http://localhost:5000/test/Answer",a);
+            history.push(`/viewtest/${testID}`);          
             
         } catch (err) {
             console.error(err);
@@ -41,7 +44,7 @@ function Answer(props) {
         <div className="row">
             {ques.map(q=>{
                 return(
-                    (q._id === props.match.params.id)&&
+                    (q._id === props.match.params.id2)&&
                     <div className="col-12">
                         {/* <h3>Question Number: {q.questionNumber}</h3>
                         <h3>Max Marks: {q.maxMarks}</h3> */}

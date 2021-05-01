@@ -23,7 +23,7 @@ function Announcement(props) {
             };
 
             await axios.post("http://localhost:5000/course/Announcement", newAnnouncement);
-             history.push("/HomeTeacher");
+            history.push(`/courseTeacher/${course_id}`);
             
         } catch (err) {
          console.error(err);

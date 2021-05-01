@@ -25,7 +25,7 @@ function Schedule(props) {
             };
 
             await axios.post("http://localhost:5000/course/Schedule", newSchedule);
-             history.push("/HomeTeacher");
+            history.push(`/courseTeacher/${props.match.params.id}`);
 
         } catch (err) {
          console.error(err);

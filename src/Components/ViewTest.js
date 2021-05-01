@@ -53,7 +53,7 @@ return (
             <ul>   
               <li className="peersxyz" > <strong>Q: {qu.questionNumber} </strong>
              {qu.ques}   </li>
-              <Link to = {`/Answer/${qu._id}/${qu.testID}`}> <button  className="btn btn-primary btn-lg btn-course btn-peers">Attempt the question </button></Link>
+              <Link to = {`/Answer/${qu.testID}/${qu._id}`}> <button  className="btn btn-primary btn-lg btn-course btn-peers">Attempt the question </button></Link>
               <li className="peersxyz" ><strong>MM: {qu.maxMarks}</strong> </li>
             </ul>
           </div>
