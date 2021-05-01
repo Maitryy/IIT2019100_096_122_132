@@ -36,7 +36,7 @@ function LoginStudent() {
 
     return (
         <div>
-            <h1>Login to an account</h1>
+            <h1 className="pass">Login with an account !!</h1>
             <form className="create"
                 onSubmit = {loginStudent}
             >
@@ -58,7 +58,7 @@ function LoginStudent() {
                     value= {password} 
                 />
                 </div>
-                <button type = 'submit'>Login</button>
+                <button  type = 'submit'>Login</button>
             </form>
         </div>
     )
