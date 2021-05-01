@@ -47,15 +47,19 @@ function CoreCoursePage() {
                                 </div>
                             <div class="card-body">
                                 <div key = '_id'>   
-                                    <div>   <strong>Course name: </strong>{ course.name} </div>
+                                    {/* <div>   <strong>Course name: </strong>{ course.name} </div>
                                         <div>  <strong>Course id: </strong>{ course.id} </div> 
                                         <div>   <strong>Course credits: </strong>{ course.credits} </div>
                                         <div>  <strong>Course description: </strong> { course.description } </div>
-                                        <br></br>
+                                        <br></br> */}
+                        <h4 className= " card-title">{ course.name}</h4>
+                        <p className="text-muted">Credits: { course.credits}</p>
+                        <p className="text-muted">Mentors: { course.teacher}</p>
+                        <p className="text-muted">Description: { course.description}</p>
                                     </div>
                                     {user === 'Student' &&
                                     <>
-                                        <button onClick = {() => EnrollCourse(course.id)}>Enroll Course</button>
+                                        <button className="btn btn-primary btn-course" onClick = {() => EnrollCourse(course.id)}>Enroll Course</button>
                                     </>
                                     }
                                 </div>
