@@ -56,10 +56,10 @@ function CoreCoursePage() {
                         <p className="text-muted">Credits: { course.credits}</p>
                         <p className="text-muted">Mentors: { course.teacher}</p>
                         <p className="text-muted">Description: { course.description}</p>
-                                    </div>
+                                </div>
                                     {user === 'Student' &&
                                     <>
-                                        <button className="btn btn-primary btn-course" onClick = {() => EnrollCourse(course.id)}>Enroll Course</button>
+                                    <button className="btn btn-primary btn-course" onClick = {() => EnrollCourse(course.id)}>Enroll Course</button>
                                     </>
                                     }
                                 </div>

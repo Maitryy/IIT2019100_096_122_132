@@ -37,26 +37,32 @@ function Answer(props) {
     }
 
     return (
-        <div className="row container">
+        <div className="container ">
+        <div className="row">
             {ques.map(q=>{
                 return(
                     (q._id === props.match.params.id)&&
-                    <div className="questions">
-                        <h3>Question Number: {q.questionNumber}</h3>
-                        <h3>Max Marks: {q.maxMarks}</h3>
-                        <h3>Ques: {q.ques}</h3>
+                    <div className="col-12">
+                        {/* <h3>Question Number: {q.questionNumber}</h3>
+                        <h3>Max Marks: {q.maxMarks}</h3> */}
+                        <h3><div className="giveans">Q: {q.ques}</div></h3>
                         <form onSubmit = {() => upload(q.questionNumber,q._id)}>
-                            <input 
+                            <textarea
+                                className="anstext"
+                                rows="7"
+                                cols="150"
                                 type='string'    
                                 placeholder = {ans}
                                 onChange = {(e) => setAns(e.target.value)}
                                 value= {ans} 
                             />
-                            <button className="create" type = 'submit'>Submit Answer</button>
+                            <br/>
+                            <button className="create btn btn-course  btn-ans" type = 'submit'>Submit Answer</button>
                         </form>
 
                     </div>
                 )})}
+        </div>
         </div>
     )
 }

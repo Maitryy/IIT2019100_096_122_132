@@ -1,5 +1,22 @@
-answersxyz {
+/* answersxyz {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+} */
+.giveans {
+    color:#463352;
+    padding: 30px 0;
+    
+
+}
+
+.btn-ans{
+    color: whitesmoke;
+}
+
+.anstext{
+    margin-bottom: 30px;
+    background-color: lavender;
+    border: #463352 2px solid;
+    border-radius: 5px;
 }
