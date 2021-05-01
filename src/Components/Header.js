@@ -83,7 +83,7 @@ function Header() {
                 
                   {Dropdown && 
                   <>
-                   <ul onClick={handledropdown} className = {Dropdown? 'dropdown-active drop':'dropdown-inactive'}>
+                   <ul onClick={handledropdown} className = {Dropdown? 'dropdown-active drop dropa':'dropdown-inactive'}>
                   {
                     data.filter((val)=>
                     {
@@ -98,7 +98,8 @@ function Header() {
                     .map((val,key) =>{
                       return(
                         <div className="searching" key={key}>
-                          <li className = 'dropdown-item'  ><button ><Link  to= {`/courseTeacher/${val._id}`}  >  {val.name}</Link></button> </li>
+                          <li className = 'dropdown-item'  ><Link className="seaco" to= {`/courseTeacher/${val._id}`}  >  
+                          <button className = "btn btn-search btn-seaco">{val.name}</button></Link> </li>
                           </div>
                       )
 
@@ -183,7 +184,7 @@ function Header() {
                   .map((val,key) =>{
                     return(
                       <div className="searching" key={key}>
-                        <li className = 'dropdown-item'  ><button ><Link  to= {`/courseTeacher/${val._id}`}  >  {val.name}</Link></button> </li>
+                        <li className = 'dropdown-item'  ><Link  to= {`/courseTeacher/${val._id}`}  ><button className = "btn btn-search btn-seaco" >  {val.name}</button></Link> </li>
                         </div>
                     )
 

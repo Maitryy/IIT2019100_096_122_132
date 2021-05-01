@@ -47,6 +47,10 @@ li{
   border-radius: 15px 50px 30px;
 }
 
+.dropa{
+  
+}
+
 ul.dropdown-active.drop {
   padding: none;
   border-radius: 15px 50px 30px;
@@ -137,4 +141,9 @@ li.dropdown-item {
   border: none;
   size: 20px 20px;
   
+}
+
+.btn-seaco {
+  text-decoration-color: #463352;
+  color: #463352;
 }
