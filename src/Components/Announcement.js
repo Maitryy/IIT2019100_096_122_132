@@ -32,7 +32,12 @@ function Announcement(props) {
 
     return (
         <div>
-    <h1>heyyyyyy</h1>
+    {/* <h1>heyyyyyy</h1> */}
+    <div className="pass">
+            <h1 >New Announcement !!</h1>
+            
+            </div>
+    {/* <h1 className="headq">New Announcement !!</h1> */}
              <form className = "create"
                         onSubmit = {createAnnouncement}
                     >

@@ -126,6 +126,51 @@ useEffect( () => {
                         </div> 
                     )})}
 
+
+                    {/* <div className="container-fluid">
+                <div className="row">
+                    <div className="col-12 mt-3">
+                        <div className="card">
+                            <div className="card-horizontal card-announcements">
+                            <div className="img-square-wrapper">
+                                    <img className="" src={image3} alt="Card image cap"/>
+                                </div>
+                                <div className="card-body">
+                                    <h4 className="card-title explore-title">Test</h4>
+                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a className="card-text text-muted" href="https://uigradients.com/#Shalala">
+                                    https://uigradients.com/#Shalala
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+            <div className="card bg-dark text-white enroll-card">
+                <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80"/>
+                <div className="card-img-overlay">
+                    <h1 className=" enroll-card-title card-title"> Tests.. </h1>
+                </div>
+            </div>
+            {Test.map(test=>{
+                return(     
+                    (test.course === props.match.params.id && user === "Student")  && 
+                        <div>                               
+                            <button className="btn btn-primary btn-lg btn-course btn-peers" onClick = {()=> VT(test._id)}>Test Links </button>
+                        </div>   
+                    )           
+            })}
+            {Test.map(test=>{
+                return(     
+                    (test.course === props.match.params.id && user === "Teacher")  && 
+                        <div>                               
+                            <button className="btn btn-primary btn-lg btn-course btn-peers"><Link to= {`/ReviewTest/${test._id}`}> Review {test.testName} </Link> </button>
+                        </div>   
+                    )           
+            })}
+
             <div className="card bg-dark text-white enroll-card">
                 <img className=" enroll-card-img" src="https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80"/>
                 <div className="card-img-overlay">
@@ -165,7 +210,7 @@ useEffect( () => {
                     </div>
                 )})}
            
-            <div className="container-fluid">
+            {/* <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 mt-3">
                         <div className="card">
@@ -201,7 +246,7 @@ useEffect( () => {
                             <button className="btn btn-primary btn-lg btn-course btn-peers"><Link to= {`/ReviewTest/${test._id}`}> Review {test.testName} </Link> </button>
                         </div>   
                     )           
-            })}
+            })} */}
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 mt-3">

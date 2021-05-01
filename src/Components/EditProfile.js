@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import userContext from '../Context/UserContext';
+import './EditProfile.css'
 
 function EditProfile() {
     const [rep,setRep] = useState();
@@ -18,10 +19,11 @@ function EditProfile() {
 
     return (
         <div>
-            <h1>Edit Password</h1>
-            <h3>Name: {userName}</h3>
-            <h3>Email: {userEmail}</h3>
-            <form onSubmit = {update}>
+            <div className="pass">
+            <h1 >Edit Password</h1>
+            
+            </div>
+            <form  className="create" onSubmit = {update}>
                 <div className="prop">
                     <label >Old Password:</label>
                     <input 

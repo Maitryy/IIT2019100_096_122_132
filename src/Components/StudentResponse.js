@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router';
+import './StudentResponse.css'
 
 function StudentResponse(props) {
     const [da,setDa] = useState([]);
@@ -37,16 +38,17 @@ function StudentResponse(props) {
 
     return (
         <div>
+            <h1 className="stureshd">Student's Responces</h1>
             {!isLoading &&
             <>
             {
                 da.Arr.map(x =>{
                     return(
                         <>
-                            <div>Question: {x.ques}</div>
-                            <div>Max Marks: {x.marks}</div>
-                            <div>Student Response:</div>
-                            <div>{x.ans}</div>
+                            <div className="question">
+                            <div className="questions">
+                            <h3 className='stures'>Q: {x.ques}</h3>
+                            <h4 className='stures'>Ans: {x.ans}</h4>
                             {x.ans === " " &&
                             <div>Not Attempted</div>
                             }
@@ -54,20 +56,28 @@ function StudentResponse(props) {
                                 type='Number' 
                                 placeholder = '0'   
                             />
+                            <p>Max Marks: {x.marks}</p>
                         <br/>
-                        <br/>         
+                        <br/>  
+                            </div>
+
+                            </div>       
                         </>
                     )
             })}
-            <form onSubmit = {AddMarks}>
+            
+                <form className="create" onSubmit = {AddMarks}>
+                <label className="peers"> Total Marks obtained</label>
                 <input 
                     type='Number' 
                     placeholder = '0' 
                     onChange = {e => setMarks(e.target.value)}
                     value = {marks}  
                     />
-                <button type = 'submit'>Submit Marks</button>
+                    <br/>
+                <button className = "btn btn-course btn-ans" type = 'submit'>Submit Marks</button>
             </form>
+                
             </>
             }
             {isLoading &&

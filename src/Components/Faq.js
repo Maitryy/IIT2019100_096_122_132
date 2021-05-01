@@ -36,7 +36,7 @@ function Faq(props) {
 
     return (
         <div>
-    <h1>heyyyyyy</h1>
+    <h1>Ask a Question...</h1>
              <form className = "create"
                         onSubmit = {createFaq}
                     >
