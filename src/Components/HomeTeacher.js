@@ -200,7 +200,7 @@ function HomeTeacher() {
                                 <div className="card-body">
                                 <Link to = '/CoreCourses'>
                                     <h4 className="card-title explore-title">Core Courses</h4> </Link>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text">Also called core curriculum, core course of study refers to a series or selection of courses that all students are required to complete before they can move on to the next level in their education or earn a diploma.</p>
                                 </div>
                             </div>
                             
@@ -216,7 +216,7 @@ function HomeTeacher() {
                             <div className="card-horizontal">
                                 <div className="card-body">
                                 <Link to = '/TechnicalElectiveCourses'><h4 className="card-title explore-title">Technical Courses</h4></Link>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text">Technical Electives are  any course in a technical field, typically from our College of National Importance.  It is recommended that a student choose additional EEE Selectives to satisfy this requirement, or take prerequisite courses to prepare for advanced EEE Selectives that the student is interested in.</p>
                                 </div>
                                 <div className="img-square-wrapper">
                                     <img className="" src="https://images.unsplash.com/photo-1606337321936-02d1b1a4d5ef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" alt="Card image cap"/>
@@ -239,7 +239,7 @@ function HomeTeacher() {
                                 <div className="card-body">
                                 <Link to = '/NonTechnicalElectiveCourses'>
                                     <h4 className="card-title explore-title">Non-Technical  Courses</h4> </Link>
-                                    <p className="card-text"> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text"> Non-Technical Electives are  any course in a non-technical field, typically from our College of National Importance. These are to improve the co-curriculum activities of the students and help them in becoming physically active.</p>
                                 </div>
                             </div>
                             

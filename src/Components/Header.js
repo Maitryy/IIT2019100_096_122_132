@@ -58,11 +58,11 @@ function Header() {
                         Grades
                     </Link>
                 </li>
-                <li className = 'dropdown-item'>
+                {/* <li className = 'dropdown-item'>
                     <a href = 'https://docs.google.com/document/d/1tw-n6FJAtuYNnpbxnlIqWSi7c9S2wxR6c33bKrGBfCo/edit' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Calender
                     </a>
-                </li>
+                </li> */}
                 <li className = 'dropdown-item'>
                     <Link to = '/EditProfile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Edit Password
@@ -113,11 +113,11 @@ function Header() {
                   
               </div>
 
-              <div className='header-items'>
+              {/* <div className='header-items'>
                 <Link className="head-item" to = '/mycoursestudent'>
                   Courses
                 </Link>
-              </div>    
+              </div>     */}
 
               <div className='header-items'>
                 <Link className="head-item" to = '/HomeStudent'>
@@ -141,11 +141,11 @@ function Header() {
                     </Link>
                 </li>
                 
-                <li className = 'dropdown-item'>
+                {/* <li className = 'dropdown-item'>
                     <Link to = '/' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Calender
                     </Link>
-                </li>
+                </li> */}
                 <li className = 'dropdown-item'>
                     <Link to = '/EditProfile' className = 'dropdown-link' onClick={() => setDropdown(false)}>
                         Edit Password
@@ -197,11 +197,11 @@ function Header() {
                   
               </div>
 
-              <div className='header-items'>
+              {/* <div className='header-items'>
                 <Link className="head-item" to = '/MyCourses'>
                   My Courses
                 </Link>
-              </div>    
+              </div>     */}
               <div className='header-items'>
                 <Link className="head-item" to = '/HomeTeacher'>
                   Home

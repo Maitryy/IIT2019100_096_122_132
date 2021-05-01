@@ -1,5 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import './ViewTest.css'
+import './Answer.css'
+import '../Auth/Register.css'
+import '../Courses/AddCourse.css';
+import '../bootstrap/bootstrap.css'
 
 function Answer(props) {
     const [ques,getQues] = useState([]);
@@ -32,11 +37,11 @@ function Answer(props) {
     }
 
     return (
-        <div>
+        <div className="row container">
             {ques.map(q=>{
                 return(
                     (q._id === props.match.params.id)&&
-                    <>
+                    <div className="questions">
                         <h3>Question Number: {q.questionNumber}</h3>
                         <h3>Max Marks: {q.maxMarks}</h3>
                         <h3>Ques: {q.ques}</h3>
@@ -47,10 +52,10 @@ function Answer(props) {
                                 onChange = {(e) => setAns(e.target.value)}
                                 value= {ans} 
                             />
-                            <button type = 'submit'>Submit Answer</button>
+                            <button className="create" type = 'submit'>Submit Answer</button>
                         </form>
 
-                    </>
+                    </div>
                 )})}
         </div>
     )

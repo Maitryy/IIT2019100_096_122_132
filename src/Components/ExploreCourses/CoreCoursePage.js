@@ -31,7 +31,8 @@ function CoreCoursePage() {
     }
     
     return (
-        <div>
+        <div className="container">
+        <div className="row ">
             {data.map(course=>{
                 return(
                     
@@ -41,7 +42,7 @@ function CoreCoursePage() {
                             <div className='card courses mask '>
                                 <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                     <a href="#" >
-                                        <img src="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
+                                        <img  src = {course.image} alt="https://www.futureelectronics.com/medias/sys_master/images/images/9601962868766/CMSHEROShapingTheFuture1200x450-D.jpg" className="img-fluid card-img-top"/>
                                     </a>
                                 </div>
                             <div class="card-body">
@@ -63,6 +64,7 @@ function CoreCoursePage() {
                     </div>
                 )
             })}
+        </div>
         </div>
     )
 }

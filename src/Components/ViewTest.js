@@ -44,17 +44,22 @@ return (
           </div>
         )    
     })}
+    <div className ="row ">
+    <div className="test-xyz col-12 col-sm-12 col-lg-12 col-md-12">
     {Question.map(qu=>{                                                   
       return(
          (qu.testID ===  props.match.params.id) &&   
           <div className="questions">
             <ul>   
-              <li className="peer"> <strong>Ques no: {qu.questionNumber} </strong>
-              <strong>Max Marks: {qu.maxMarks}</strong> {qu.ques} ?</li>
+              <li className="peersxyz" > <strong>Q: {qu.questionNumber} </strong>
+             {qu.ques} ?  </li>
               <Link to = {`/Answer/${qu._id}/${qu.testID}`}> <button  className="btn btn-primary btn-lg btn-course btn-peers">Attempt the question </button></Link>
+              <li className="peersxyz" ><strong>MM: {qu.maxMarks}</strong> </li>
             </ul>
           </div>
-    )})}                                                    
+    )})}  
+    </div>     
+    </div>                                             
   </div>
 )}
 
