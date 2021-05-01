@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import './ViewTestResponse.css'
 
 function ViewTestResponse(props) {
     const [testRes, setTestRes] = useState([]);
@@ -17,16 +18,19 @@ function ViewTestResponse(props) {
     }, [testRes]);
 
     return (
-        <div>
-            Hello
+        <div className="container">
+            {/* Hello */}
+            <div className="jumbotron list-stu">
+            <h3 className="stu-head">Students: </h3>
             <ul>
                 {
                     testRes.map(te => {
                         return(
                             (te.test === props.match.params.id)&&
-                            <>
+                            <div classname="conatiner">
                                 <li>
-                                    {te.name}{space}
+                                    <span className="ele">{te.name}</span>{space} 
+                                    <span className="ele">
                                     {te.marks === -1 && 
                                     <> 
                                         Not checked
@@ -37,12 +41,16 @@ function ViewTestResponse(props) {
                                         {te.marks  }
                                     </>
                                     }
+                                    </span>
                                     {space}
-                                    <Link to = {`/StudentResponse/${te.test}/${te.student}`}><button>Review Test</button></Link>
+                                    <span className="ele">
+                                    <Link to = {`/StudentResponse/${te.test}/${te.student}`}><button className="btn btn-course btn-res">Review Test</button></Link>
+                                    </span>
                                 </li>
-                        </>
+                        </div>
                 )})}
             </ul>
+            </div>
         </div>
     )
 }
