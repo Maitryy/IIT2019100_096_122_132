@@ -158,7 +158,7 @@ useEffect( () => {
                 return(     
                     (test.course === props.match.params.id && user === "Student")  && 
                         <div>                               
-                            <button className="btn btn-primary btn-lg btn-course btn-peers" onClick = {()=> VT(test._id)}>Test Links </button>
+                            <button className="btn btn-primary btn-lg btn-course btn-peers" onClick = {()=> VT(test._id)}> Attempt {test.testName} </button>
                         </div>   
                     )           
             })}
