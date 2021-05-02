@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
+import { useHistory } from 'react-router';
 import userContext from '../Context/UserContext';
 import './EditProfile.css'
 
@@ -8,13 +9,18 @@ function EditProfile() {
     const [oldPassword,setOld] = useState();
     const [newPassword1,setNew1] = useState("");
     const [newPassword2,setNew2] = useState("");
-    const {userName,userEmail} = useContext(userContext);
+    const {userName,userEmail,user} = useContext(userContext);
+    const history = useHistory();
 
     async function update(){
         const x = {oldPassword, newPassword1, newPassword2};
         const y = await axios.post("http://localhost:5000/auth/update",x);
         console.log(y.data);
         setRep(y.data);
+        if(user === 'Teacher')
+        {history.push("/HomeTeacher")}
+        else if(user === 'Student')
+        {history.push("/HomeStudent")}
     }
 
     return (
