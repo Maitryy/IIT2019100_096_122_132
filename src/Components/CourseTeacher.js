@@ -43,14 +43,6 @@ useEffect(async() => {
     setSchedule(da);
 }, []);
 
-useEffect(async() => {
-    const response = await fetch("http://localhost:5000/course/getFaq");
-    const da = await response.json();
-    setFaq(da);
-}, []);
-useEffect( () => {
-   
-}, [Faq]);
 
 useEffect(async() => {
     const response = await fetch("http://localhost:5000/course/GetAllCourses");
@@ -116,11 +108,11 @@ useEffect( () => {
                                             </div> 
                                         </div>
                                     }
-                                    { user==='Student' &&
+                                    
                                         <div>
-                                            <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
+                                            <Link  to= {`/Doubts/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">FAQ's and Doubts</button></Link>
                                         </div>
-                                    }
+                                    
                                 </div>
                             </div>
                         </div> 
@@ -328,34 +320,7 @@ useEffect( () => {
                 </div>
             </div>
             <br/>
-            {Faq.map(faq=>{
-                return(
-                    <div>
-                        { faq.course === props.match.params.id  && 
-                            <div className="jumbotron list-stu">
-                                <ul>
-                                    <li className="peer"><strong>Asked by: </strong>{faq.student}  </li>
-                                    <li className="peer"> <i className="fas fa-user-circle stu "></i><strong>Q: </strong>{faq.question} </li>   
-                                        {
-                                            faq.answer.map(ans=>{
-                                                return(
-                                                    <div>
-                                                        <ul>
-                                                            <li className="peer"> <i className="fas fa-user-circle stu "></i><strong>A: </strong>{ans} </li>
-                                                        </ul>
-                                                    </div>
-                                                )})}
-                                </ul>
-                                { user==='Teacher' &&
-                                    <div>
-                                        <Link  to= {`/AnswerFaq/${faq._id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Answer</button></Link>
-                                    </div>
-                                }
-                            </div>
-                        }
-                        <br/>
-                    </div>
-                )})}
+            
         </div>
     )
 }

@@ -319,6 +319,27 @@ router.get("/getFaq",  async(req, res) => {
     }
 });
 
+
+router.get("/getOneFaq/:id",  async(req, res) => {
+    try {
+        const id = req.params.id;
+        const Faq= await Faq.findById(id);
+        if(!Faq)
+        res
+        .status(401)
+        .json({errorMessage: "No faq exist"});
+        res.send(Faq);
+
+
+    }
+    catch(err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "No Faq"});
+    }
+});
+
 router.get("/ACourse", async (req,res) => {
     try {
         const {course_ID} = req.body;

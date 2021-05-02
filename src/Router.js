@@ -32,6 +32,7 @@ import StudentResponse from './Components/StudentResponse';
 import ViewSchedule from './Components/ViewSchedule';
 import EditProfile from './Components/EditProfile';
 import GradesMain from './Components/GradesMain';
+import FAQPage from './Components/FAQPage';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -114,7 +115,7 @@ function Router() {
 
                         <Route path="/viewtest/:id" render={(props) => <ViewTest {...props} />} />
                         <Route path="/Answer/:id/:id2" render={(props) => <Answer {...props}/>} />
-                        
+                        <Route path="/Doubts/:id" render={(props) => <FAQPage {...props}/>} />
                         { user === "Student" &&
                             <>
                                 <Route exact path = '/HomeStudent'>
@@ -137,7 +138,7 @@ function Router() {
                                     <HomeTeacher />
                                 </Route>
                                 <Route exact path = '/AddCourse'><AddCourses /></Route>
-                                <Route path="/AnswerFaq/:id" render={(props) => <AnswerFaq {...props} />} />
+                                <Route path="/AnswerFaq/:id/:id2" render={(props) => <AnswerFaq {...props} />} />
                                 <Route path="/Announcement/:id" render={(props) => <Announcement {...props} />} />
                                 <Route path="/Schedule/:id" render={(props) => <Schedule {...props} />} />
                                 <Route path="/test/:id" render={(props) => <Test {...props} />} />

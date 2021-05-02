@@ -27,7 +27,7 @@ function AnswerFaq(props) {
             };
 
             await axios.post("http://localhost:5000/course/AnswerFaq", newFaq);
-            history.push(`/courseTeacher/${props.match.params.id}`);
+            history.push(`/Doubts/${props.match.params.id2}`);
             
         } catch (err) {
          console.error(err);
@@ -36,7 +36,7 @@ function AnswerFaq(props) {
 
     return (
         <div>
-    <h1>heyyyyyy</h1>
+    <h1>Answer</h1>
              <form className = "create"
                         onSubmit = {createFaq}
                     >
