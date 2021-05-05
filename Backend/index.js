@@ -46,6 +46,7 @@ const obj =(req,res) => {
       const file = new File();
       file.meta_data = req.file;
       file.save().then(()=>{
+          console.log("It did something");
         res.send(file);
       })
       /*Now do where ever you want to do*/
