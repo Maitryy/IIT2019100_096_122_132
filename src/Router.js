@@ -33,6 +33,7 @@ import ViewSchedule from './Components/ViewSchedule';
 import EditProfile from './Components/EditProfile';
 import GradesMain from './Components/GradesMain';
 import FAQPage from './Components/FAQPage';
+import NewAssignment from './Components/NewAssignment';
 
 function Router() {
     const {loggedIn} = useContext(AuthContext);
@@ -136,6 +137,9 @@ function Router() {
                             <>
                                 <Route exact path = '/HomeTeacher'>
                                     <HomeTeacher />
+                                </Route>
+                                <Route exact path = '/NewAssignment'>
+                                    <NewAssignment />
                                 </Route>
                                 <Route exact path = '/AddCourse'><AddCourses /></Route>
                                 <Route path="/AnswerFaq/:id/:id2" render={(props) => <AnswerFaq {...props} />} />
