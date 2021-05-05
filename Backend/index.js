@@ -7,57 +7,52 @@ const cors = require("cors");
 const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
-const methodOverride = require('method-override');
 const crypto = require('crypto');
-
+const router = express.Router();
+const File = require("./models/fileModel");
 
 const PORT = 5000;
 // app.use();
 app.use(express.json());
-//app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(cors({
     origin: ["http://localhost:3000"],
     credentials: true
 }));
 
-const conn = mongoose.connect(process.env.MDB_CONNECT, {
+mongoose.connect(process.env.MDB_CONNECT, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
 });
 
-// let gfs;
 
-// conn.once('open', () => {
-//   // Init stream
-//   gfs = Grid(conn.db, mongoose.mongo);
-//   gfs.collection('uploads');
-// });
+const storage = multer.diskStorage({
+   destination: "./public/",
+   filename: function(req, file, cb){
+      cb(null,"IMAGE-" + Date.now() + path.extname(file.originalname));
+   }
+});
 
-// const storage = new GridFsStorage({
-//     url: process.env.MDB_CONNECT,
-//     file: (req, file) => {
-//       return new Promise((resolve, reject) => {
-//         crypto.randomBytes(16, (err, buf) => {
-//           if (err) {
-//             return reject(err);
-//           }
-//           const filename = buf.toString('hex') + path.extname(file.originalname);
-//           const fileInfo = {
-//             filename: filename,
-//             bucketName: 'uploads'
-//           };
-//           resolve(fileInfo);
-//         });
-//       });
-//     }
-//   });
-//   const upload = multer({ storage });
+const upload = multer({
+   storage: storage,
+   limits:{fileSize: 1000000},
+}).single("myfile");
 
-// app.post('/uploadFile', upload.single('file'), (req, res) => {
-//     // kres.json({ file: req.file });
-//     res.redirect('/');
-// });
+const obj =(req,res) => {
+   upload(req, res, () => {
+      console.log("Request ---", req.body);
+      console.log("Request file ---", req.file);//Here you get file.
+      const file = new File();
+      file.meta_data = req.file;
+      file.save().then(()=>{
+        res.send(file);
+      })
+      /*Now do where ever you want to do*/
+   });
+}
+
+router.post("/uploadFile", obj);
 
 
 app.use("/auth", require("./routers/UserRouter"));

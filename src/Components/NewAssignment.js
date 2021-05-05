@@ -1,6 +1,26 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 
 function NewAssignment() {
+    const [file,setFile] = useState();
+
+    async function Submit(e){
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('myfile',file);
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        };
+        const x = axios.post("http://localhost:5000/uploadFile",formData,config)
+            .then((response) => {
+                alert("The file is successfully uploaded");
+            }).catch((error) => {
+        });
+        console.log(x);
+    }
+
 
     return (
         <div>
@@ -15,9 +35,10 @@ function NewAssignment() {
                 <input type="string"
                 placeholder = "Due Time"
                 />
-                <form>
-                    <input type="file"/>
-                    <button className="upload-button" type="submit">Upload File</button>
+                <form onSubmit={Submit}>
+                    <h1>File Upload</h1>
+                    <input type="file" className="custom-file-input" onChange= {(e) => setFile(e.target.files) } files = {file} placeholder = "Select file"/>
+                    <button className="upload-button" type="submit">Upload</button>
                 </form>
                 <button>Create Assignment</button>
             </form>            
