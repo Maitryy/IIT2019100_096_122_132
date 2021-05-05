@@ -19,6 +19,7 @@ function NewAssignment() {
                     <input type="file"/>
                     <button className="upload-button" type="submit">Upload File</button>
                 </form>
+                <button>Create Assignment</button>
             </form>            
         </div>
     )
