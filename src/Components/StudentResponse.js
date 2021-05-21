@@ -45,8 +45,8 @@ function StudentResponse(props) {
                 da.Arr.map(x =>{
                     return(
                         <>
-                            <div className="question">
-                            <div className="questions">
+                            <div className="container">
+                            <div className="queis">
                             <h3 className='stures'>Q: {x.ques}</h3>
                             <h4 className='stures'>Ans: {x.ans}</h4>
                             {x.ans === " " &&

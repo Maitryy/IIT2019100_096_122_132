@@ -108,10 +108,11 @@ useEffect( () => {
                                             </div> 
                                         </div>
                                     }
-                                    
-                                        <div>
+                                    <div className='course_doubts row ml-2 mr-2'>
                                             <Link  to= {`/Doubts/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">FAQ's and Doubts</button></Link>
-                                        </div>
+                                    </div>
+                                    
+                                       
                                     
                                 </div>
                             </div>
@@ -180,17 +181,15 @@ useEffect( () => {
                                     <div className="card-horizontal card-announcements">
                                     <div className="img-square-wrapper">
                                             { announcement.type === "image" && <img className="" src={image2} alt="Card image cap"/>}
-                                            { announcement.type === "video" && <img className="" src={image1} alt="Card image cap"/>}
-                                            { announcement.type === "pdf" && <img className="" src={image3} alt="Card image cap"/>}
+                                            { announcement.type === "Video" && <img className="" src={image1} alt="Card image cap"/>}
+                                            { announcement.type === "Assignment" && <img className="" src={image3} alt="Card image cap"/>}
                                         </div>
                                         <div className="card-body">
                                             {/* <h4 className="card-title explore-title">Resources for class diagrams</h4> */}
                                             <h4 className="card-title explore-title">New {announcement.type} added ..</h4>
                                             <p className="card-text">{announcement.description}</p>
-                                            <a className="card-text text-muted" href=" {announcement.link}">
-                                            {announcement.link}
-                                            </a>
-                                        </div>
+                                            <a href = {announcement.link} target="_blank"><button className = "btn btn-sm btn-warning"><strong>Link </strong></button></a>
+                                           </div>
                                         
                                     </div>
                                 </div>
@@ -240,87 +239,6 @@ useEffect( () => {
                         </div>   
                     )           
             })} */}
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-12 mt-3">
-                        <div className="card">
-                            <div className="card-horizontal card-announcements">
-                                <div className="img-square-wrapper">
-                                    <img className="" src={image3} alt="Card image cap"/>
-                                </div>
-                                <div className="card-body">
-                                    <h4 className="card-title explore-title">New Assignment</h4>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a className="card-text text-muted" href="https://uigradients.com/#Shalala">
-                                    https://uigradients.com/#Shalala
-                                    </a>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-12 mt-3">
-                        <div className="card">
-                            <div className="card-horizontal card-announcements">
-                                <div className="card-body">
-                                    <h4 className="card-title explore-title">Recorded Video of Today's class </h4>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a className="card-text text-muted" href="https://uigradients.com/#Shalala">
-                                    https://uigradients.com/#Shalala
-                                    </a>
-                                </div>
-                                <div className="img-square-wrapper">
-                                    <img className="" src={image1} alt="Card image cap"/>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-12 mt-3">
-                        <div className="card">
-                            <div className="card-horizontal card-announcements">
-                            <div className="img-square-wrapper">
-                                    <img className="" src={image2} alt="Card image cap"/>
-                                </div>
-                                <div className="card-body">
-                                    <h4 className="card-title explore-title">Resources for class diagrams</h4>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a className="card-text text-muted" href="https://uigradients.com/#Shalala">
-                                    https://uigradients.com/#Shalala
-                                    </a>
-                                </div>              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-12 mt-3">
-                        <div className="card">
-                            <div className="card-horizontal card-announcements">
-                                <div className="img-square-wrapper">
-                                    <img className="" src={image2} alt="Card image cap"/>
-                                </div>
-                                <div className="card-body">
-                                    <h4 className="card-title explore-title">Feedback and queries</h4>
-                                    <p className="card-text">Students can ask questions</p>
-                                    <a className="card-text text-muted" href="https://uigradients.com/#Shalala">
-                                    https://uigradients.com/#Shalala
-                                    </a>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br/>
             
         </div>
     )

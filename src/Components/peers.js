@@ -8,6 +8,7 @@ function Peers(props) {
  
     const [data,setData] = useState([]);
     const [data1,setData1] = useState([]);
+    const [isLoading,setLoading] = useState(true);
     useEffect(async() => {
         const response = await fetch("http://localhost:5000/course/GetAllCourses");
         const da = await response.json();
@@ -19,17 +20,19 @@ function Peers(props) {
 
   
     useEffect(async() => {
-        const response = await fetch("http://localhost:5000/auth/GetAllUsers");
+        const response = await fetch(`http://localhost:5000/course/CoursePeers/${props.match.params.id}`);
         const da = await response.json();
         setData1(da);
+        setLoading(false);
     }, []);
-    useEffect( () => {
-        console.log(data1);
-    }, [data1]);
     
     return(
        
-
+        <>
+        {isLoading &&
+        <>
+        </>}
+        {!isLoading &&
         <div className="peers">
              <div className="container">
                 <div className="card bg-dark text-white enroll-card ">
@@ -63,11 +66,10 @@ function Peers(props) {
                         <div className="jumbotron list-stu">
                         <h3 className="stu-head">Students: </h3>
                             <ul>
-                                {data1.map(students=>{
+                                {data1.y.map(student=>{
                                     return(
-                                        (course.student == students._id)&&
                                         <>
-                                            <li className="peer"> <i className="fas fa-user-circle stu "></i> {students.firstName} {students.lastName}</li>
+                                            <li className="peer"> <i className="fas fa-user-circle stu "></i> {student}</li>
                                             <hr className="my-4"/>
                                         </>
                                     );                    
@@ -79,7 +81,9 @@ function Peers(props) {
                 </div> ) })}     
 
 
-</div>
+</div>}
+
+</>
 
 
 )}
