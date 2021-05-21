@@ -185,6 +185,7 @@ useEffect( () => {
                                         </div>
                                         <div className="card-body">
                                             {/* <h4 className="card-title explore-title">Resources for class diagrams</h4> */}
+                                            <h4 className="card-title explore-title">New {announcement.type} added ..</h4>
                                             <p className="card-text">{announcement.description}</p>
                                             <a className="card-text text-muted" href=" {announcement.link}">
                                             {announcement.link}
