@@ -20,7 +20,7 @@ function FAQPage(props) {
     return (
         <div>
             { user==='Student' &&
-                <div>
+                <div class = "container">
                     <Link  to= {`/Faq/${props.match.params.id}`} >  <button className="btn btn-primary btn-lg btn-course btn-peers">Ask Questions </button></Link>
                 </div>
             }

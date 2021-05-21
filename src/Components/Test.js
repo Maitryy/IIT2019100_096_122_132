@@ -88,7 +88,7 @@ function Test(props) {
                         <label >Due time</label>
                         <input 
                             type='string' 
-                            placeholder = 'due time (hr:min::dd/mm/yyyy)' 
+                            placeholder = 'due time (dd/mm/yyyy hh:mm)' 
                             onChange = {(e) => setdueTime(e.target.value)}
                             value= {dueTime}
                         />

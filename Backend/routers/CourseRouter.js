@@ -259,6 +259,34 @@ router.get("/getSchedule",  async(req, res) => {
             .json({errorMessage: "No schedule"});
     }
 });
+router.get("/CoursePeers/:id", async(req, res) =>{
+    try {
+        course = req.params.id;
+        const x = await Course.findById(course);
+        let y = new Array;
+        const len = x.student.length;
+        for(i=0;i<len;i++)
+        {
+            if(x.student[i] !== "")
+            {
+            const z = await Student.findById(x.student[i]);
+            let b = z.firstName;
+            let c = z.lastName;
+            let a = `${b} ${c}`;
+            y.push(a);
+            }
+        }
+        res.send({y});
+        
+    } catch (err) {
+        console.error(err);
+        res
+            .status(401)
+            .json({errorMessage: "Unauthorised"});
+        
+    }
+
+});
 
 router.post("/Faq", async(req, res) => {
     try {

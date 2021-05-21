@@ -62,10 +62,6 @@ function HomeStudent() {
                 <h1 className="display-4">Hello, {userName} !!</h1>
                 <p className="lead"> “Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young.”</p>
                 <hr className="my-4"/>
-                <strong>
-                <p>Total credits completed: 18</p>
-                <p>Enrolled in courses: 5</p>
-                </strong>
                 <p className="lead">
                     <Link to = '/Faq' ><button className="btn btn-lg btn-course add-btn">Feedback and queries</button></Link>
 
