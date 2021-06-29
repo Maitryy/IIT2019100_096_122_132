@@ -181,8 +181,8 @@ useEffect( () => {
                                     <div className="card-horizontal card-announcements">
                                     <div className="img-square-wrapper">
                                             { announcement.type === "image" && <img className="" src={image2} alt="Card image cap"/>}
-                                            { announcement.type === "Video" && <img className="" src={image1} alt="Card image cap"/>}
-                                            { announcement.type === "Assignment" && <img className="" src={image3} alt="Card image cap"/>}
+                                            { announcement.type === "video" && <img className="" src={image1} alt="Card image cap"/>}
+                                            { announcement.type === "assignment" && <img className="" src={image3} alt="Card image cap"/>}
                                         </div>
                                         <div className="card-body">
                                             {/* <h4 className="card-title explore-title">Resources for class diagrams</h4> */}
